@@ -3,10 +3,10 @@
         global $conn;
         $stmt = $conn->prepare("
             SELECT Produto.nome, Produto.preco, Produto.caminhoImagem 
-            FROM Produto, Carrinho_de_Compras, Encomenda_Item 
-            WHERE Carrinho_de_Compras.id = Encomenda_Item.idCarrinho
-            AND Produto.id = Encomenda_Item.idProduto 
-            ORDER by Carrinho_de_Compras.id DESC 
+            FROM Produto, carrinhoCompras, encomendaItem 
+            WHERE carrinhoCompras.id = encomendaItem.idCarrinho
+            AND Produto.id = encomendaItem.idProduto 
+            ORDER by carrinhoCompras.id DESC 
             LIMIT 4");
         $stmt->execute();
         return $stmt->fetchAll();
@@ -16,8 +16,8 @@
         global $conn;
         $stmt = $conn->prepare("
             SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, SUM(encomenda_item.quantidade) as quantidade
-            FROM Produto, Encomenda_Item 
-            WHERE Produto.id = Encomenda_Item.idProduto 
+            FROM Produto, encomendaItem 
+            WHERE Produto.id = encomendaItem.idProduto 
             GROUP by Produto.id
             ORDER by Quantidade DESC 
             LIMIT 4");
