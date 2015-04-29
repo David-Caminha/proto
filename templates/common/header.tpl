@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html >
     <head>
-        <link rel="stylesheet" href="css/Pesquisa.css"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/Pesquisa.css"/>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <meta charset="utf-8">
     </head>
     <body id="pagina">
