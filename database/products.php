@@ -3,9 +3,9 @@
         global $conn;
         $stmt = $conn->prepare("
             SELECT Produto.nome, Produto.preco, Produto.caminhoImagem 
-            FROM Produto, carrinhoCompras, encomendaItem 
-            WHERE carrinhoCompras.id = encomendaItem.idCarrinho
-            AND Produto.id = encomendaItem.idProduto 
+            FROM Produto, carrinhoCompras, itemEncomenda 
+            WHERE carrinhoCompras.id = itemEncomenda.idCarrinho
+            AND Produto.id = itemEncomenda.idProduto 
             ORDER by carrinhoCompras.id DESC 
             LIMIT 4");
         $stmt->execute();
@@ -15,9 +15,9 @@
     function getMaisVendidos() {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, SUM(encomenda_item.quantidade) as quantidade
-            FROM Produto, encomendaItem 
-            WHERE Produto.id = encomendaItem.idProduto 
+            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, SUM(itemEncomenda.quantidade) as quantidade
+            FROM Produto, itemEncomenda 
+            WHERE Produto.id = itemEncomenda.idProduto 
             GROUP by Produto.id
             ORDER by Quantidade DESC 
             LIMIT 4");
