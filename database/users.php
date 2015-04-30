@@ -12,7 +12,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador 
                             WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, sha1($password)));
+        $stmt->execute(array($username, $password));
         return $stmt->fetch() == true;
     }
 
