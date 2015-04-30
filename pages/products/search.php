@@ -4,7 +4,7 @@
 
     $searchResult = getSearchResult($_GET['pesquisa']);
 
-    foreach ($recentProducts as $key => $product)
+    foreach ($searchResult as $key => $product)
     {
         unset($photo);
         if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
