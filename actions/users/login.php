@@ -5,7 +5,7 @@
   if (!$_POST['username'] || !$_POST['password']) {
     $_SESSION['error_messages'][] = 'Invalid login';
     $_SESSION['form_values'] = $_POST;
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header("Location: $BASE_URL" . 'pages/users/register.php');
     exit;
   }
 
@@ -18,5 +18,5 @@
   } else {
     $_SESSION['error_messages'][] = 'Login failed';  
   }
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  header("Location: $BASE_URL");
 ?>

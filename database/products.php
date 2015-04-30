@@ -24,4 +24,16 @@
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    function getSearchresult($value) {
+        global $conn;
+        $stmt = $conn->prepare("
+            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem 
+            FROM Produto
+            WHERE nome LIKE ?
+            OR descricao LIKE ?
+            LIMIT 8");
+        $stmt->execute(array($value, $value));
+        return $stmt->fetchAll();
+    }
 ?>
