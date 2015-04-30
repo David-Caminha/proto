@@ -9,7 +9,7 @@
 
         <div id="header" class="col-xs-12 col-md-12 ">
             <section >
-               <img  src="Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
+               <img  src="{$BASE_URL}/images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
             </section>
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
