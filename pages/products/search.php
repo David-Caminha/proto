@@ -2,7 +2,7 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
 
-    $searchResult = getSearchResult(&_GET['pesquisa']);
+    $searchResult = getSearchResult($_GET['pesquisa']);
 
     foreach ($recentProducts as $key => $product)
     {
