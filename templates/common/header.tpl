@@ -14,7 +14,7 @@
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
                     <a  class=" btn btn-default" href="http://www.google.com">Home</a>
-                    <form action="{$BASE_URL}pages/products/search.php" method="get">
+                    <form action="{$BASE_DIR}pages/products/search.php" method="get">
                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Pesquisa">
                     </form>
                 </section>
