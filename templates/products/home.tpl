@@ -10,7 +10,7 @@
             
             <dt>
                 <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 ">
-                    <img  src="{$produto.photo}" alt="Imagem do produto" height="100" width="100">
+                    <img  src="{$BASE_DIR}{$produto.photo}" alt="Imagem do produto" height="100" width="100">
                     <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" height="40" width="40">
                     <p class=" col-xs-12 col-md-12 "> {$produto.nome}</p>
                     <p class=" col-xs-12 col-md-12 "> {$produto.preco}€</p>
@@ -19,6 +19,7 @@
             </dt> 
             
             {/foreach}
+            <div>ola</div>
             
         </dl>
         <dl id="ComprasRecentes" class=" col-xs-12 col-md-12 ">
@@ -27,7 +28,7 @@
             
             <dt>
                 <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 ">
-                    <img  src="{$produto.photo}" alt="Imagem do produto" height="100" width="100">
+                    <img  src="{$BASE_DIR}{$produto.photo}" alt="Imagem do produto" height="100" width="100">
                     <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" height="40" width="40">
                     <p class=" col-xs-12 col-md-12 ">{$produto.nome}</p>
                     <p class=" col-xs-12 col-md-12 ">{$produto.preco}€</p>
