@@ -38,5 +38,4 @@
             {/foreach}
         </dl>
         
-    </body>
-</html>
+{include file='common/footer.tpl'}
