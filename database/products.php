@@ -33,7 +33,7 @@
             WHERE nome LIKE ?
             OR descricao LIKE ?
             LIMIT 8");
-        $stmt->execute(array($value, $value));
+        $stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
         return $stmt->fetchAll();
     }
 ?>
