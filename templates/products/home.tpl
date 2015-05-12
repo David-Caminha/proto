@@ -19,7 +19,6 @@
             </dt> 
             
             {/foreach}
-            <div>ola</div>
             
         </dl>
         <dl id="ComprasRecentes" class=" col-xs-12 col-md-12 ">

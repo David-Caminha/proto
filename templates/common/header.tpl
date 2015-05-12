@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html >
     <head>
-        <link rel="stylesheet" href="../../css/Pesquisa.css"/>
+        <link rel="stylesheet" href="../../css/Style.css"/>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <meta charset="utf-8">
     </head>
