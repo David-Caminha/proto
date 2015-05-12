@@ -1,5 +1,6 @@
 {include file='common/header.tpl'}
 
+            </div>
             <section id="linkagem" class="col-xs-12 col-md-12" >
                 <a  href="http://www.google.com">HOME</a>
             </section>
