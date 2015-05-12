@@ -5,7 +5,7 @@
     $recentementeVendidos = getRecentementeVendidos();
     $maisVendidos = getMaisVendidos();
 
-    foreach ($recentProducts as $key => $product)
+    foreach ($recentementeVendidos as $key => $product)
     {
         unset($photo);
         if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
@@ -15,7 +15,7 @@
         if (!$photo) $photo = 'images/produtos/default.png';
         $recentProducts[$key]['photo'] = $photo;
     }
-    foreach ($mostSold as $key => $product)
+    foreach ($maisVendidos as $key => $product)
     {
         unset($photo);
         if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
