@@ -5,6 +5,19 @@
                 <a  href="http://www.google.com">HOME</a>
             </section>
         </div>
+
+        <div id="headerItens">
+            <p  class="col-xs-6 col-md-4"> Showing 1-7 of 7 results</p>
+            <form id="Filtros" class=" col-xs-6 col-md-4 col-md-offset-4">
+                <select name="Filtro">
+                    <option value="Preço crescente"> Preço crescente</option>
+                    <option value="Preço decrescente"> Preço decrescente</option>
+                    <option value="Melhor classificação"> Maior classificação</option>
+                    <option value="Recentes"> Mais recentes</option>
+                </select>
+            </form>
+        </div>
+
         <dl id="TopCompras" class=" col-xs-12 col-md-12 ">
             
             {foreach $maisVendidos as $produto}
