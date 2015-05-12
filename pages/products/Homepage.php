@@ -2,8 +2,8 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
     
-    $recentProducts = getRecentementeVendidos();
-    $mostSold = getMaisVendidos();
+    $recentementeVendidos = getRecentementeVendidos();
+    $maisVendidos = getMaisVendidos();
 
     foreach ($recentProducts as $key => $product)
     {
