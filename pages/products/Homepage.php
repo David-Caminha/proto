@@ -24,7 +24,7 @@
         else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
           $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
         else
-            $photo = 'images/produtos/default.png';
+            $photo = 'images/assets/Logo.png';
         $product['caminhoimagem'] = $photo;
     }
 
