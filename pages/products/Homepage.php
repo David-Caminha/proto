@@ -8,11 +8,11 @@
     foreach ($recentementeVendidos as $key => $product)
     {
         unset($photo);
-        if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
+        /*if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
             $photo = 'images/produtos/'.$product['id'].'.png';
         else if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg'))
           $photo = 'images/produtos/'.$product['id'].'.jpg';
-        else
+        else*/
             $photo = 'images/produtos/default.png';
         $recentProducts[$key]['photo'] = $photo;
     }
