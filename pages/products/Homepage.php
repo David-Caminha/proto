@@ -14,7 +14,7 @@
           $photo = 'images/produtos/'.$product['id'].'.jpg';
         else*/
             $photo = 'images/produtos/default.png';
-        $recentProducts[$key]['photo'] = $photo;
+        $product['photo'] = $photo;
     }
     foreach ($maisVendidos as $key => $product)
     {
@@ -25,7 +25,7 @@
           $photo = 'images/produtos/'.$product['id'].'.jpg';
         else
             $photo = 'images/produtos/default.png';
-        $mostSold[$key]['photo'] = $photo;
+        $product['photo'] = $photo;
     }
 
     $smarty->assign('recentementeVendidos', $recentementeVendidos);
