@@ -5,27 +5,27 @@
     $recentementeVendidos = getRecentementeVendidos();
     $maisVendidos = getMaisVendidos();
 
-    foreach ($recentementeVendidos as $key => $product)
+    foreach ($recentementeVendidos as  $product)
     {
         unset($photo);
-        /*if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
-            $photo = 'images/produtos/'.$product['id'].'.png';
-        else if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg'))
-          $photo = 'images/produtos/'.$product['id'].'.jpg';
-        else*/
-            $photo = 'images/produtos/default.png';
-        $product['photo'] = $photo;
-    }
-    foreach ($maisVendidos as $key => $product)
-    {
-        unset($photo);
-        if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
-            $photo = 'images/produtos/'.$product['id'].'.png';
-        else if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg'))
-          $photo = 'images/produtos/'.$product['id'].'.jpg';
+        if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
+            $photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
+        else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
+          $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
         else
             $photo = 'images/produtos/default.png';
         $product['photo'] = $photo;
+    }
+    foreach ($maisVendidos as $product)
+    {
+        unset($photo);
+        if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
+            $photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
+        else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
+          $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
+        else
+            $photo = 'images/produtos/default.png';
+        $product['caminhoimagem'] = $photo;
     }
 
     $smarty->assign('recentementeVendidos', $recentementeVendidos);
