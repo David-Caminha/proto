@@ -4,7 +4,7 @@
         $stmt = $conn->prepare("
             INSERT INTO utilizador 
             VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, sha1($password), $birthDate, $realname, $email, $phone));
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT), $birthDate, $realname, $email, $phone));
     }
 
     function isUserLoginCorrect($username, $password) {
@@ -12,7 +12,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador 
                             WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, $password));
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
         return $stmt->fetch() == true;
     }
 
@@ -21,7 +21,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM fornecedor 
                             WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, sha1($password)));
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
         return $stmt->fetch() == true;
     }
 
