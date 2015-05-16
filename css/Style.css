@@ -15,7 +15,7 @@
 }
 #header  a:hover{
     border: 0px;
-    background-color: rgba(166, 165, 198, 0.9);
+    background-color: rgba(162, 160, 160, 0.78);
 }
 
 #ferramentas{
@@ -84,4 +84,31 @@
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
 }
+
+.register-form {
+    background-color: rgb(217, 209, 209);
+    padding: 3%;
+    border-radius: 1%;
+}
+
+.box{
+    display: none;
+}
+
+#TopCompras {
+    margin-top: 2%; 
+}
+
+#TopCompras h7{
+    
+    background-color: #d9e5e5;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#ItensTopCompras{
+    border: 1px solid #d9e5e5;
+    border-radius: 5px;
+}
+
 
