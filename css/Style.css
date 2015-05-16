@@ -42,7 +42,9 @@
  background-color: rgb(255, 255, 255)
    
 }
-
+#Item{
+    margin-top:2%;
+}
 #Imagem{
     position: absolute;
     top: -10%;
