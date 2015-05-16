@@ -1,25 +1,45 @@
-{include file='common/header.tpl'}
+<!DOCTYPE HTML>
+<html >
+    <head>
+        <link rel="stylesheet" href="../../css/Style.css"/>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+    </head>
+    <body id="pagina">
 
+        <div id="header" class="col-xs-12 col-md-12 ">
+            <section >
+               <img  src="../../images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
+            </section>
+            <div id="ferramentas" class=" col-xs-12 col-md-12">
+                <section class="row col-xs-6 col-md-4">
+                    <a  class=" btn btn-default" href="http://www.google.com">Home</a>
+                    <form >
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Pesquisa">
+                    </form>
+                </section>
+                 <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
+                    <a  class=" btn btn-default" href="http://www.google.com">Logout</a>
+                    <a  class=" btn btn-default" href="http://www.google.com">Acount</a>
+                    <a  class="btn btn-default" href="http://www.google.com">1 Items</a>
+                    <a  class="btn btn-default" href="http://www.google.com">Checkout</a>
+                </section>
             </div>
+            
             <section id="linkagem" class="col-xs-12 col-md-12" >
                 <a  href="http://www.google.com">HOME</a>
+                 > 
+                <a href="http://www.google.com">LOGIN</a>
             </section>
+            <section id="line"></section>
         </div>
-
-        <div id="headerItens">
-            <p  class="col-xs-6 col-md-4"> Showing 1-7 of 7 results</p>
-            <form id="Filtros" class=" col-xs-6 col-md-4 col-md-offset-4">
-                <select name="Filtro">
-                    <option value="Preço crescente"> Preço crescente</option>
-                    <option value="Preço decrescente"> Preço decrescente</option>
-                    <option value="Melhor classificação"> Maior classificação</option>
-                    <option value="Recentes"> Mais recentes</option>
-                </select>
-            </form>
-        </div>
-
+           
+      
         <dl id="TopCompras" class=" col-xs-12 col-md-12 ">
-            
+            <h7> Top Compras</h7>
+             <div id="ItensTopCompras">
+            <br>
+           
             {foreach $maisVendidos as $produto}
             
             <dt>
@@ -33,7 +53,7 @@
             </dt> 
             
             {/foreach}
-            
+            </div>
         </dl>
         <dl id="ComprasRecentes" class=" col-xs-12 col-md-12 ">
             

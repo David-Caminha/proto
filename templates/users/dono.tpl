@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
 <html >
     <head>
-        <link rel="stylesheet" href="../../css/PaginaDono.css"/>
-        <link rel="stylesheet" href="../../css/Pesquisa.css"/>
+        <link rel="stylesheet" href="../../css/Style.css"/>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <meta charset="utf-8">
     </head>
@@ -10,7 +9,7 @@
 
         <div id="header" class="col-xs-12 col-md-12 ">
             <section >
-               <img  src="Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
+               <img  src="../../images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
             </section>
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
