@@ -99,10 +99,13 @@
 #TopCompras {
     border: 2px solid #d9e5e5;
     border-radius: 5px;
+    padding: 1%;
 }
 
 #Tab{
-        margin-top: 2%; 
+    margin-top: 2%; 
+    margin-left: 1%;
+    margin-right: 1%;
     background-color: #d9e5e5;
     border-radius: 5px;
     padding: 1%;
