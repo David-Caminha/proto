@@ -41,7 +41,7 @@
             <dt>
                 <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 ">
                     <img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="{$produto.photo}" height="100" width="100">
-                    <span id="Imagem" class="glyphicon glyphicon-zoom-in">
+                    <span id="Imagem" class="glyphicon glyphicon-zoom-in"></span>
                     <p class=" col-xs-12 col-md-12 "> {$produto.nome}</p>
                     <p class=" col-xs-12 col-md-12 "> {$produto.preco}€</p>
                     <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
