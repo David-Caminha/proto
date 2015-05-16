@@ -55,6 +55,10 @@
     margin-bottom: 10%
 }
 
+span.glyphicon-zoom-in {
+    font-size: 1.2em;
+}
+
 #descricao{
     margin-bottom: 10%
 }
