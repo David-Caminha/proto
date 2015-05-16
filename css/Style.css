@@ -97,19 +97,15 @@
 }
 
 #TopCompras {
-    margin-top: 2%; 
+    border: 2px solid #d9e5e5;
+    border-radius: 5px;
 }
 
-#TopCompras h7{
-    
+#Tab{
+        margin-top: 2%; 
     background-color: #d9e5e5;
     border-radius: 5px;
     padding: 1%;
-}
-
-#ItensTopCompras{
-    border: 2px solid #d9e5e5;
-    border-radius: 5px;
 }
 
 

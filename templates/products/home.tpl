@@ -34,10 +34,10 @@
             <section id="line"></section>
         </div>
            
-      
+      <h7 id="Tab"> Top Compras</h7>
         <dl id="TopCompras" class=" col-xs-12 col-md-12 ">
-            <h7> Top Compras</h7>
-             <div id="ItensTopCompras">
+            
+     
             <br>
            
             {foreach $maisVendidos as $produto}
@@ -53,7 +53,7 @@
             </dt> 
             
             {/foreach}
-            </div>
+
         </dl>
         <dl id="ComprasRecentes" class=" col-xs-12 col-md-12 ">
             
