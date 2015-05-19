@@ -15,7 +15,7 @@
                 <section class="row col-xs-6 col-md-4">
                     <a  class=" btn btn-default" href="http://www.google.com">Home</a>
                     <form action="{$BASE_URL}pages/products/search.php" method="get">
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Pesquisa">
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
                     </form>
                 </section>
                 <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
