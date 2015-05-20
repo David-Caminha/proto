@@ -1,10 +1,27 @@
 <?php
-    function createUser($username, $password, $birthDate, $realname, $email, $phone) {
+    function usernameExists($username) {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                            FROM utilizador 
+                            WHERE username = ?");
+        $stmt->execute(array($username));
+        return $stmt->fetch() == true;
+    }
+
+    function createUser($username, $password, $email, $birthDate, $realname, $phone, $address) {
         global $conn;
         $stmt = $conn->prepare("
             INSERT INTO utilizador 
-            VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT), $birthDate, $realname, $email, $phone));
+            VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT), $email, $birthDate, $realname, $phone, $address));
+    }
+
+    function createSuplier($username, $password, $email, $contactName, $contactPhone) {
+        global $conn;
+        $stmt = $conn->prepare("
+            INSERT INTO utilizador 
+            VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT), $email, $contactName, $contactPhone));
     }
 
     function isUserLoginCorrect($username, $password) {

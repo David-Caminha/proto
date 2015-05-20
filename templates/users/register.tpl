@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html >
     <head>
-        <link rel="stylesheet" href="../../css/Style.css"/>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{$BASE_URL}css/Style.css"/>
+        <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
         <meta charset="utf-8">
     </head>
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
@@ -24,7 +24,7 @@
 
         <div id="header" class="col-xs-12 col-md-12 ">
             <section >
-               <img  src="../../images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
+               <img  src="{$BASE_URL}images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
             </section>
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
@@ -57,10 +57,10 @@
                     <input class="form-control" type="text" name="username" placeholder="Username"> <br>
                     <input class="form-control" type="text" name="email" placeholder="Email"><br>
                      <input class="form-control" type="password" name="password" placeholder="Password"> <br>         
-                    <input class="form-control" type="password" name="confirmarpassword" placeholder="Confirmar Password"> <br>
+                    <input class="form-control" type="password" name="confirmarPassword" placeholder="Confirmar Password"> <br>
                     <h7> Desejo ser</h7>  
-                    <label><input type="radio" name="colorRadio" value="user" > Utilizador</label>
-                    <label><input type="radio" name="colorRadio" value="fornecedor"> Fornecedor</label>
+                    <label><input type="radio" name="choiceRadio" value="user" > Utilizador</label>
+                    <label><input type="radio" name="choiceRadio" value="fornecedor"> Fornecedor</label>
                     <div class="user box">
                          <input class="form-control" type="date" name="dataNascimento" placeholder="Data de Nascimento"> <br>
                         <input class="form-control" type="text" name="nome" placeholder="Nome completo"> <br>
@@ -68,8 +68,8 @@
                         <input class="form-control" type="text" name="morada" placeholder="Morada"> 
                     </div>
                     <div class="fornecedor box"> 
-                        <input class="form-control" type="text" name="nome" placeholder="Nome responsável"> <br>
-                        <input class="form-control" type="text" name="contacto" placeholder="Contacto"> 
+                        <input class="form-control" type="text" name="nomeResponsavel" placeholder="Nome responsável"> <br>
+                        <input class="form-control" type="text" name="contactoResponsavel" placeholder="Contacto"> 
                     </div>
                     <br>          
                     <input type="checkbox"> <h7> Li e concordo com os</h7> <a href="http://www.google.com">Termos de utilização</a> <br><br>
