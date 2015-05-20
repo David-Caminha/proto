@@ -4,16 +4,16 @@
 	<h2>Carrinho de Compras</h2>
 	<table class="table table-striped">
 		<tr>
-			<td>Produto</td>
-			<td>Quantidade</td>
-			<td>Total</td>
+			<td><b>Produto</b></td>
+			<td><b>Quantidade</b></td>
+			<td><b>Total</b></td>
 		</tr>
 		{foreach $Result as $itemEncomenda}
 		<tr>
 			<td>{$itemEncomenda.nome}</td>
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
-			<td><button type="button" action="{$BASE_URL}pages/users/shop_cart.php" name="remover">Remover</button></td> 
+			<td><a href="?id={$itemEncomenda.id}"><button type="button" >Remover</button></a></td> 
 		</tr>
 		{/foreach}
 	</table>
