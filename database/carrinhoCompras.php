@@ -8,4 +8,3 @@ function searchItems() {
         $stmt->execute();
         return $stmt->fetchAll();
     }
-?>
