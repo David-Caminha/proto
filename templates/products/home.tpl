@@ -25,8 +25,6 @@
 
         <h7 id="Tab"> Top Compras</h7>
         <dl id="TopCompras" class=" col-xs-12 col-md-12 ">
-            <div id="owl-example" class="owl-carousel">
-                
             {foreach $maisVendidos as $produto}
                     <div>
                     <dt>
@@ -40,8 +38,7 @@
                     </dt> 
                     </div>
             {/foreach}
-               
-            </div>
+             
         </dl>
 
         <h7 id="Tab"> Compras Recentes</h7>
