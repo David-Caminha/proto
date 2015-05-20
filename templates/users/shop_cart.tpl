@@ -13,11 +13,11 @@
 			<td>{$itemEncomenda.nome}</td>
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
-			<td><button type="button">Remover</button></td>
+			<td><button type="button" action="{$BASE_URL}pages/users/carrinhoCompras.php" name="remover">Remover</button></td>
 		</tr>
 		{/foreach}
 	</table>
-	<button>Finalizar Compra</button>
+	<button type="button">Finalizar Compra</button>
 	
 </section>
 {include file='common/footer.tpl'}
