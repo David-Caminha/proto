@@ -13,9 +13,11 @@
 			<td>{$itemEncomenda.nome}</td>
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
+			<td><button type="button">Remover</button></td>
 		</tr>
 		{/foreach}
 	</table>
+	<button>Finalizar Compra</button>
 	
 </section>
 {include file='common/footer.tpl'}
