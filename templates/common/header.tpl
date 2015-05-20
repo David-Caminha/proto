@@ -19,9 +19,10 @@
                     </form>
                 </section>
                 <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
-                    <a  class=" btn btn-default" href="http://www.google.com">Logout</a>
-                    <a  class=" btn btn-default" href="http://www.google.com">Acount</a>
-                    <a  class="btn btn-default" href="http://www.google.com">1 Items</a>
-                    <a  class="btn btn-default" href="http://www.google.com">Checkout</a>
+                    {if $USERNAME}
+                        {include file='common/menu_logged_in.tpl'}
+                    {else}
+                        {include file='common/menu_logged_out.tpl'}
+                    {/if}
                 </section>
             </div>
