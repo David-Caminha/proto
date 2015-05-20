@@ -107,6 +107,13 @@ span.glyphicon-zoom-in {
     padding-bottom: 1%;
 }
 
+#ComprasRecentes {
+    border: 2px solid #d9e5e5;
+    border-radius: 5px;
+    padding-bottom: 1%;
+}
+
+
 #Tab{
     margin-top: 5%; 
     margin-left: 1%;
@@ -115,5 +122,6 @@ span.glyphicon-zoom-in {
     border-radius: 5px;
     padding: 1%;
 }
+
 
 
