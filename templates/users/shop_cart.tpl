@@ -7,6 +7,8 @@
 			<td><b>Produto</b></td>
 			<td><b>Quantidade</b></td>
 			<td><b>Total</b></td>
+			<td><b>idCarrinho</b></td>
+			<td><b>idProduto</b></td>
 		</tr>
 		{foreach $Result as $itemEncomenda}
 		<tr>
