@@ -9,7 +9,7 @@ function searchItems() {
         return $stmt->fetchAll();
     }
 
-	function removeItem($value, $id)
+	function removeItem($value, $id) {
 		global $conn;
 		
 		$stmtVerify = $conn->prepare("
