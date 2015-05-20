@@ -16,7 +16,7 @@ function searchItems() {
 			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND itemEncomenda.idUser = ?
 			");
 		$stmtVerify->execute(array($idC, $idP, $idU));
-		$item = $stmtVerify->fetch();
+		$item = $stmtVerify->fetchALL();
 		
 		if(!empty($item)) {
 			$stmtRemove = $conn->prepare("
