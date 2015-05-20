@@ -22,7 +22,7 @@ function searchItems() {
 			$stmtRemove = $conn->prepare("
 			DELETE FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND ? = (SELECT idUser FROM carrinhoCompras WHERE id =?)
 			");
-			$stmtRemove->execute(array($idC, $idP, $idU));
+			$stmtRemove->execute(array($idC, $idP, $idU, $idC));
 			
 			return true;
 		}
