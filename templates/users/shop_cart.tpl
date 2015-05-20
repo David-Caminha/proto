@@ -13,7 +13,7 @@
 			<td>{$itemEncomenda.nome}</td>
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
-			<td><a href="?id={$itemEncomenda.id}"><button type="button" >Remover</button></a></td> 
+			<td><a href="?idCarrinho={$itemEncomenda.idCarrinho}&idProduto={$itemEncomenda.idProduto}"><button type="button" >Remover</button></a></td> 
 		</tr>
 		{/foreach}
 	</table>

@@ -2,27 +2,27 @@
 function searchItems() {
         global $conn;
         $stmt = $conn->prepare("            
-			SELECT itemEncomenda.id, itemEncomenda.quantidade, produto.nome, (itemEncomenda.quantidade*produto.preco) as total
+			SELECT itemEncomenda.quantidade, produto.nome, (itemEncomenda.quantidade*produto.preco) as total
 			FROM itemEncomenda, produto
 			WHERE produto.id = itemEncomenda.idProduto AND itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = 1 AND estado = FALSE)");
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
-	function removeItem($value, $id) {
+	function removeItem($idC, $idP, $idU) {
 		global $conn;
 		
 		$stmtVerify = $conn->prepare("
-			SELECT id FROM itemEncomenda WHERE itemEncomenda.id = (?) AND itemEncomenda.idUser = ?
+			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND itemEncomenda.idUser = ?
 			");
-		$stmtVerify->execute(array($value, $id));
+		$stmtVerify->execute(array($idC, $idP, $idU));
 		$item = $stmtVerify->fetch();
 		
 		if(!empty($item)) {
 			$stmtRemove = $conn->prepare("
-			DELETE FROM itemEncomenda WHERE itemEncomenda.id = (?) AND itemEncomenda.idUser = ?
+			DELETE FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND itemEncomenda.idUser = ?
 			");
-			$stmtRemove->execute(array($value, $id));
+			$stmtRemove->execute(array($idC, $idP, $idU));
 			
 			return true;
 		}
