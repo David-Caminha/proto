@@ -26,7 +26,6 @@
         <h7 id="Tab"> Top Compras</h7>
         <dl id="TopCompras" class=" col-xs-12 col-md-12 ">
             {foreach $maisVendidos as $produto}
-                    <div>
                     <dt>
                         <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 ">
                             <img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="{$produto.photo}" height="100" width="100">
@@ -36,7 +35,6 @@
                             <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
                         </section>
                     </dt> 
-                    </div>
             {/foreach}
              
         </dl>
