@@ -13,14 +13,14 @@ function searchItems() {
 		global $conn;
 		
 		$stmtVerify = $conn->prepare("
-			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND itemEncomenda.idUser = ?
+			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND ? = (SELECT idUser FROM carrinhoCompras WHERE id =?)
 			");
-		$stmtVerify->execute(array($idC, $idP, $idU));
+		$stmtVerify->execute(array($idC, $idP, $idU, $idC));
 		$item = $stmtVerify->fetchALL();
 		
 		if(!empty($item)) {
 			$stmtRemove = $conn->prepare("
-			DELETE FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND itemEncomenda.idUser = ?
+			DELETE FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND ? = (SELECT idUser FROM carrinhoCompras WHERE id =?)
 			");
 			$stmtRemove->execute(array($idC, $idP, $idU));
 			
