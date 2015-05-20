@@ -15,9 +15,9 @@
 			<td>{$itemEncomenda.nome}</td>
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
-			<td>{$itemEncomenda.idCarrinho}</td>
-			<td>{$itemEncomenda.idProduto}</td>
-			<td><a href="?idCarrinho={$itemEncomenda.idCarrinho}&idProduto={$itemEncomenda.idProduto}"><button type="button" >Remover</button></a></td> 
+			<td>{$itemEncomenda.idcarrinho}</td>
+			<td>{$itemEncomenda.idproduto}</td>
+			<td><a href="?idC={$itemEncomenda.idcarrinho}&idP={$itemEncomenda.idproduto}"><button type="button" >Remover</button></a></td> 
 		</tr>
 		{/foreach}
 	</table>
