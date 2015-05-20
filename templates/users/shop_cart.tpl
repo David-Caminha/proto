@@ -8,11 +8,11 @@
 			<td>Quantidade</td>
 			<td>Total</td>
 		</tr>
-		{foreach $itemEncomenda as $itemEncomenda}
+		{foreach $Result as $itemEncomenda}
 		<tr>
-			<td>{$itemEncomenda.}</td>
-			<td>{}</td>
-			<td>{}</td>
+			<td>{$itemEncomenda.nome}</td>
+			<td>{$itemEncomenda.quantidade}</td>
+			<td>{$itemEncomenda.total}</td>
 		</tr>
 		{/foreach}
 	</table>
