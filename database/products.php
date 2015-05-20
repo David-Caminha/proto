@@ -30,8 +30,8 @@
         $stmt = $conn->prepare("
             SELECT Produto.nome, Produto.preco, Produto.caminhoImagem 
             FROM Produto
-            WHERE nome LIKE ?
-            OR descricao LIKE ?
+            WHERE UPPER(nome) LIKE upper(?)
+            OR UPPER(descricao) LIKE upper(?)
             LIMIT 8");
         $stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
         return $stmt->fetchAll();
