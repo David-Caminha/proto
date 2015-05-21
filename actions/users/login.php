@@ -12,7 +12,7 @@
   $username = $_POST['username'];
   $password = $_POST['password'];
   
-  if (isLoginCorrect($username, $password)) {
+  if (isUserLoginCorrect($username, $password)) {
     $_SESSION['username'] = $username;
     $_SESSION['success_messages'][] = 'Login successful';  
   } else {
