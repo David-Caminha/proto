@@ -14,8 +14,8 @@
         // if (!$photo) $photo = 'images/produtos/default.png';
         // $recentProducts[$key]['photo'] = $photo;
     // }
-	foreach $searchResult{
-		$searchResult['caminhoImagem'] = 'images/produtos/default.png';
+	foreach $searchResult as $a{
+		$a['caminhoImagem'] = 'images/produtos/default.png';
 	}
 	//acrescentei este codigo
 	if (!empty($_GET['idP'])) {
