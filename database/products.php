@@ -48,7 +48,7 @@
 		$stmtVerify->execute(array($u_id, $p_id));
 		$item = $stmtVerify->fetchALL();
 		
-		if(!empty($item)) {
+		if(empty($item)) {
 			$stmt = $conn->prepare("
 				INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (?, (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE), ?)
 			");
