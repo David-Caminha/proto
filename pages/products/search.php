@@ -11,7 +11,7 @@
             $photo = 'images/produtos/'.$product['id'].'.png';
         if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg'))
           $photo = 'images/produtos/'.$product['id'].'.jpg';
-        if (!$photo) $photo = $BASE_DIR.'images/produtos/default.png';
+        if (!$photo) $photo = 'images/produtos/default.png';
         $recentProducts[$key]['photo'] = $photo;
     }
 	//acrescentei este codigo
