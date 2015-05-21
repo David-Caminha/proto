@@ -39,11 +39,22 @@
 
 	//adicionei daqui para baixo
 	
-	function addItem($p_id, $u_id) {
+	function addItem($qtd, $p_id, $u_id) {
 		global $conn;
-		$stmt = $conn->prepare("
-			INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (1, (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE), ?)
-		");
-		$stmt->execute(array($u_id, $p_id));
-		return true;
+		$stmtVerify = $conn->prepare(" //verifica se existe algum itemEncomenda nesse carrinho para o mesmo produto.
+			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE) AND itemEncomenda.idProduto = ? 
+			");
+		$stmtVerify->execute(array($u_id, $p_id));
+		$item = $stmtVerify->fetchALL();
+		
+		if(!empty($item)) {
+			$stmt = $conn->prepare("
+				INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES ($qtd, (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE), ?)
+			");
+			$stmt->execute(array($qtd, $u_id, $p_id));
+			echo "<script type='text/javascript'>alert('O item foi adicionado ao seu Carrinho de Compras com sucesso!');</script>"
+			return true;
+		}
+		echo "<script type='text/javascript'>alert('Já adicionou esse item ao seu carrinho!');</script>"
+		return false;
 	}
