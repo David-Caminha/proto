@@ -28,7 +28,7 @@
     function getSearchresult($value) {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem 
+            SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem 
             FROM Produto
             WHERE UPPER(nome) LIKE upper(?)
             OR UPPER(descricao) LIKE upper(?)
@@ -36,4 +36,14 @@
         $stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
         return $stmt->fetchAll();
     }
-?>
+
+	//adicionei daqui para baixo
+	
+	function addItem($p_id, $u_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (1, (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE), ?)
+		");
+		$stmt->execute(array($p_id, $u_id)
+		return true;
+	}

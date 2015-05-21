@@ -14,7 +14,11 @@
         if (!$photo) $photo = 'images/produtos/default.png';
         $recentProducts[$key]['photo'] = $photo;
     }
-
+	//acrescentei este codigo
+	if (!empty($_GET['idP'])) {
+	  addItem($_GET['idP'], 1); //este 1 sera substituido pelo id do utilizador com sessão aberta
+  }
+	
     $smarty->assign('searchResult', $searchResult);
     $smarty->display('products/search.tpl');
 ?>
