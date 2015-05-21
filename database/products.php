@@ -44,6 +44,6 @@
 		$stmt = $conn->prepare("
 			INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (1, (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE), ?)
 		");
-		$stmt->execute(array($p_id, $u_id);
+		$stmt->execute(array($u_id, $p_id));
 		return true;
 	}
