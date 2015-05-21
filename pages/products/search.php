@@ -6,13 +6,14 @@
 
     foreach ($searchResult as $key => $product)
     {
-        unset($photo);
-        if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
-            $photo = 'images/produtos/'.$product['id'].'.png';
-        if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg'))
-          $photo = 'images/produtos/'.$product['id'].'.jpg';
-        if (!$photo) $photo = 'images/produtos/default.png';
-        $recentProducts[$key]['photo'] = $photo;
+        // unset($photo);
+        // if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png'))
+            // $photo = 'images/produtos/'.$product['id'].'.png';
+        // if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg'))
+          // $photo = 'images/produtos/'.$product['id'].'.jpg';
+        // if (!$photo) $photo = 'images/produtos/default.png';
+        // $recentProducts[$key]['photo'] = $photo;
+        $recentProducts[$key]['photo'] = 'images/produtos/default.png';
     }
 	//acrescentei este codigo
 	if (!empty($_GET['idP'])) {
