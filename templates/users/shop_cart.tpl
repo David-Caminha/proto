@@ -10,6 +10,7 @@
 			<td><b>Quantidade</b></td>
 			<td><b>Total</b></td>
 		</tr>
+		{$valorfinal = 0}
 		{foreach $Result as $itemEncomenda}
 		<tr>
 			<td>{$itemEncomenda.nome}</td>
@@ -17,7 +18,11 @@
 			<td>{$itemEncomenda.total}</td>
 			<td><a href="?idC={$itemEncomenda.idcarrinho}&idP={$itemEncomenda.idproduto}"><button type="button" >Remover</button></a></td> 
 		</tr>
+		{$valorfinal = $valorfinal + $itemEncomenda.total}
 		{/foreach}
+		<tr>
+			<td><b>Valor Final:</b> {$valorfinal}</td>
+		</tr>
 	</table>
 	<a href="#"><button type="button">Finalizar Compra</button></a>
 	
