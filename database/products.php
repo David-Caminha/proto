@@ -2,7 +2,7 @@
     function getRecentementeVendidos() {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem 
+            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, Produto.id 
             FROM Produto, carrinhoCompras, itemEncomenda 
             WHERE carrinhoCompras.id = itemEncomenda.idCarrinho
             AND Produto.id = itemEncomenda.idProduto 
@@ -15,7 +15,7 @@
     function getMaisVendidos() {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, SUM(itemEncomenda.quantidade) as quantidade
+            SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem, SUM(itemEncomenda.quantidade) as quantidade
             FROM Produto, itemEncomenda 
             WHERE Produto.id = itemEncomenda.idProduto 
             GROUP by Produto.id
