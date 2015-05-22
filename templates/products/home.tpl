@@ -65,7 +65,7 @@
         </div>
 
 <!--  jQuery 1.7+  -->
-<script src="../../jquery.js"></script>
+<script src="jquery-1.9.1.min.js"></script>
  
 <!-- Include js plugin -->
 <script src="../../owl.carousel/owl-carousel/owl.carousel.js"></script>
