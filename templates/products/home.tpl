@@ -1,6 +1,13 @@
 {include file='common/header.tpl'}
 <link rel="stylesheet" href="../../css/owl.carousel.css">
 <link rel="stylesheet" href="../../css/owl.theme.css">
+<script>
+$(document).ready(function() {
+ 
+  $("#owl-example").owlCarousel();
+ 
+});
+</script>
             <section id="linkagem" class="col-xs-12 col-md-12" >
                 <a  href="http://www.google.com">HOME</a>
                  > 
