@@ -1,17 +1,4 @@
 {include file='common/header.tpl'}
-<!-- Important Owl stylesheet -->
-<link rel="stylesheet" href="../../owl.carousel/owl-carousel/owl.carousel.css">
- 
-<!-- Default Theme -->
-<link rel="stylesheet" href="../../owl.carousel/owl-carousel/owl.theme.css">
-
-<script>
-    $(document).ready(function() {
- 
-  $("#owl-example").owlCarousel();
- 
-});
-</script>
 
             <section id="linkagem" class="col-xs-12 col-md-12" >
                 <a  href="http://www.google.com">HOME</a>
@@ -24,10 +11,6 @@
 
         <h7 id="Tab" > Top Compras</h7>
         <div id="TopCompras" class=" col-xs-12 col-md-12 ">
-            
-            <div id="owl-example" class="owl-carousel">
-            
-            
             {foreach $maisVendidos as $produto}
                         <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 ">
                             <img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="{$produto.photo}" height="100" width="100">
@@ -37,11 +20,6 @@
                             <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
                         </section>
             {/foreach}
-                
-                
-            </div>
-                
-                
              
         </div>
 <br>
@@ -64,9 +42,4 @@
 
         </div>
 
-<!--  jQuery 1.7+  -->
-<script src="jquery-1.9.1.min.js"></script>
- 
-<!-- Include js plugin -->
-<script src="../../owl.carousel/owl-carousel/owl.carousel.js"></script>
 {include file='common/footer.tpl'}
