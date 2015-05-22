@@ -51,6 +51,5 @@ $(document).ready(function() {
 
         </div>
 <script src="../../javascript//owl.carousel.js"></script>
-<script src="../../javascript/jquery-1.9.1.min.js"></script>
 
 {include file='common/footer.tpl'}
