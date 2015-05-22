@@ -24,6 +24,7 @@
              
         </div>
 <br>
+<br>
 
         <h7 id="Tab"> Compras Recentes</h7>
         <div id="ComprasRecentes" class=" col-xs-12 col-md-12 ">
