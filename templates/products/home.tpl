@@ -1,6 +1,6 @@
 {include file='common/header.tpl'}
-
-
+<link rel="stylesheet" href="../../css/owl.carousel.css">
+<link rel="stylesheet" href="../../css/owl.theme.css">
             <section id="linkagem" class="col-xs-12 col-md-12" >
                 <a  href="http://www.google.com">HOME</a>
                  > 
@@ -12,6 +12,7 @@
 
         <h7 id="Tab" > Top Compras</h7>
         <div id="TopCompras" class=" col-xs-12 col-md-12 ">
+            <div id="owl-example" class="owl-carousel">
             {foreach $maisVendidos as $produto}
                         <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 ">
                             <img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="{$produto.photo}" height="100" width="100">
@@ -21,7 +22,7 @@
                             <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
                         </section>
             {/foreach}
-             
+            </div>
         </div>
 <br>
 <br>
@@ -42,6 +43,7 @@
             {/foreach}
 
         </div>
-
+<script src="../../javascript//owl.carousel.js"></script>
+<script src="../../javascript/jquery-1.9.1.min.js"></script>
 
 {include file='common/footer.tpl'}
