@@ -5,14 +5,14 @@
     $recentementeVendidos = getRecentementeVendidos();
     $maisVendidos = getMaisVendidos();
 
-    foreach ($recentementeVendidos as  $product)
+    foreach ($recentementeVendidos as $product)
     {
         if(isset($photo))
             unset($photo);
-        if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
+        if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoImagem'].'.png'))
             $photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
-        else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
-          $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
+        else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoImagem'].'.jpg'))
+          $photo = 'images/produtos/'.$product['caminhoImagem'].'.jpg';
         else
             $photo = 'images/produtos/default.png';
         $product['photo'] = $photo;
@@ -21,13 +21,13 @@
     {
         if(isset($photo))
             unset($photo);
-        if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
-            $photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
-        else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
-          $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
+        if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoImagem'].'.png'))
+            $photo = 'images/produtos/'.$product['caminhoImagem'].'.png';
+        else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoImagem'].'.jpg'))
+          $photo = 'images/produtos/'.$product['caminhoImagem'].'.jpg';
         else
             $photo = 'images/assets/Logo.png';
-        $product['caminhoimagem'] = $photo;
+        $product['caminhoImagem'] = $photo;
     }
 
     $smarty->assign('recentementeVendidos', $recentementeVendidos);
