@@ -17,7 +17,7 @@
                             <span id="Imagem" class="glyphicon glyphicon-zoom-in"></span>
                             <p class=" col-xs-12 col-md-12 "> {$produto.nome}</p>
                             <p class=" col-xs-12 col-md-12 "> {$produto.preco}€</p>
-                            <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
+                            <a href="?idP={$produto.id}"><button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button></a>
                         </section>
             {/foreach}
              
@@ -35,7 +35,7 @@
                     <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" height="40" width="40">
                     <p class=" col-xs-12 col-md-12 ">{$produto.nome}</p>
                     <p class=" col-xs-12 col-md-12 ">{$produto.preco}€</p>
-                    <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
+                    <a href="?idP={$produto.id}"><button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button></a>
                 </section>
 
             {/foreach}
