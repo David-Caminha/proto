@@ -13,7 +13,7 @@
         $stmt = $conn->prepare("
             INSERT INTO utilizador 
             VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT), $email, $birthDate, $realname, $phone, $address));
+        $stmt->execute(array($username, crypt($password), $email, $birthDate, $realname, $phone, $address));
     }
 
     function createSuplier($username, $password, $email, $contactName, $contactPhone) {
@@ -21,7 +21,7 @@
         $stmt = $conn->prepare("
             INSERT INTO fornecedor 
             VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT), $email, $contactName, $contactPhone));
+        $stmt->execute(array($username, crypt($password), $email, $contactName, $contactPhone));
     }
 
     function isUserLoginCorrect($username, $password) {
@@ -29,7 +29,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador 
                             WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
+        $stmt->execute(array($username, crypt($password)));
         return $stmt->fetch() == true;
     }
 
@@ -38,7 +38,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM fornecedor 
                             WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
+        $stmt->execute(array($username, crypt($password)));
         return $stmt->fetch() == true;
     }
 
