@@ -11,7 +11,7 @@
     function createUser($username, $password, $email, $birthDate, $realname, $phone, $address) {
         global $conn;
         $stmt = $conn->prepare("
-            INSERT INTO utilizador (username, passowrd, datanascimento, nome, email, telemovel)
+            INSERT INTO utilizador (username, password, datanascimento, nome, email, telemovel)
             VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute(array($username, crypt($password), $email, $birthDate, $realname, $phone));
     }
