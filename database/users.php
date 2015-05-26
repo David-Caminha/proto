@@ -11,9 +11,9 @@
     function createUser($username, $password, $email, $birthDate, $realname, $phone, $address) {
         global $conn;
         $stmt = $conn->prepare("
-            INSERT INTO utilizador 
-            VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, crypt($password), $email, $birthDate, $realname, $phone, $address));
+            INSERT INTO utilizador (username, passowrd, datanascimento, nome, email, telemovel)
+            VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute(array($username, crypt($password), $email, $birthDate, $realname, $phone));
     }
 
     function createSuplier($username, $password, $email, $contactName, $contactPhone) {
