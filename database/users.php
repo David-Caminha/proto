@@ -13,7 +13,7 @@
         $stmt = $conn->prepare("
             INSERT INTO utilizador (username, password, datanascimento, nome, email, telemovel)
             VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, crypt($password), $email, $birthDate, $realname, $phone));
+        $stmt->execute(array($username, crypt($password), $birthDate, $realname, $email, $phone));
     }
 
     function createSuplier($username, $password, $email, $contactName, $contactPhone) {
