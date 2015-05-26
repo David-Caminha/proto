@@ -52,7 +52,7 @@
                     <input class="form-control" type="text" name="username" placeholder="Username"> <br>
                     <input class="form-control" type="password" name="Password" placeholder="Password"> <br>
                     <input type="checkbox"> <h7>Remember me</h7> <br>
-                     <button type="button" class=" btn btn-primary ">Login</button>      
+                    <input type="submit" class="btn btn-primary" value="Login">  
                 </form>
             </div>
             <div class="col-xs-10 col-sm-4 col-md-4 col-md-offset-2">
@@ -76,7 +76,7 @@
                     </div>
                     <br>          
                     <input type="checkbox"> <h7> Li e concordo com os</h7> <a href="http://www.google.com">Termos de utilização</a> <br><br>
-                    <input type="submit" class=" btn btn-primary " value="Registar">   
+                    <input type="submit" class="btn btn-primary" value="Registar">
                     <br>
                 </form>
             </div>
