@@ -30,7 +30,7 @@
                             FROM utilizador 
                             WHERE username = ?");
         $stmt->execute(array($username));
-        $stmt->bind_result($pass);
+        $stmt->bindColumn(1, $pass);
         if($stmt->fetch())
             return hash_equals($pass, crypt($password, $pass));
         else
