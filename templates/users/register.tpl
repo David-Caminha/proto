@@ -54,22 +54,22 @@
             </div>
             <div class="col-xs-10 col-sm-4 col-md-4 col-md-offset-2">
                 <form class="register-form" action="{$BASE_URL}actions/users/register.php" method="post">
-                    <input class="form-control" type="text" name="username" placeholder="Username"> <br>
-                    <input class="form-control" type="text" name="email" placeholder="Email"><br>
+                    <input class="form-control" type="text" name="username" placeholder="Username" value="{$FORM_VALUES.username}"> <br>
+                    <input class="form-control" type="email" name="email" placeholder="Email" value="{$FORM_VALUES.email}"><br>
                      <input class="form-control" type="password" name="password" placeholder="Password"> <br>         
                     <input class="form-control" type="password" name="confirmarPassword" placeholder="Confirmar Password"> <br>
                     <h7> Desejo ser</h7>  
-                    <label><input type="radio" name="choiceRadio" value="user" > Utilizador</label>
+                    <label><input type="radio" name="choiceRadio" value="user"> Utilizador</label>
                     <label><input type="radio" name="choiceRadio" value="fornecedor"> Fornecedor</label>
                     <div class="user box">
-                         <input class="form-control" type="date" name="dataNascimento" placeholder="Data de Nascimento"> <br>
-                        <input class="form-control" type="text" name="nome" placeholder="Nome completo"> <br>
-                        <input class="form-control" type="text" name="contacto" placeholder="Contacto"> <br>
-                        <input class="form-control" type="text" name="morada" placeholder="Morada"> 
+                         <input class="form-control" type="date" name="dataNascimento" placeholder="Data de Nascimento" value="{$FORM_VALUES.dataNascimento}"> <br>
+                        <input class="form-control" type="text" name="nome" placeholder="Nome completo" value="{$FORM_VALUES.nome}"> <br>
+                        <input class="form-control" type="text" name="contacto" placeholder="Contacto" value="{$FORM_VALUES.contacto}"> <br>
+                        <input class="form-control" type="text" name="morada" placeholder="Morada" value="{$FORM_VALUES.morada}"> 
                     </div>
                     <div class="fornecedor box"> 
-                        <input class="form-control" type="text" name="nomeResponsavel" placeholder="Nome responsável"> <br>
-                        <input class="form-control" type="text" name="contactoResponsavel" placeholder="Contacto"> 
+                        <input class="form-control" type="text" name="nomeResponsavel" placeholder="Nome responsável" value="{$FORM_VALUES.nomeResponsavel}"> <br>
+                        <input class="form-control" type="text" name="contactoResponsavel" placeholder="Contacto" value="{$FORM_VALUES.contactoResponsavel}"> 
                     </div>
                     <br>          
                     <input type="checkbox"> <h7> Li e concordo com os</h7> <a href="http://www.google.com">Termos de utilização</a> <br><br>

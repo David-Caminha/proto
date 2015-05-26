@@ -54,8 +54,15 @@
     try {
         if($_POST['choiceRadio'] == "user")
             createUser($username, $password, $email, $birthDate, $realname, $phone, $address);
-        else
+        else if($_POST['choiceRadio'] == "fornecedor")
             createSupplier($username, $password, $email, $contactName, $contactPhone);
+        else
+        {
+            $_SESSION['error_messages'][] = 'Please select one.';
+            $_SESSION['form_values'] = $_POST;
+            header("Location: $BASE_URL" . 'pages/users/register.php');
+            exit;
+        }
     } catch (PDOException $e) {
         $_SESSION['error_messages'][] = 'Error with connection please try again later.';
         $_SESSION['form_values'] = $_POST;
