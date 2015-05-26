@@ -44,7 +44,7 @@
             <section id="line"></section>
         </div>
         {foreach $ERROR_MESSAGES as $error}
-      <div class="error">{$error}<a class="close" href="#">X</a></div>
+      <div class="error">{$error}  {$FORM_VALUES.dataNascimento}<a class="close" href="#">X</a></div>
     {/foreach}
         <section id="forms">
             <div class="col-xs-10 col-sm-4 col-md-4 col-md-offset-1">
