@@ -2,14 +2,14 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/users.php');
 
-    if ($_POST['choiceRadio'] == "user" && (!$_POST['username'] || $_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['dataNascimento'] || !$_POST['nome'] || !$_POST['contacto'] || !$_POST['morada'])) 
+    if ($_POST['choiceRadio'] == "user" && (!$_POST['username'] || !$_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['dataNascimento'] || !$_POST['nome'] || !$_POST['contacto'] || !$_POST['morada'])) 
     {
         $_SESSION['error_messages'][] = 'All fields are mandatory.';
         $_SESSION['form_values'] = $_POST;
         header("Location: $BASE_URL" . 'pages/users/register.php');
         exit;
     }
-    else if ($_POST['choiceRadio'] == "fornecedor" && (!$_POST['username'] || $_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['nomeResponsavel'] || !$_POST['contactoResponsavel'])) 
+    else if ($_POST['choiceRadio'] == "fornecedor" && (!$_POST['username'] || !$_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['nomeResponsavel'] || !$_POST['contactoResponsavel'])) 
     {
         $_SESSION['error_messages'][] = 'All fields are mandatory.';
         $_SESSION['form_values'] = $_POST;
