@@ -43,6 +43,9 @@
             </section>
             <section id="line"></section>
         </div>
+        {foreach $ERROR_MESSAGES as $error}
+      <div class="error">{$error}<a class="close" href="#">X</a></div>
+    {/foreach}
         <section id="forms">
             <div class="col-xs-10 col-sm-4 col-md-4 col-md-offset-1">
                 <form class="signIn-form" action="{$BASE_URL}actions/users/login.php" method="post">
