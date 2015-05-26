@@ -19,7 +19,7 @@
     function createSuplier($username, $password, $email, $contactName, $contactPhone) {
         global $conn;
         $stmt = $conn->prepare("
-            INSERT INTO fornecedor 
+            INSERT INTO utilizador 
             VALUES (?, ?, ?, ?, ?)");
         $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT), $email, $contactName, $contactPhone));
     }
