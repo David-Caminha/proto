@@ -18,7 +18,7 @@
         $_SESSION['username'] = $username;
         $_SESSION['success_messages'][] = 'Login successful';  
     }
-    else if(isSupplierLoginCorrect($username, $password)
+    else if(isSupplierLoginCorrect($username, $password))
     {
         $_SESSION['username'] = $username;
         $_SESSION['success_messages'][] = 'Login successful'; 
