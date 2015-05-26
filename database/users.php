@@ -26,11 +26,15 @@
 
     function isUserLoginCorrect($username, $password) {
         global $conn;
-        $stmt = $conn->prepare("SELECT * 
+        $stmt = $conn->prepare("SELECT password 
                             FROM utilizador 
-                            WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, crypt($password)));
-        return $stmt->fetch() == true;
+                            WHERE username = ?");
+        $stmt->execute(array($username));
+        $stmt->bind_result($pass);
+        if($stmt->fetch())
+            return hash_equals($pass, crypt($password, $pass));
+        else
+            return false;
     }
 
     function isSuplierLoginCorrect($username, $password) {
