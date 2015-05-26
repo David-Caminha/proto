@@ -32,7 +32,7 @@
         $stmt->execute(array($username));
         $stmt->bindColumn(1, $pass);
         if($stmt->fetch())
-            return $pass, crypt($password, $pass);
+            return ($pass == crypt($password, $pass));
         else
             return false;
     }
