@@ -64,7 +64,7 @@
             exit;
         }
     } catch (PDOException $e) {
-        $_SESSION['error_messages'][] = $e->getCode();
+        $_SESSION['error_messages'][] = $e->getMessage();
         $_SESSION['form_values'] = $_POST;
         header("Location: $BASE_URL" . 'pages/users/register.php');
         exit;
