@@ -50,7 +50,7 @@
             <div class="col-xs-10 col-sm-4 col-md-4 col-md-offset-1">
                 <form class="signIn-form" action="{$BASE_URL}actions/users/login.php" method="post">
                     <input class="form-control" type="text" name="username" placeholder="Username"> <br>
-                    <input class="form-control" type="password" name="Password" placeholder="Password"> <br>
+                    <input class="form-control" type="password" name="password" placeholder="Password"> <br>
                     <input type="checkbox"> <h7>Remember me</h7> <br>
                     <input type="submit" class="btn btn-primary" value="Login">  
                 </form>
