@@ -69,8 +69,8 @@
                             FROM utilizador
                             WHERE username = ?");
         $stmt->execute(array($username));
-        $stmt->bindColumn(1, $type);
-        $stmt->fetch();
-        return $type;
+        // $stmt->bindColumn(1, $type);
+        $stmt->fetchALL();
+        // return $type;
     }
 ?>
