@@ -63,6 +63,7 @@
         return $stmt->fetch();
     }
 
+
     function getType($username) {
         global $conn;
         $stmt = $conn->prepare("SELECT tipo 
@@ -73,4 +74,5 @@
         $stmt->fetchALL();
         // return $type;
     }
+
 ?>
