@@ -53,7 +53,7 @@
 				INSERT INTO carrinhoCompras (idUser) VALUES ((SELECT id FROM utilizador WHERE username = ?))
 				");
 			$stmtInsert->execute(array($u_username));
-			
+			$stmtInsert->fetchALL();
 			$stmt1 = $conn->prepare("
 				INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (?, (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE), ?)
 			");
