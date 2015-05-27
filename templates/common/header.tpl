@@ -13,7 +13,7 @@
             </section>
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
-                    <a  class=" btn btn-default" href="http://www.google.com">Home</a>
+                    <a  class=" btn btn-default" href="{$BASE_URL}">Home</a>
                     <form action="{$BASE_URL}pages/products/search.php" method="get">
                         <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
                     </form>
