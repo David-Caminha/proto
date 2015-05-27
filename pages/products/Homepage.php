@@ -31,7 +31,7 @@
     }
 	
 	if (!empty($_GET['idP'])) {
-	  addItem(1,$_GET['idP'], 1); //o primeiro 1 sera substituido pela quantidade e o segundo 1 sera substituido pelo id do utilizador com sessão aberta
+	  addItem(1,$_GET['idP'], $_SESSION['username']); //o primeiro 1 sera substituido pela quantidade e o segundo 1 sera substituido pelo id do utilizador com sessão aberta
   }
 
     $smarty->assign('recentementeVendidos', $recentementeVendidos);
