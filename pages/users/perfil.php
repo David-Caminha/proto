@@ -4,7 +4,7 @@
 
     $type = getType();
     if($type == 2)
-        header("Location: $BASE_URL pages/users/pagDono.php");
+        header('Location: '.$BASE_URL. 'pages/users/pagDono.php');
     else
         header("Location: $BASE_URL");
 ?>
