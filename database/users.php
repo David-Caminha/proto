@@ -58,19 +58,8 @@
         global $conn;
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador
-                            WHERE tipo = 1");
+                            WHERE tipo = admin");
         $stmt->execute();
         return $stmt->fetch();
-    }
-
-    function getType($username) {
-        global $conn;
-        $stmt = $conn->prepare("SELECT tipo 
-                            FROM utilizador
-                            WHERE username = ?");
-        $stmt->execute(array($username));
-        $stmt->bindColumn(1, $type);
-        $stmt->fetch();
-        return $type;
     }
 ?>
