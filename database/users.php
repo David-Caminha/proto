@@ -63,12 +63,12 @@
         return $stmt->fetch();
     }
 
-    function getType() {
+    function getType($username) {
         global $conn;
         $stmt = $conn->prepare("SELECT tipo 
                             FROM utilizador
                             WHERE username = ?");
-        $stmt->execute(array($_SESSION['username']));
+        $stmt->execute(array($username));
         $stmt->bindColumn(1, $type);
         $stmt->fetch();
         return $type;
