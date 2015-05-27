@@ -65,7 +65,7 @@
 
     function getTipo($username) {
         global $conn;
-        $stmt = $conn->prepare("SELECT type 
+        $stmt = $conn->prepare("SELECT tipo 
                             FROM utilizador 
                             WHERE username = ?");
         $stmt->execute(array($username));
