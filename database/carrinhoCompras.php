@@ -1,11 +1,11 @@
 <?php
-function searchItems() {
+function searchItems($usernameU) {
         global $conn;
         $stmt = $conn->prepare("            
 			SELECT itemEncomenda.idcarrinho, itemEncomenda.idproduto, itemEncomenda.quantidade, produto.nome, (itemEncomenda.quantidade*produto.preco) as total
 			FROM itemEncomenda, produto
-			WHERE produto.id = itemEncomenda.idProduto AND itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = 1 AND estado = FALSE)");
-        $stmt->execute();
+			WHERE produto.id = itemEncomenda.idProduto AND itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE)");
+        $stmt->execute(array($usernameU));
         return $stmt->fetchAll();
     }
 
