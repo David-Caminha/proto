@@ -64,14 +64,6 @@
     }
 
 
-    function getType($username) {
-        global $conn;
-        $stmt = $conn->prepare("
-		SELECT tipo FROM utilizador WHERE username = ?");
-        $stmt->execute(array($username));
-
-        return $stmt->fetchALL();
-
-    }
+    
 
 ?>
