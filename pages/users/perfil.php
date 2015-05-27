@@ -6,5 +6,5 @@
     if($type == 2)
         header('Location: '.$BASE_URL. 'pages/users/pagDono.php');
     else
-        header("Location: $BASE_URL");
+        header('Location: '.$BASE_URL.'pages/products/search.php?pesquisa='.$type);
 ?>
