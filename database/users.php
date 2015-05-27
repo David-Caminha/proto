@@ -63,6 +63,6 @@
         return $stmt->fetch();
     }
 
-    function getType() {
+    function getTipe() {
     }
 ?>
