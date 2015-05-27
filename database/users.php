@@ -56,14 +56,13 @@
 
     function getAdmins() {
         global $conn;
-        $stmt = $conn->prepare('SELECT * 
+        $stmt = $conn->prepare("SELECT * 
                             FROM utilizador
-                            WHERE tipo = 1');
+                            WHERE tipo = admin");
         $stmt->execute();
         return $stmt->fetch();
     }
 
-<<<<<<< HEAD
     function getType($username) {
         global $conn;
         $stmt = $conn->prepare("SELECT tipo 
@@ -74,9 +73,4 @@
         $stmt->fetch();
         return $type;
     }
-=======
-
-    
-
->>>>>>> origin/master
 ?>
