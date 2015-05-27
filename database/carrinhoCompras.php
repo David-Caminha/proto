@@ -9,20 +9,20 @@ function searchItems() {
         return $stmt->fetchAll();
     }
 
-	function removeItem($idC, $idP, $idU) {
+	function removeItem($idC, $idP, $usernameU) {
 		global $conn;
 		
 		$stmtVerify = $conn->prepare("
-			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND ? = (SELECT idUser FROM carrinhoCompras WHERE id =?)
+			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND ? = (SELECT username FROM utilizador WHERE id = (SELECT idUser FROM carrinhoCompras WHERE id =?))
 			");
-		$stmtVerify->execute(array($idC, $idP, $idU, $idC));
+		$stmtVerify->execute(array($idC, $idP, $usernameU, $idC));
 		$item = $stmtVerify->fetchALL();
 		
 		if(!empty($item)) {
 			$stmtRemove = $conn->prepare("
-			DELETE FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND ? = (SELECT idUser FROM carrinhoCompras WHERE id =?)
+			DELETE FROM itemEncomenda WHERE itemEncomenda.idCarrinho = ? AND itemEncomenda.idProduto = ? AND ? = (SELECT username FROM utilizador WHERE id = (SELECT idUser FROM carrinhoCompras WHERE id =?))
 			");
-			$stmtRemove->execute(array($idC, $idP, $idU, $idC));
+			$stmtRemove->execute(array($idC, $idP, $usernameU, $idC));
 			
 			return true;
 		}
