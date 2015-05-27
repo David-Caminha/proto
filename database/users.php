@@ -58,7 +58,7 @@
         global $conn;
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador
-                            WHERE tipo = admin");
+                            WHERE tipo = 1");
         $stmt->execute();
         return $stmt->fetch();
     }
