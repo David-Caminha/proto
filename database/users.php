@@ -63,6 +63,7 @@
         return $stmt->fetch();
     }
 
+<<<<<<< HEAD
     function getType($username) {
         global $conn;
         $stmt = $conn->prepare("SELECT tipo 
@@ -73,4 +74,9 @@
         $stmt->fetch();
         return $type;
     }
+=======
+
+    
+
+>>>>>>> origin/master
 ?>
