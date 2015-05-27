@@ -39,20 +39,20 @@
 
 	//adicionei daqui para baixo
 	
-	function addItem($qtd, $p_id, $u_id) {
+	function addItem($qtd, $p_id, $u_username) {
 		global $conn;
 		//verifica se existe algum itemEncomenda nesse carrinho para o mesmo produto.
 		$stmtVerify = $conn->prepare(" 
-			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE) AND itemEncomenda.idProduto = ? 
+			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE) AND itemEncomenda.idProduto = ? 
 			");
-		$stmtVerify->execute(array($u_id, $p_id));
+		$stmtVerify->execute(array($u_username, $p_id));
 		$item = $stmtVerify->fetchALL();
 		
 		if(empty($item)) {
 			$stmt = $conn->prepare("
-				INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (?, (SELECT id FROM carrinhoCompras WHERE idUser = ? AND estado = FALSE), ?)
+				INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (?, (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE), ?)
 			");
-			$stmt->execute(array($qtd, $u_id, $p_id));
+			$stmt->execute(array($qtd, $u_username, $p_id));
 			echo "<script type='text/javascript'>alert('O item foi adicionado ao seu Carrinho de Compras com sucesso!');</script>";
 			return true;
 		}
