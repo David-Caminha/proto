@@ -62,7 +62,4 @@
         $stmt->execute();
         return $stmt->fetch();
     }
-
-    function getType($username) {
-    }
 ?>
