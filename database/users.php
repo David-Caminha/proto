@@ -62,4 +62,7 @@
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    function getA() {
+    }
 ?>
