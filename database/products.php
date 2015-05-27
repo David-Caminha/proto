@@ -54,30 +54,31 @@
 				");
 			$stmtInsert->execute(array($u_username));
 			
-			$stmt = $conn->prepare("
+			$stmt1 = $conn->prepare("
 				INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (?, (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE), ?)
 			");
-			$stmt->execute(array($qtd, $u_username, $p_id));
+			$stmt1->execute(array($qtd, $u_username, $p_id));
 			echo "<script type='text/javascript'>alert('O item foi adicionado ao seu Carrinho de Compras com sucesso!');</script>";
 			return true;
 		}
 		else
 		{
-		//verifica se existe algum itemEncomenda nesse carrinho para o mesmo produto.
-		$stmtVerify = $conn->prepare(" 
-			SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE) AND itemEncomenda.idProduto = ? 
-			");
-		$stmtVerify->execute(array($u_username, $p_id));
-		$item = $stmtVerify->fetchALL();
+			//verifica se existe algum itemEncomenda nesse carrinho para o mesmo produto.
+			$stmtVerify = $conn->prepare(" 
+				SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE) AND itemEncomenda.idProduto = ? 
+				");
+			$stmtVerify->execute(array($u_username, $p_id));
+			$item = $stmtVerify->fetchALL();
+			
+			if(empty($item)) {
+				$stmt = $conn->prepare("
+					INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (?, (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE), ?)
+				");
+				$stmt->execute(array($qtd, $u_username, $p_id));
+				echo "<script type='text/javascript'>alert('O item foi adicionado ao seu Carrinho de Compras com sucesso!');</script>";
+				return true;
+			}
+			echo "<script type='text/javascript'>alert('J? adicionou esse item ao seu carrinho!');</script>";
 		
-		if(empty($item)) {
-			$stmt = $conn->prepare("
-				INSERT INTO itemEncomenda (quantidade, idCarrinho, idProduto) VALUES (?, (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE), ?)
-			");
-			$stmt->execute(array($qtd, $u_username, $p_id));
-			echo "<script type='text/javascript'>alert('O item foi adicionado ao seu Carrinho de Compras com sucesso!');</script>";
-			return true;
 		}
-		echo "<script type='text/javascript'>alert('Já adicionou esse item ao seu carrinho!');</script>";
 		return false;
-	}
