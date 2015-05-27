@@ -1,4 +1,5 @@
 <?php
+//nao esquecer de adicionar condicao true
     function getRecentementeVendidos() {
         global $conn;
         $stmt = $conn->prepare("
