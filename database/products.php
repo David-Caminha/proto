@@ -79,7 +79,7 @@
 				echo "<script type='text/javascript'>alert('O item foi adicionado ao seu Carrinho de Compras com sucesso!');</script>";
 				return true;
 			}
-			echo "<script type='text/javascript'>alert('J? adicionou esse item ao seu carrinho!');</script>";
+			echo "<script type='text/javascript'>alert('Ja adicionou esse item ao seu carrinho!');</script>";
 		
 		}
 		return false;
