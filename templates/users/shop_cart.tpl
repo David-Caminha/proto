@@ -1,4 +1,5 @@
 {include file='common/header.tpl'}
+{if($USERNAME ) }
 <link rel="stylesheet" href="{$BASE_URL}css/Style_carrinho.css"/>
 <section id="">
 	<h2>Carrinho de Compras</h2>
@@ -32,4 +33,8 @@
 		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 	</form>
 </section>
+
+{else}
+	{include file='common/no_permission.tpl'}
+{/if}
 {include file='common/footer.tpl'}
