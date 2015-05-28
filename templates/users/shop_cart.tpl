@@ -1,5 +1,5 @@
 {include file='common/header.tpl'}
-{if$USERNAME  }
+{if $USERNAME  }
 <link rel="stylesheet" href="{$BASE_URL}css/Style_carrinho.css"/>
 <section id="">
 	<h2>Carrinho de Compras</h2>
