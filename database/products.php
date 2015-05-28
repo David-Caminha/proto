@@ -1,5 +1,5 @@
 <?php
-//nao esquecer de adicionar condicao true
+//nao esquecer de adicionar condicao estado = true
     function getRecentementeVendidos() {
         global $conn;
         $stmt = $conn->prepare("
@@ -26,16 +26,31 @@
         return $stmt->fetchAll();
     }
 
-    function getSearchresult($value) {
-        global $conn;
-        $stmt = $conn->prepare("
-            SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem 
-            FROM Produto
-            WHERE UPPER(nome) LIKE UPPER(?)
-            OR UPPER(descricao) LIKE UPPER(?)
-            LIMIT 8");
-        $stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
-        return $stmt->fetchAll();
+    function getSearchresult($value, $filter) {
+        
+		if($filter == 'asc_price') {
+			$asc = asc_price_search($value);
+			return $asc;
+		} elseif ($filter == 'desc_price') {
+			$desc = desc_price_search($value);
+			return $desc;
+		} elseif ($filter == 'best_rate') {
+			$rate = rate_search($value);
+			return $rate;
+		} elseif ($filter == 'recent') {
+			$rec = recent_search($value);
+			return $rec;
+		} else {
+			global $conn;
+			$stmt = $conn->prepare("
+				SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem 
+				FROM Produto
+				WHERE UPPER(nome) LIKE UPPER(?)
+				OR UPPER(descricao) LIKE UPPER(?)
+				LIMIT 8");
+			$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
+			return $stmt->fetchAll();
+		}
     }
 
 	//adicionei daqui para baixo
@@ -83,4 +98,62 @@
 		
 		}
 		return false;
+	}
+	
+	function asc_price_search($value) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem 
+			FROM Produto
+			WHERE UPPER(Produto.nome) LIKE UPPER(?)
+			OR UPPER(Produto.descricao) LIKE UPPER(?)
+			ORDER BY Produto.preco ASC
+			LIMIT 8
+		");
+		$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
+		return $stmt->fetchALL();
+	}
+	
+	function desc_price_search($value) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem 
+			FROM Produto
+			WHERE UPPER(Produto.nome) LIKE UPPER(?)
+			OR UPPER(Produto.descricao) LIKE UPPER(?)
+			ORDER BY Produto.preco DESC
+			LIMIT 8
+		");
+		$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
+		return $stmt->fetchALL();
+	}
+	
+	function rate_search() {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem, classificacao.valor
+			FROM Produto, classificacao
+			WHERE Produto.id = classificacao.idProduto
+			AND(UPPER(Produto.nome) LIKE UPPER(?)
+			OR UPPER(Produto.descricao) LIKE UPPER(?))
+			GROUP BY Produto.id
+			ORDER BY classificacao.valor DESC
+			LIMIT 8
+		");
+		$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
+		return $stmt->fetchALL();
+	}
+	
+	function recent_search() {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem 
+			FROM Produto
+			WHERE UPPER(Produto.nome) LIKE UPPER(?)
+			OR UPPER(Produto.descricao) LIKE UPPER(?)
+			ORDER BY Produto.id DESC
+			LIMIT 8
+		");
+		$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
+		return $stmt->fetchALL();
 	}

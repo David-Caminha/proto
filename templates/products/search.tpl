@@ -1,9 +1,9 @@
 {include file='common/header.tpl'}
 
             <section id="linkagem" class="col-xs-12 col-md-12" >
-                <a  href="http://www.google.com">HOME</a>
+                <a  href="{$BASE_URL}">HOME</a>
                  > 
-                <a href="http://www.google.com">SHOP</a>
+                <a href="#">SHOP</a>
             </section>
             <section id="line"></section>
         </div>
@@ -12,10 +12,10 @@
             <p  class="col-xs-6 col-md-4"> Showing 1-7 of 7 results</p>
             <form id="Filtros" class=" col-xs-6 col-md-4 col-md-offset-4">
                 <select name="Filtro">
-                    <option value="Preço crescente"> Preço crescente</option>
-                    <option value="Preço decrescente"> Preço decrescente</option>
-                    <option value="Melhor classificação"> Maior classificação</option>
-                    <option value="Recentes"> Mais recentes</option>
+                    <option value="asc_price"> Preço crescente</option>
+                    <option value="desc_price"> Preço decrescente</option>
+                    <option value="best_rate"> Maior classificação</option>
+                    <option value="recent"> Mais recentes</option>
                 </select>
             </form>
         </div>
