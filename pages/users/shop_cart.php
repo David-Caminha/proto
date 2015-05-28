@@ -4,7 +4,7 @@
   $itemEncomenda = searchItems($_SESSION['username']);
   if (!empty($_GET['idC']) && !empty($_GET['idP'])) {
 	  removeItem($_GET['idC'],$_GET['idP'], $_SESSION['username']);
-	  echo "<script type='text/javascript'>window.location.replace("http://gnomo.fe.up.pt/~lbaw1463/proto/pages/users/shop_cart.php");</script>";
+	  echo "<script type='text/javascript'>window.location.replace('http://gnomo.fe.up.pt/~lbaw1463/proto/pages/users/shop_cart.php');</script>";
   }
   $smarty->assign('Result', $itemEncomenda);
   $smarty->display('users/shop_cart.tpl');
