@@ -47,7 +47,6 @@
 				FROM Produto
 				WHERE UPPER(nome) LIKE UPPER(?)
 				OR UPPER(descricao) LIKE UPPER(?)
-				ORDER BY Produto.preco ASC
 				LIMIT 8");
 			$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
 			return $stmt->fetchAll();
