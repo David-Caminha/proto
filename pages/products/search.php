@@ -1,9 +1,8 @@
 <?php
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
-	
-	$filtro = <echo>"<script type='text/javascript'>document.getElementById('filter').value;</script>";
-    $searchResult = getSearchResult($_GET['pesquisa'], $filtro);
+
+    $searchResult = getSearchResult($_GET['pesquisa'], $_GET['Filtro']);
 
     foreach ($searchResult as $key => $product)
     {
