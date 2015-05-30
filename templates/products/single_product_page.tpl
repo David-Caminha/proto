@@ -42,13 +42,27 @@
 		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.
 		</p>
 	</div>
-	<div id="separation-line">
+	<div class="separation-line">
 	</div>
 	<div id="comentarios">
 		<p class="c_username">Nome do Utilizador</p>
 		<p class="c_rate">4/5 (pode-se pôr estrelas)</p>
 		<p class="c_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 
-		Suspendisse ut neque leo.</p>
+		Suspendisse ut neque leo.Aliquam vitae nisl vel odio iaculis pellentesque non sit amet neque. 
+		Aliquam varius ornare leo id vulputate. 
+		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.</p>
+		<div class="separation-line">
+		</div>
+		<p class="c_username">Nome do Utilizador</p>
+		<p class="c_rate">2/5 (pode-se pôr estrelas)</p>
+		<p class="c_text">Vestibulum fringilla diam in laoreet rutrum. 
+		Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+		Suspendisse condimentum, turpis sed facilisis pretium, turpis massa tempus metus, eu pharetra velit justo in ante. 
+		Donec pharetra molestie quam mattis iaculis. 
+		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+		Fusce dapibus ultrices metus, finibus tristique orci elementum ac. </p>
+		<div class="separation-line">
+		</div>
 	</div>
 {include file='common/footer.tpl'}
