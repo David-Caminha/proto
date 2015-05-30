@@ -22,9 +22,9 @@
 	</div>
 	<div id="center_column" class="column" >
 	{foreach $p as $product}
-		<span id="p_name">{$product.nome}</span>
+		<span id="p_name">{$product.produto.nome}</span>
 		<br />
-		de: <span id="fornecedor">Fornecedor</span>
+		de: <span id="fornecedor">{$product.fornecedor.nome</span>
 		<p id="price">Preço: <span id="price_value">{$product.preco}€</span> </p>
 		<p>
 		{$product.descricao}
@@ -48,16 +48,6 @@
 		Suspendisse ut neque leo.Aliquam vitae nisl vel odio iaculis pellentesque non sit amet neque. 
 		Aliquam varius ornare leo id vulputate. 
 		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.</p>
-		<div class="separation-line">
-		</div>
-		<p class="c_username">Nome do Utilizador</p>
-		<p class="c_rate">2/5 (pode-se pôr estrelas)</p>
-		<p class="c_text">Vestibulum fringilla diam in laoreet rutrum. 
-		Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-		Suspendisse condimentum, turpis sed facilisis pretium, turpis massa tempus metus, eu pharetra velit justo in ante. 
-		Donec pharetra molestie quam mattis iaculis. 
-		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-		Fusce dapibus ultrices metus, finibus tristique orci elementum ac. </p>
 		<div class="separation-line">
 		</div>
 	</div>

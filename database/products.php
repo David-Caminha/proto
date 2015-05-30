@@ -174,9 +174,10 @@
 	function populate_product_info($p_id) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT produto.nome, produto.descricao, produto.preco
-			FROM produto
-			WHERE produto.id = ?
+			SELECT produto.nome, produto.descricao, produto.preco, fornecedor.nome
+			FROM produto, fornecedor
+			WHERE fornecedor.id = produto.idFornecedor AND
+			produto.id = ? 
 		");
 		$stmt->execute(array($p_id));
 		return $stmt->fetchALL();
