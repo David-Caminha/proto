@@ -17,7 +17,7 @@
                     <a  class=" btn btn-default" href="{$BASE_URL}">Home</a>
                     <form action="{$BASE_URL}pages/products/search.php" method="get">
                         <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
-						<input type="text" name="method_receiver" />
+						<input type="hidden" name="method_receiver" />
 						<select id="search_method" onchange="this.form.method_receiver.value=this.value">
 							<option value="asc_price" selected> Preço crescente</option>
 							<option value="desc_price"> Preço decrescente</option>
