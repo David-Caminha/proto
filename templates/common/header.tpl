@@ -5,17 +5,8 @@
         <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
         <meta charset="utf-8">
     </head>
-    <body id="pagina" onload="method_load">
-	<script>
-	$(function method_load(){
-		//this first line loads the pre-selected value into the text box
-		$('#method_receiver').val($('#search_method option:selected').val());
-		//still want to bind the change event
-		$('#search_method').bind('change', function(){
-        $('#method_receiver').val($('#search_method option:selected').text());
-		});
-	});
-</script>
+    <body id="pagina">
+	
         <div id="header" class="col-xs-12 col-md-12 ">
             <section >
                <img  src="{$BASE_URL}images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
@@ -36,3 +27,4 @@
                     {/if}
                 </section>
             </div>
+			
