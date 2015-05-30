@@ -1,16 +1,7 @@
 <!DOCTYPE HTML>
 <html >
     <head>
-		<script>
-		$(function (){
-			//this first line loads the pre-selected value into the text box
-			$('#method_receiver').val($('#search_method option:selected').val());
-			//still want to bind the change event
-			$('#search_method').bind('change', function(){
-				$('#method_receiver').val($('#search_method option:selected').text());
-			});
-		});
-		</script>
+		
         <link rel="stylesheet" href="{$BASE_URL}css/Style.css"/>
         <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
         <meta charset="utf-8">
@@ -35,7 +26,16 @@
 						</select>
 					</form>
                 </section>
-                <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
+                <script>
+		$(function (){
+			//this first line loads the pre-selected value into the text box
+			$('#method_receiver').val($('#search_method option:selected').val());
+			//still want to bind the change event
+			$('#search_method').bind('change', function(){
+				$('#method_receiver').val($('#search_method option:selected').text());
+			});
+		});
+		</script><section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
                     {if $USERNAME}
                         {include file='common/menu_logged_in.tpl'}
                     {else}
