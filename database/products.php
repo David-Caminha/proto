@@ -186,7 +186,7 @@
 	function also_bought($p_id) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT produto.nome 
+			SELECT produto.nome, produto.preco
 			FROM produto, utilizador, itemEncomenda, carrinhoCompras
 			WHERE utilizador.id IN (
 			SELECT carrinhoCompras.idUser 

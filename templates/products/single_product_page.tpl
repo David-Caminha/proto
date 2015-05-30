@@ -33,7 +33,7 @@
 	</div>
 	<div class="separation-line-big">
 	</div>
-	<div id="also_bought_container">
+	<table id="also_bought_container">
 		<tr>
 		{foreach $a_bought as $ab}
 			<td>		
@@ -43,7 +43,7 @@
 			</td>
 		{/foreach}
 		</tr>
-	</div>
+	</table>
 	<div class="separation-line-big">
 	</div>
 	<div id="comments">
