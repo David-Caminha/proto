@@ -33,6 +33,19 @@
 	</div>
 	<div class="separation-line-big">
 	</div>
+	<div id="also_bought_container">
+		<tr>
+		{foreach $a_bought as $ab}
+			<td>		
+				<p class="a_b_name">{ab.nome}</p>
+				<p class="a_b_price">{ab.preco}€</p>
+				<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
+			</td>
+		{/foreach}
+		</tr>
+	</div>
+	<div class="separation-line-big">
+	</div>
 	<div id="comments">
 		<h3>Comentários</h3>
 		{foreach $Result as $comment}

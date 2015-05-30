@@ -197,6 +197,21 @@ span.glyphicon-zoom-in {
 	margin-top: 10px;
 }
 
+#also_bought_container {
+	display: block;
+	margin-top: 5px;
+	background-color: #eee;
+}
+
+.a_b_price {
+	color: orange;
+	font-size: 120%;
+}
+
+.a_b_name {
+	font-size: 140%;
+}
+
 #comments {
 	display: block;
 }

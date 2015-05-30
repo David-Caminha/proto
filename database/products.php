@@ -182,3 +182,22 @@
 		$stmt->execute(array($p_id));
 		return $stmt->fetchALL();
 	}
+	
+	function also_bought($p_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT produto.nome 
+			FROM produto, utilizador, itemEncomenda, carrinhoCompras
+			WHERE utilizador.id IN (
+			SELECT carrinhoCompras.idUser 
+			FROM itemEncomenda, carrinhoCompras
+			WHERE itemEncomenda.idCarrinho = carrinhoCompras.id AND
+			itemEncomenda.idProduto = ?) AND
+			itemEncomenda.idCarrinho = carrinhoCompras.id AND
+			itemEncomenda.idProduto <> ? AND
+			itemEncomenda.idProduto = produto.id
+			LIMIT 4
+		");
+		$stmt->execute(array($p_id,$p_id));
+		return $stmt->fetchALL();
+	}
