@@ -20,6 +20,8 @@
 	<div id="left_column" class="column" >
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
 	</div>
+	<br />
+	<br />
 	<div id="center_column" class="column" >
 		<span id="p_name">Nome do Produto</span>
 		<br />
