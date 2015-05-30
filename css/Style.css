@@ -124,28 +124,38 @@ span.glyphicon-zoom-in {
     padding: 1%;
 }
 
+.column{
+	margin-top: 10px;
+	padding: 8px;
+}
+
 #center_column{
-	border: 1px solid;
-	border-color: #ddd;
 	margin-left: 32%;
 	width: 30.5%;
 	margin-right: 270 px;
 	display: block;
-	
 }
 
 #left_column{
 	width: 30.5%;
 	float: left;
 	display: block;
+	text-align: center;
 }
 
 #right_column{
 	border: 1px solid #ddd;
+	border-radius: 4px;
 	width: 244px;
 	float: right;
 	margin-left: 20px;
+	margin-right: 20px;
 	display: block;
+	line-height: 19px;
+}
+
+#center_column h5 {
+	color: blue;
 }
 
 body {
