@@ -22,6 +22,7 @@
 	</div>
 	<div id="center_column" class="column" >
 		<span id="p_name">Nome do Produto</span>
+		<br />
 		de: <span id="fornecedor">Fornecedor</span>
 		<p id="price">Preço: <span id="price_value">12,3€</span> </p>
 		<p>
