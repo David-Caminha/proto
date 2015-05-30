@@ -199,25 +199,22 @@ span.glyphicon-zoom-in {
 #also_bought_container {
 	display: block;
 	padding: 10px;
-	background-color: #ffd;
+	background-color: #ffe;
 	border: 0;
-	text-align: center;
 }
 
 #also_bought_container td {
 	width: 29%;
-	margin-left: 4%;
-	margin-right: 4%;
+	padding: 8px;
 }
 
 .a_b_price {
 	color: orange;
-	font-size: 120%;
+	font-size: 110%;
 }
 
 .a_b_name {
-	font-size: 140%;
-	float: right;
+	font-size: 120%;
 }
 
 #comments {

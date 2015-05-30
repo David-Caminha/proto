@@ -34,12 +34,13 @@
 	<div class="separation-line-big">
 	</div>
 	<table id="also_bought_container">
+		<h3>Quem comprou este produto, também comprou:</h3>
 		<tr>
 		{foreach $a_bought as $ab}
 			<td>		
 				<span class="a_b_name">{$ab.nome}</span><br />
-				<span class="a_b_price">{$ab.preco}€</span><br />
 				<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
+				<span class="a_b_price">{$ab.preco}€</span><br />
 			</td>
 		{/foreach}
 		</tr>
