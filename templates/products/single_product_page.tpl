@@ -20,8 +20,6 @@
 	<div id="left_column" class="column" >
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
 	</div>
-	<br />
-	<br />
 	<div id="center_column" class="column" >
 		<span id="p_name">Nome do Produto</span>
 		<br />
@@ -44,5 +42,13 @@
 		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.
 		</p>
 	</div>
-	
+	<div id="separation-line">
+	</div>
+	<div id="comentarios">
+		<p class="c_username">Nome do Utilizador</p>
+		<p class="c_rate">4/5 (pode-se pôr estrelas)</p>
+		<p class="c_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 
+		Suspendisse ut neque leo.</p>
+	</div>
 {include file='common/footer.tpl'}

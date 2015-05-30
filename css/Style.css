@@ -182,7 +182,29 @@ span.glyphicon-zoom-in {
 	padding-left: 2em;
 }
 
+#separation-line {
+	width: 100%;
+	border-top: 1px solid #ccc;
+	height: 1px;
+}
 
+#comentarios {
+	margin: 20px;
+	display: block;
+}
+
+.c_username {
+	font-size: 150%;
+	margin-top: 10px;
+}
+
+.c_rate {
+	margin-top: 10px;
+}
+
+.c_text{
+	margin-top: 10px;
+}
 
 body {
 	font-family: Arial, sans-serif;
