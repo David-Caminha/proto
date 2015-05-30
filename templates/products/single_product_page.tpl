@@ -24,7 +24,7 @@
 	<div id="center_column" class="column" >
 		<h3>Nome do Produto</h3>
 		de: <span>Fornecedor</span>
-		
+		<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 
 		Suspendisse ut neque leo. Cras ac lorem et quam mollis egestas eget ac dolor. 
@@ -39,6 +39,7 @@
 		Aliquam vitae nisl vel odio iaculis pellentesque non sit amet neque. 
 		Aliquam varius ornare leo id vulputate. 
 		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.
+		</p>
 	</div>
 	
 {include file='common/footer.tpl'}
