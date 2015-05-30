@@ -130,14 +130,14 @@ span.glyphicon-zoom-in {
 }
 
 #center_column{
-	margin-left: 32%;
+	margin-left: 22%;
 	width: 40%;
 	margin-right: 270 px;
 	display: block;
 }
 
 #left_column{
-	width: 30.5%;
+	width: 20.5%;
 	float: left;
 	display: block;
 	text-align: center;
