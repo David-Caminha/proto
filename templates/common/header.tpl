@@ -1,14 +1,15 @@
 <!DOCTYPE HTML>
 <html >
     <head>
-		<script type='text/javascript'>
-		$(document).ready(function(){
-
-		$("select").change(function(){
-		$("input[type=hidden]").val($("select option:selected").val());
+		<script>
+		$(function (){
+			//this first line loads the pre-selected value into the text box
+			$('#method_receiver').val($('#search_method option:selected').val());
+			//still want to bind the change event
+			$('#search_method').bind('change', function(){
+				$('#method_receiver').val($('#search_method option:selected').text());
+			});
 		});
-
-		});// End Jquery
 		</script>
         <link rel="stylesheet" href="{$BASE_URL}css/Style.css"/>
         <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +27,12 @@
                     <form action="{$BASE_URL}pages/products/search.php" method="get">
                         <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
 						<input type="text" name="Filtro" id="method_receiver" value="" />
+						<select id="search_method">
+							<option value="asc_price" selected> Preço crescente</option>
+							<option value="desc_price"> Preço decrescente</option>
+							<option value="best_rate"> Maior classificação</option>
+							<option value="recent"> Mais recentes</option>
+						</select>
 					</form>
                 </section>
                 <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
