@@ -1,4 +1,23 @@
 {include file='common/header.tpl'}
+	<div id="right_column">
+		Quantity: <select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+		</select>
+		<br />
+		{if $USERNAME}<a href="#"><button>Adicionar ao Carrinho</button></a>{/if}
+		<br />
+		{if $USERNAME}<a href="#"><button>Adicionar aos Favoritos</button></a>{/if}
+	</div>
 	<div id="left_column">
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
 	</div>
@@ -21,23 +40,5 @@
 		Aliquam varius ornare leo id vulputate. 
 		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.
 	</div>
-	<div id="right_column">
-		Quantity: <select>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-			<option>10</option>
-			<option>11</option>
-		</select>
-		<br />
-		{if $USERNAME}<a href="#"><button>Adicionar ao Carrinho</button></a>{/if}
-		<br />
-		{if $USERNAME}<a href="#"><button>Adicionar aos Favoritos</button></a>{/if}
-	</div>
+	
 {include file='common/footer.tpl'}

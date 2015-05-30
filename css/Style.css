@@ -125,12 +125,13 @@ span.glyphicon-zoom-in {
 }
 
 #center_column{
-	border: 1px;
+	border: 1px solid;
 	border-color: #ddd;
 	margin-left: 32%;
 	width: 30.5%;
-	display: block;
 	margin-right: 270 px;
+	display: block;
+	
 }
 
 #left_column{
@@ -140,9 +141,15 @@ span.glyphicon-zoom-in {
 }
 
 #right_column{
+	border: 1px solid #ddd;
 	width: 244px;
 	float: right;
 	margin-left: 20px;
 	display: block;
 }
 
+body {
+	font-family: Arial, sans-serif;
+	color: #111;
+	font-size: 13px;
+}
