@@ -1,6 +1,6 @@
 {include file='common/header.tpl'}
 	<div id="right_column" class="column" >
-		Quantity: <select>
+		Quantidade: <select>
 			<option>1</option>
 			<option>2</option>
 			<option>3</option>
@@ -15,8 +15,7 @@
 		</select>
 		<br />
 		{if $USERNAME}<a href="#"><button>Adicionar ao Carrinho</button></a>{/if}
-		<br />
-		{if $USERNAME}<a href="#"><button>Adicionar aos Favoritos</button></a>{/if}
+		
 	</div>
 	<div id="left_column" class="column" >
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
@@ -24,6 +23,7 @@
 	<div id="center_column" class="column" >
 		<h3>Nome do Produto</h3>
 		de: <span>Fornecedor</span>
+		<p>Preço: <span id="price_value">12,3€</span> </p>
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 

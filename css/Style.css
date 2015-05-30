@@ -134,7 +134,6 @@ span.glyphicon-zoom-in {
 	width: 50%;
 	margin-right: 270 px;
 	display: block;
-	margin-top: 50px;
 }
 
 #left_column{
@@ -164,6 +163,19 @@ span.glyphicon-zoom-in {
 
 #center_column span {
 	color: blue;
+}
+
+#center_column h3 {
+	margin-top: 20px;
+}
+
+#center_column p {
+	margin-top: 8px;
+}
+
+#price_value {
+	font-size: 140%;
+	color: orange;
 }
 
 body {
