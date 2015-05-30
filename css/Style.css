@@ -199,8 +199,8 @@ span.glyphicon-zoom-in {
 
 #also_bought_container {
 	display: block;
-	margin-top: 5px;
-	background-color: #eee;
+	padding-top: 5px;
+	background-color: #ffc;
 }
 
 .a_b_price {
