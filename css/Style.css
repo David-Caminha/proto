@@ -161,6 +161,11 @@ span.glyphicon-zoom-in {
 	padding: 2px;
 }
 
+#price_value {
+	font-size: 140%;
+	color: orange;
+}
+
 #center_column span {
 	color: blue;
 }
@@ -173,10 +178,11 @@ span.glyphicon-zoom-in {
 	margin-top: 8px;
 }
 
-#price_value {
-	font-size: 140%;
-	color: orange;
+#price {
+	padding-left: 5em;
 }
+
+
 
 body {
 	font-family: Arial, sans-serif;
