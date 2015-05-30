@@ -22,7 +22,7 @@
 	</div>
 	<div id="center_column" class="column" >
 	{foreach $p as $product}
-		<span id="p_name">{$product.produto.nome}</span>
+		<span id="p_name">{$product.nome}</span>
 		<br />
 		de: <span id="fornecedor">{$product.f_nome}</span>
 		<p id="price">Preço: <span id="price_value">{$product.preco}€</span> </p>
