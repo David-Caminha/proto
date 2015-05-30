@@ -157,3 +157,18 @@
 		$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
 		return $stmt->fetchALL();
 	}
+
+	function populate_product_page($p_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT produto.nome, produto.descricao, produto.preco, comentario.texto, classificacao.valor, utilizador.username
+			FROM comentario, classificacao, utilizador, produto
+			WHERE comentario.idUser = utilizador.id AND
+			classificacao.idUser = utilizador.id AND
+			comentario.idProduto = ? AND
+			classificacao.idProduto = ? AND
+			produto.id = ?
+		");
+		$stmt->execute(array($p_id, $p_id, $p_id));
+		return $stmt->fetchALL();
+	}

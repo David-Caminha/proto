@@ -189,8 +189,15 @@ span.glyphicon-zoom-in {
 	margin-top: 10px;
 }
 
+
+.separation-line-big {
+	width: 100%;
+	border-top: 3px solid orange;
+	height: 1px;
+	margin-top: 10px;
+}
+
 #comentarios {
-	margin: 20px;
 	display: block;
 }
 
