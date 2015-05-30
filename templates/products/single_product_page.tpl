@@ -22,12 +22,12 @@
 	</div>
 	<div id="center_column" class="column" >
 	
-		<span id="p_name">{$Result.nome}</span>
+		<span id="p_name">{$p.nome}</span>
 		<br />
 		de: <span id="fornecedor">Fornecedor</span>
-		<p id="price">Preço: <span id="price_value">{$Result.preco}€</span> </p>
+		<p id="price">Preço: <span id="price_value">{$p.preco}€</span> </p>
 		<p>
-		{$Result.descricao}
+		{$p.descricao}
 		</p>
 	</div>
 	<div class="separation-line-big">

@@ -158,7 +158,7 @@
 		return $stmt->fetchALL();
 	}
 
-	function populate_product_page($p_id) {
+	function populate_product_comment($p_id) {
 		global $conn;
 		$stmt = $conn->prepare("
 			SELECT produto.nome, produto.descricao, produto.preco, comentario.texto, utilizador.username
@@ -168,5 +168,16 @@
 			produto.id = ?
 		");
 		$stmt->execute(array($p_id, $p_id));
+		return $stmt->fetchALL();
+	}
+	
+	function populate_product_info($p_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT produto.nome, produto.descricao, produto.preco
+			FROM produto
+			WHERE produto.id = ?
+		");
+		$stmt->execute(array($p_id));
 		return $stmt->fetchALL();
 	}
