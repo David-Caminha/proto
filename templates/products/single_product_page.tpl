@@ -35,6 +35,9 @@
 			<option>10</option>
 			<option>11</option>
 		</select>
+		<br />
 		{if $USERNAME}<a href="#"><button>Adicionar ao Carrinho</button></a>{/if}
+		<br />
+		{if $USERNAME}<a href="#"><button>Adicionar aos Favoritos</button></a>{/if}
 	</div>
 {include file='common/footer.tpl'}

@@ -128,13 +128,21 @@ span.glyphicon-zoom-in {
 	border: 1px;
 	border-color: #ddd;
 	margin-left: 32%;
+	width: 30.5%;
+	display: block;
+	margin-right: 270 px;
 }
 
 #left_column{
 	width: 30.5%;
+	float: left;
+	display: block;
 }
 
 #right_column{
-	
+	width: 244px;
+	float: right;
+	margin-left: 20px;
+	display: block;
 }
 
