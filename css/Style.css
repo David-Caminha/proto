@@ -134,6 +134,8 @@ span.glyphicon-zoom-in {
 	width: 50%;
 	margin-right: 270 px;
 	display: block;
+	padding-top: 10px;
+	margin-top: 10px;
 }
 
 #left_column{
