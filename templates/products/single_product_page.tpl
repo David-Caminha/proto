@@ -30,13 +30,12 @@
 		{$Result.descricao}
 		</p>
 	</div>
-	<div class="separation-line">
+	<div class="separation-line-big">
 	</div>
 	<div id="comentarios">
 		<h3>Comentários</h3>
 		{foreach $Result as $comment}
 		<p class="c_username">{$comment.username}</p>
-		<p class="c_rate">{$comment.valor}</p>
 		<p class="c_text">{$comment.texto}</p>
 		<div class="separation-line">
 		</div>
@@ -48,7 +47,7 @@
 		Suspendisse ut neque leo.Aliquam vitae nisl vel odio iaculis pellentesque non sit amet neque. 
 		Aliquam varius ornare leo id vulputate. 
 		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.</p>
-		<div class="separation-line-big">
+		<div class="separation-line">
 		</div>
 		<p class="c_username">Nome do Utilizador</p>
 		<p class="c_rate">2/5 (pode-se pôr estrelas)</p>
