@@ -203,6 +203,13 @@ span.glyphicon-zoom-in {
 	border: 0;
 }
 
+#also_bought_container td {
+	width: 180px;
+	margin-left: 2%;
+	margin-right: 2%;
+	background-color: #ffe;
+}
+
 .a_b_price {
 	color: orange;
 	font-size: 120%;
