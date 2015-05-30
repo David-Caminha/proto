@@ -196,6 +196,7 @@
 			itemEncomenda.idCarrinho = carrinhoCompras.id AND
 			itemEncomenda.idProduto <> ? AND
 			itemEncomenda.idProduto = produto.id
+			GROUP BY produto.id
 			LIMIT 4
 		");
 		$stmt->execute(array($p_id,$p_id));
