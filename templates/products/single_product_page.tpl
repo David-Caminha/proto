@@ -24,7 +24,7 @@
 	{foreach $p as $product}
 		<span id="p_name">{$product.produto.nome}</span>
 		<br />
-		de: <span id="fornecedor">{$product.fornecedor.nome</span>
+		de: <span id="fornecedor">{$product.fornecedor.nome}</span>
 		<p id="price">Preço: <span id="price_value">{$product.preco}€</span> </p>
 		<p>
 		{$product.descricao}
