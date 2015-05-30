@@ -23,7 +23,7 @@
 	</div>
 	<div id="center_column" class="column" >
 		<h3>Nome do Produto</h3>
-		de: <h5>Fornecedor</h5>
+		de: <span>Fornecedor</span>
 		
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 

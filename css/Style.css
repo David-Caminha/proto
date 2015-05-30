@@ -125,13 +125,13 @@ span.glyphicon-zoom-in {
 }
 
 .column{
-	margin-top: 10px;
+	margin-top: 20px;
 	padding: 8px;
 }
 
 #center_column{
 	margin-left: 32%;
-	width: 30.5%;
+	width: 40%;
 	margin-right: 270 px;
 	display: block;
 }
@@ -152,9 +152,16 @@ span.glyphicon-zoom-in {
 	margin-right: 20px;
 	display: block;
 	line-height: 19px;
+	text-align: center;
+	padding: 10px;
 }
 
-#center_column h5 {
+#right_column button {
+	margin-top: 5px;
+	padding: 2px;
+}
+
+#center_column span {
 	color: blue;
 }
 
@@ -162,4 +169,5 @@ body {
 	font-family: Arial, sans-serif;
 	color: #111;
 	font-size: 13px;
+	min-width: 800px;
 }
