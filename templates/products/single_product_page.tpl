@@ -34,7 +34,7 @@
 	<div class="separation-line-big">
 	</div>
 	<table id="also_bought_container">
-		<h3>Quem comprou este produto, também comprou:</h3>
+		<tr><h3>Quem comprou este produto, também comprou:</h3></tr>
 		<tr>
 		{foreach $a_bought as $ab}
 			<td>		
