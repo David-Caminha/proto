@@ -21,7 +21,7 @@
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
 	</div>
 	<div id="center_column" class="column" >
-		<h3>Nome do Produto</h3>
+		<span id="p_name">Nome do Produto</span>
 		de: <span id="fornecedor">Fornecedor</span>
 		<p id="price">Preço: <span id="price_value">12,3€</span> </p>
 		<p>

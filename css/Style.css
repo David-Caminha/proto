@@ -37,7 +37,7 @@
     border-top: 1px solid black;
     padding-top: 1%;
     padding-bottom: 1%;
-      margin-top: 1%;
+     margin-top: 1%;
    
 }
 #linkagem a{
@@ -134,8 +134,6 @@ span.glyphicon-zoom-in {
 	width: 50%;
 	margin-right: 270 px;
 	display: block;
-	padding-top: 10px;
-	margin-top: 10px;
 }
 
 #left_column{
@@ -172,8 +170,9 @@ span.glyphicon-zoom-in {
 	color: blue;
 }
 
-#center_column h3 {
+#p_name {
 	padding-top: 20px;
+	font-size: 180%;
 }
 
 #center_column p {
