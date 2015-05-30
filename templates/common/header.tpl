@@ -17,8 +17,8 @@
                     <a  class=" btn btn-default" href="{$BASE_URL}">Home</a>
                     <form action="{$BASE_URL}pages/products/search.php" method="get">
                         <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
-						<input type="text" name="Filtro" id="method_receiver" value="" />
-						<select id="search_method">
+						<input type="text" name="method_receiver" />
+						<select id="search_method" onchange="this.form.method_receiver.value=this.selectedIndex">
 							<option value="asc_price" selected> Preço crescente</option>
 							<option value="desc_price"> Preço decrescente</option>
 							<option value="best_rate"> Maior classificação</option>
@@ -26,16 +26,7 @@
 						</select>
 					</form>
                 </section>
-                <script>
-		$(function (){
-			//this first line loads the pre-selected value into the text box
-			$('#method_receiver').val($('#search_method option:selected').val());
-			//still want to bind the change event
-			$('#search_method').bind('change', function(){
-				$('#method_receiver').val($('#search_method option:selected').text());
-			});
-		});
-		</script><section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
+          <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
                     {if $USERNAME}
                         {include file='common/menu_logged_in.tpl'}
                     {else}
