@@ -1,10 +1,10 @@
 {include file='common/header.tpl'}
-	<div id="product_header">
-		<h2>Nome do Produto</h2>
+	<div id="left_column">
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
-		<img src="images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
 	</div>
-	<div id="product_description">
+	<div id="center_column">
+		<h2>Nome do Produto</h2>
+		<h4>Fornecedor</h4>
 		
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 
@@ -20,5 +20,21 @@
 		Aliquam vitae nisl vel odio iaculis pellentesque non sit amet neque. 
 		Aliquam varius ornare leo id vulputate. 
 		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.
+	</div>
+	<div id="right_column">
+		Quantity: <select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+		</select>
+		{if $USERNAME}<a href="#"><button>Adicionar ao Carrinho</button></a>{/if}
 	</div>
 {include file='common/footer.tpl'}
