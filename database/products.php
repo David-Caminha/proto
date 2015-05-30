@@ -161,7 +161,7 @@
 	function populate_product_page($p_id) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT produto.nome, produto.descricao, produto.preco, comentario.texto, classificacao.valor, utilizador.username
+			SELECT produto.nome, produto.descricao, produto.preco, comentario.texto, utilizador.username
 			FROM comentario, utilizador, produto
 			WHERE comentario.idUser = utilizador.id AND
 			comentario.idProduto = ? AND
