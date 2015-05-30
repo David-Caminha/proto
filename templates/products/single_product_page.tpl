@@ -21,13 +21,13 @@
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
 	</div>
 	<div id="center_column" class="column" >
-	{foreach $p as $p}
-		<span id="p_name">{$p.nome}</span>
+	{foreach $p as $product}
+		<span id="p_name">{$product.nome}</span>
 		<br />
 		de: <span id="fornecedor">Fornecedor</span>
-		<p id="price">Preço: <span id="price_value">{$p.preco}€</span> </p>
+		<p id="price">Preço: <span id="price_value">{$product.preco}€</span> </p>
 		<p>
-		{$p.descricao}
+		{$product.descricao}
 		</p>
 	{/foreach}
 	</div>
