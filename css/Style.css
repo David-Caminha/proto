@@ -124,5 +124,13 @@ span.glyphicon-zoom-in {
     padding: 1%;
 }
 
+#product_description{
+	width: 50em;
+	border: 1px;
+	border-color: #ddd;
+}
 
+#product_header{
+	width: 40em;
+}
 

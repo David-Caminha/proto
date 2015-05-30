@@ -1,9 +1,10 @@
 {include file='common/header.tpl'}
-	<div>
+	<div id="product_header">
 		<h2>Nome do Produto</h2>
-		<img src="" alt="Imagem do Artigo" width="100" height="100" />
+		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
+		<img src="images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
 	</div>
-	<div>
+	<div id="product_description">
 		
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 
