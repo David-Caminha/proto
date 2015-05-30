@@ -32,7 +32,7 @@
 	</div>
 	<div class="separation-line-big">
 	</div>
-	<div id="comentarios">
+	<div id="comments">
 		<h3>Comentários</h3>
 		{foreach $Result as $comment}
 		<p class="c_username">{$comment.username}</p>
