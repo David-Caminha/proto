@@ -1,6 +1,15 @@
 <!DOCTYPE HTML>
 <html >
     <head>
+		<script type='text/javascript'>
+		$(document).ready(function(){
+
+		$("select").change(function(){
+		$("input[type=hidden]").val($("select option:selected").val());
+		});
+
+		});// End Jquery
+		</script>
         <link rel="stylesheet" href="{$BASE_URL}css/Style.css"/>
         <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
         <meta charset="utf-8">

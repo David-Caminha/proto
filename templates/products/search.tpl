@@ -36,14 +36,5 @@
             
             {/foreach}
         </dl>
-        <script>
-	$(function (){
-		//this first line loads the pre-selected value into the text box
-		$('#method_receiver').val($('#search_method option:selected').val());
-		//still want to bind the change event
-		$('#search_method').bind('change', function(){
-			$('#method_receiver').val($('#search_method option:selected').text());
-		});
-	});
-	</script>
+     
 {include file='common/footer.tpl'}
