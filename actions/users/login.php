@@ -18,7 +18,10 @@
     {
         $_SESSION['username'] = $username;
 		$_SESSION['nitems'] = $n_items[0]->qtd;
-        $_SESSION['success_messages'][] = 'Login successful';  
+        $_SESSION['success_messages'][] = 'Login successful'; 
+		echo $NITEMS;
+		echo $_SESSION['nitems'];
+		echo $n_items[0]->qtd;
     }
     else if(isSupplierLoginCorrect($username, $password))
     {
@@ -30,8 +33,6 @@
         $_SESSION['error_messages'][] = 'Login failed';
     }
 	
-	echo $NITEMS;
-	echo $_SESSION['nitems'];
-	echo $n_items[0]->qtd;
+	
     // header("Location: $BASE_URL");
 ?>
