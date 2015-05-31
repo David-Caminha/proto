@@ -13,9 +13,9 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 	$n_items = getNumberOfItems($_POST['username']);
-	foreach $n_items as $ni {
+	foreach $n_items as $ni (
 		$nitems = $ni.qtd;
-	}
+	)
 	
     if (isUserLoginCorrect($username, $password))
     {
