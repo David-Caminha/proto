@@ -234,7 +234,7 @@ span.glyphicon-zoom-in {
 	margin-top: 10px;
 }
 
-.user_name{
+.first_tier_text{
 	display: inline-block;
 	clear: both;
 	white-space: nowrap;
@@ -243,15 +243,20 @@ span.glyphicon-zoom-in {
 
 .second_tier_text{
 	line-height: 15px;
-	padding-top: 20px;
 	clear: both;
 	display: inline-block;
 	white-space: nowrap;
+	font-weight: 700;
 }
 
 #nav_right_h_menu {
 	display: inline-block;
 	vertical-align: baseline;
+	text-align: left;
+}
+
+#nav_right_h_menu a {
+	height: 50px;
 }
 
 body {

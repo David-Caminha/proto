@@ -73,4 +73,16 @@
         $stmt->fetch();
         return $type;
     }
-?>
+
+	function getNumberOfItems($u_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT COUNT(*) AS qtd 
+			FROM itemEncomenda
+			WHERE itemEncomenda.estado = FALSE AND
+			itemEncomenda.idUser = (SELECT id FROM utilizador WHERE utilizador.username = ?)
+		");
+		$stmt->execute(array($u_name));
+		return->$stmt->fetchALL();
+		
+	}
