@@ -83,6 +83,6 @@
 			itemEncomenda.idUser = (SELECT id FROM utilizador WHERE utilizador.username = ?)
 		");
 		$stmt->execute(array($u_name));
-		return->$stmt->fetchALL();
+		return $stmt->fetchALL();
 		
 	}
