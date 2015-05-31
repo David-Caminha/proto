@@ -13,12 +13,12 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 	$n_items = getNumberOfItems($_POST['username']);
-	
+	$nitems = $n_items[0]->qtd
 
     if (isUserLoginCorrect($username, $password))
     {
         $_SESSION['username'] = $username;
-		$_SESSION['nitems'] = $n_items[0]->qtd;
+		$_SESSION['nitems'] = $nitems;
         $_SESSION['success_messages'][] = 'Login successful';  
     }
     else if(isSupplierLoginCorrect($username, $password))
