@@ -129,13 +129,13 @@
 	function rate_search() {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem, classificacao.valor
+			SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem, AVG(classificacao.valor) AS rate
 			FROM Produto, classificacao
 			WHERE Produto.id = classificacao.idProduto
 			AND(UPPER(Produto.nome) LIKE UPPER(?)
 			OR UPPER(Produto.descricao) LIKE UPPER(?))
 			GROUP BY Produto.id
-			ORDER BY classificacao.valor DESC
+			ORDER BY rate DESC
 			LIMIT 8
 		");
 		$stmt->execute(array('%'.$value.'%', '%'.$value.'%'));
