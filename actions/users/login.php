@@ -18,7 +18,7 @@
     if (isUserLoginCorrect($username, $password))
     {
         $_SESSION['username'] = $username;
-		$_SESSION['nitems'] = $nitems['qtd'];
+		$_SESSION['nitems'] = $n_items['qtd'];
         $_SESSION['success_messages'][] = 'Login successful';  
     }
     else if(isSupplierLoginCorrect($username, $password))
