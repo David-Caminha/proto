@@ -6,7 +6,8 @@
 	$a_b = also_bought($_GET['idProd']);
 	
 	if (!empty($_GET['qtd_receiver'])) {
-	  addItem($_GET['qtd_receiver'], $_GET['prd_receiver'], $_SESSION['username']); //o primeiro 1 sera substituido pela quantidade
+	  addItem($_GET['qtd_receiver'], $_GET['prd_receiver'], $_SESSION['username']); 
+	  header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['prd_receiver']);
 	}
 	
 	$smarty->assign('Result', $pp);
