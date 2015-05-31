@@ -55,13 +55,7 @@
 		<div class="separation-line">
 		</div>
 		{/foreach}
-		<p class="c_username">Nome do Utilizador</p>
-		<p class="c_rate">4/5 (pode-se pôr estrelas)</p>
-		<p class="c_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-		Aenean lacinia sapien urna, vitae lobortis eros laoreet a. 
-		Suspendisse ut neque leo.Aliquam vitae nisl vel odio iaculis pellentesque non sit amet neque. 
-		Aliquam varius ornare leo id vulputate. 
-		Morbi vel dui commodo, pharetra dui eu, fermentum tortor.</p>
+		
 		<div class="separation-line">
 		</div>
 	</div>
