@@ -14,7 +14,7 @@
 		{$valorfinal = 0}
 		{foreach $Result as $itemEncomenda}
 		<tr>
-			<td>{$itemEncomenda.nome}</td>
+			<td><a href="?idProd={$itemEncomenda.idproduto}">{$itemEncomenda.nome}</a></td>
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
 			<td><a href="?idC={$itemEncomenda.idcarrinho}&idP={$itemEncomenda.idproduto}"><button type="button" >Remover</button></a></td> 

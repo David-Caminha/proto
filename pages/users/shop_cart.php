@@ -6,6 +6,10 @@
 	  removeItem($_GET['idC'],$_GET['idP'], $_SESSION['username']);
 	  echo "<script type='text/javascript'>window.location.replace('shop_cart.php');</script>";
   }
+  if (!empty($_GET['idProd'])) {
+		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd']);
+	}
+
   $smarty->assign('Result', $itemEncomenda);
   $smarty->display('users/shop_cart.tpl');
 ?>
