@@ -195,7 +195,7 @@
 			itemEncomenda.idProduto <> ? AND
 			itemEncomenda.idProduto = produto.id
 			GROUP BY produto.id
-			ORDER BY quantidade
+			ORDER BY quantidade DESC
 			LIMIT 4
 		");
 		$stmt->execute(array($p_id,$p_id));
