@@ -3,7 +3,8 @@
   include_once($BASE_DIR .'database/carrinhoCompras.php');
   $itemEncomenda = searchItems($_SESSION['username']);
   if (!empty($_GET['idC']) && !empty($_GET['idP'])) {
-	  removeItem($_GET['idC'],$_GET['idP'], $_SESSION['username']);
+	  $result=removeItem($_GET['idC'],$_GET['idP'], $_SESSION['username']);
+	  if($result){$_SESSION['nitems']-=1;}
 	  echo "<script type='text/javascript'>window.location.replace('shop_cart.php');</script>";
   }
   if (!empty($_GET['idProd'])) {
