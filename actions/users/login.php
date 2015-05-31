@@ -15,7 +15,8 @@
 	$n_items = getNumberOfItems($_POST['username']);
 	echo $n_items;
 	echo $n_items['qtd'];
-	echo $n_items.qtd;
+	echo $n_items->qtd;
+	print_r($n_items);
 	
     if (isUserLoginCorrect($username, $password))
     {
