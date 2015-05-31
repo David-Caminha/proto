@@ -26,12 +26,14 @@
 						</select>
 					</form>
                 </section>
-          <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
+          
                     {if $USERNAME}
                         {include file='common/menu_logged_in.tpl'}
                     {else}
-                        {include file='common/menu_logged_out.tpl'}
+						<section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
+							{include file='common/menu_logged_out.tpl'}
+						</section>
                     {/if}
-                </section>
+             
             </div>
 			

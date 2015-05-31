@@ -253,6 +253,9 @@ span.glyphicon-zoom-in {
 	display: inline-block;
 	vertical-align: baseline;
 	text-align: left;
+	float: right;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 #nav_right_h_menu a {
