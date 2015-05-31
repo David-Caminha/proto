@@ -13,7 +13,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 	$n_items = getNumberOfItems($_POST['username']);
-	$nitems = $n_items[0]->qtd
+	$nitems = $n_items[0]->qtd;
 
     if (isUserLoginCorrect($username, $password))
     {
