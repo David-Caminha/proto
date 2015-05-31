@@ -1,21 +1,22 @@
 {include file='common/header.tpl'}
 	<div id="right_column" class="column" >
-		Quantidade: <select>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-			<option>10</option>
-			<option>11</option>
+	<form action="{$BASE_URL}pages/products/product.php" method="get">
+		<input type="hidden" name="qtd_receiver" />
+		Quantidade: <select name="qtd" onchange="this.form.qtd_receiver.value=this.value">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
 		</select>
 		<br />
-		{if $USERNAME}<a href="#"><button>Adicionar ao Carrinho</button></a>{/if}
-		
+		{if $USERNAME}<button>Adicionar ao Carrinho</button>{/if}
+	</form>
 	</div>
 	<div id="left_column" class="column" >
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
