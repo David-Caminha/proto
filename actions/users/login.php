@@ -15,16 +15,16 @@
 	$n_items = getNumberOfItems($_POST['username']);
 	
 	echo $n_items[0]->qtd;
-	echo $n_items[0]->'qtd';
 	echo $n_items[0];
 	echo $n_items;
 	echo $n_items[0]['qtd'];
+	print_r($n_items);
 		
     if (isUserLoginCorrect($username, $password))
     {
         
 		$_SESSION['username'] = $username;
-		$_SESSION['nitems'] = $n_items[0]->'qtd';
+		$_SESSION['nitems'] = $n_items[0]->qtd;
         $_SESSION['success_messages'][] = 'Login successful'; 
 		
     }
