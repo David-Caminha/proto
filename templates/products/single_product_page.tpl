@@ -55,8 +55,5 @@
 		<div class="separation-line">
 		</div>
 		{/foreach}
-		
-		<div class="separation-line">
-		</div>
 	</div>
 {include file='common/footer.tpl'}
