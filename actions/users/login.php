@@ -29,5 +29,9 @@
     {
         $_SESSION['error_messages'][] = 'Login failed';
     }
-    header("Location: $BASE_URL");
+	
+	echo $NITEMS;
+	echo $_SESSION['nitems'];
+	echo $n_items[0]->qtd;
+    // header("Location: $BASE_URL");
 ?>
