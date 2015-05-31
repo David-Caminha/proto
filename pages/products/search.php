@@ -17,6 +17,7 @@
 	//acrescentei este codigo
 	if (!empty($_GET['idP'])) {
 	  addItem(1,$_GET['idP'], $_SESSION['username']); //o primeiro 1 sera substituido pela quantidade
+	  $_SESSION['nitems']+=1;
 	}
 	if (!empty($_GET['idProd'])) {
 		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd']);
