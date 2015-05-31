@@ -2,6 +2,9 @@
 	<div id="right_column" class="column" >
 	<form action="{$BASE_URL}pages/products/product.php" method="get">
 		<input type="hidden" name="qtd_receiver" />
+		{foreach $p as $prd}
+		<input type="hidden" name="prd_receiver" value="{$prd.id}" />
+		{/foreach}
 		Quantidade: <select name="qtd" onchange="this.form.qtd_receiver.value=this.value">
 			<option value="1">1</option>
 			<option value="2">2</option>
