@@ -13,7 +13,8 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 	$n_items = getNumberOfItems($_POST['username']);
-	
+	<echo>$n_items;
+	<echo>$n_items['qtd'];</echo>
 	
     if (isUserLoginCorrect($username, $password))
     {
@@ -30,5 +31,5 @@
     {
         $_SESSION['error_messages'][] = 'Login failed';
     }
-    header("Location: $BASE_URL");
+    // header("Location: $BASE_URL");
 ?>

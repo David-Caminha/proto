@@ -4,7 +4,7 @@
 		<span class="second_tier_text">Your Account</span>
 	</a>
 	<a class="btn btn-default" href="{$BASE_URL}pages/users/shop_cart.php">
-		<span class="first_tier_text">Check ({$_SESSION['nitems']})Items</span><br />
+		<span class="first_tier_text">Check ({$_SESSION['nitems']}) Items</span><br />
 		<span class="second_tier_text">Shop Cart</span>
 	</a>
 	<a class=" btn btn-default" href="{$BASE_URL}pages/users/favourites.php"><br />Favourites</a>
