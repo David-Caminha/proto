@@ -17,8 +17,11 @@
 	//acrescentei este codigo
 	if (!empty($_GET['idP'])) {
 	  addItem(1,$_GET['idP'], $_SESSION['username']); //o primeiro 1 sera substituido pela quantidade
-  }
-	
+	}
+	if (!empty($_GET['idProd'])) {
+		$_SESSION['produto']=$_GET['idProd'];
+		header("Location: $BASE_URL" . 'pages/products/product.php');
+	}
     $smarty->assign('searchResult', $searchResult);
     $smarty->display('products/search.tpl');
 ?>

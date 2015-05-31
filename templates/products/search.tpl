@@ -19,8 +19,8 @@
             
             <dt> 
                 <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
-                    <img  src="{$BASE_URL}{$produto.photo}" alt="Imagem artigo" height="100" width="100">
-                    <a href="#"><img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg"  height="40" width="40"></a>
+                    <a href="?idProd={$produto.id}"><img  src="{$BASE_URL}{$produto.photo}" alt="Imagem artigo" height="100" width="100"></a>
+                    <a href="?idProd={$produto.id}"><img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg"  height="40" width="40"></a>
                     <p class=" col-xs-12 col-md-12 "> {$produto.nome}</p>
                     <p class=" col-xs-12 col-md-12 "> {$produto.preco}€</p>
                     {if $USERNAME}<a href="?idP={$produto.id}"><button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button></a>{/if}
