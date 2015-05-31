@@ -7,7 +7,7 @@
 	
 	if (!empty($_GET['qtd_receiver'])) {
 	  addItem($_GET['qtd_receiver'], $_GET['prd_receiver'], $_SESSION['username']);
-	  $_SESSION['nitems']+=1;
+	  if($result){$_SESSION['nitems']+=1;}
 	  header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['prd_receiver']);
 	}
 	
