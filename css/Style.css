@@ -234,6 +234,17 @@ span.glyphicon-zoom-in {
 	margin-top: 10px;
 }
 
+.user_name{
+	display: inline-block;
+	clear: both;
+	white-space: nowrap;
+}
+
+#nav_right_h_menu {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	color: #111;

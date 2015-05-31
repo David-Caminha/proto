@@ -52,8 +52,6 @@
 			return $stmt->fetchAll();
 		}
     }
-
-	//adicionei daqui para baixo
 	
 	function addItem($qtd, $p_id, $u_username) {
 		global $conn;
@@ -186,7 +184,7 @@
 	function also_bought($p_id) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT produto.nome, produto.preco
+			SELECT produto.nome, produto.preco, SUM(itemEncomenda.quantidade) as quantidade
 			FROM produto, utilizador, itemEncomenda, carrinhoCompras
 			WHERE utilizador.id IN (
 			SELECT carrinhoCompras.idUser 
@@ -197,6 +195,7 @@
 			itemEncomenda.idProduto <> ? AND
 			itemEncomenda.idProduto = produto.id
 			GROUP BY produto.id
+			ORDER BY quantidade
 			LIMIT 4
 		");
 		$stmt->execute(array($p_id,$p_id));
