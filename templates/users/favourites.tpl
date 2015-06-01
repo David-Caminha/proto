@@ -8,7 +8,7 @@
 		
 		{foreach $produto as $fav}
 		<tr>
-		<a href="?idProd={$fav.id}"><td>{fav.nome}</td></a>
+		<a href="?idProd={$fav.id}"><td>{$fav.nome}</td></a>
 		<a href="?idP={$fav.id}"><button>Remover</button></a>
 		</tr>
 		{foreach}
