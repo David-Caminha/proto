@@ -53,11 +53,30 @@
 	</div>
 	<div id="comments">
 		<h3>Comentários</h3>
+		{$number=0}
 		{foreach $Result as $comment}
 		<p class="c_username">{$comment.username}</p>
 		<p class="c_text">{$comment.texto}</p>
 		<div class="separation-line">
 		</div>
+		{$number+=1}
 		{/foreach}
+		
+		<div id="write_comment">
+			<form method="post" action="{$BASE_URL}pages/products/product.php" >
+				<input type="hidden" name="username_comment" value="{$USERNAME}" />
+				{if $number==0}
+				<span>Seja o Primeiro a comentar:</span>
+				<br />
+				{else}
+				<span>Escreva um Comentário:</span>
+				<br />
+				{/if}
+				<textarea rows="10" cols="120" name="text_comment" placeholder="Escreva aqui o seu comentário...">
+				</textarea>
+				<button type="submit">Submeter</button>
+				<button type="reset">Limpar</button>
+			</form>
+		</div>
 	</div>
 {include file='common/footer.tpl'}

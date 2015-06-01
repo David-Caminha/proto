@@ -201,3 +201,13 @@
 		$stmt->execute(array($p_id,$p_id));
 		return $stmt->fetchALL();
 	}
+	
+	function insertComment($u_name, $comment, $p_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			INSERT INTO comentario (idUser, idProduto, texto) VALUES ((SELECT id FROM utilizador WHERE username = ?), ?, ?)
+		");
+		$stmt->execute(array($u_name, $p_id, $comment));
+		echo "<script type='text/javascript'>alert('O seu comentário foi inserido com sucesso!');</script>"
+		return true;
+	}

@@ -11,6 +11,11 @@
 	  header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['prd_receiver']);
 	}
 	
+	if (!empty($_POST['text_comment'])) {
+		insertComment($_POST['username_comment'],$_POST['text_comment'],$_GET['idProd'] );
+		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['prd_receiver']);
+	}
+	
 	$smarty->assign('Result', $pp);
 	$smarty->assign('p', $info);
 	$smarty->assign('a_bought', $a_b);
