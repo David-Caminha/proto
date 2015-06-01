@@ -262,6 +262,10 @@ span.glyphicon-zoom-in {
 	height: 50px;
 }
 
+#exampleInputEmail1 {
+	max-width: 180px;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	color: #111;
