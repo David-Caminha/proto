@@ -37,7 +37,7 @@
             return false;
     }
 
-    function isSuplierLoginCorrect($username, $password) {
+    function isSupplierLoginCorrect($username, $password) {
         global $conn;
         $stmt = $conn->prepare("SELECT * 
                             FROM fornecedor 
