@@ -22,7 +22,7 @@
 	</form>
 	<br />
 	<br />
-	{if $USERNAME}{if $fav==0}{foreach $p as $pp}<a href="?idProd={$pp.id}"><button>Adicionar aos Favoritos</button></a>{/foreach}{/if}{/if}
+	{if $USERNAME}{if $fav==0}{foreach $p as $pp}<a href="?idFav={$pp.id}"><button>Adicionar aos Favoritos</button></a>{/foreach}{/if}{/if}
 	</div>
 	<div id="left_column" class="column" >
 		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />

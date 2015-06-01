@@ -12,6 +12,10 @@
 		$fav_bool=0;
 	}
 	
+	if(!empty($_GET['idFav'])) {
+		addFav($_GET['idFav'], $_SESSION['username']);
+		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idFav']);
+	}
 	
 	if (!empty($_GET['qtd_receiver'])) {
 	  addItem($_GET['qtd_receiver'], $_GET['prd_receiver'], $_SESSION['username']);

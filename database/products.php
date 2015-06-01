@@ -251,3 +251,17 @@
 		$stmt->execute(array($p_id, $u_name));
 		return $stmt->fetchALL();
 	}
+	
+	function addFav($p_id, $u_name) {
+		global $conn;
+		$item = checkFav($p_id, $u_name);
+		
+		if(empty($item)) {
+			$stmt = $conn->prepare("
+				INSERT INTO favorito (idUser, idProduto) VALUES ((SELECT id FROM utilizador WHERE username = ?),?)
+			");
+			$stmt->execute(array($u_name, $p_id));
+			return true;
+		}
+		return false;
+	}
