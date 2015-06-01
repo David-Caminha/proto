@@ -4,12 +4,12 @@
 	
 	<div id="fav_wrapper">
 		<h3>Favoritos</h3>
-		<table id="favoritos">
+		<table class="table table-striped">
 		
 		{foreach $produto as $fav}
 		<tr>
-		<a href="?idProd={$fav.id}"><td>{$fav.nome}</td></a>
-		<a href="?idP={$fav.id}"><button>Remover</button></a>
+			<a href="?idProd={$fav.id}"><td>{$fav.nome}</td></a>
+			<a href="?idP={$fav.id}"><button>Remover</button></a>
 		</tr>
 		{/foreach}
 		<table>
