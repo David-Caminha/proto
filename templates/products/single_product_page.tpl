@@ -59,7 +59,7 @@
 		<p class="c_text">{$comment.texto}</p>
 		<div class="separation-line">
 		</div>
-		{$number+=1}
+		{$number=$number+1}
 		{/foreach}
 		
 		<div id="write_comment">
