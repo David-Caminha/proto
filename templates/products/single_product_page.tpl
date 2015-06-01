@@ -64,7 +64,6 @@
 		
 		<div id="write_comment">
 			<form method="post" action="{$BASE_URL}pages/products/product.php" >
-				<input type="hidden" name="username_comment" value="{$USERNAME}" />
 				{foreach $p as $prd}
 					<input type="hidden" name="idProd_comment" value="{$prd.id}" />
 				{/foreach}
