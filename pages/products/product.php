@@ -12,8 +12,8 @@
 	}
 	
 	if (!empty($_POST['text_comment'])) {
-		insertComment($_POST['username_comment'],$_POST['text_comment'],$_GET['idProd_comment'] );
-		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd_comment']);
+		insertComment($_POST['username_comment'],$_POST['text_comment'],$_POST['idProd_comment'] );
+		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_POST['idProd_comment']);
 	}
 	
 	$smarty->assign('Result', $pp);
