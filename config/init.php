@@ -25,6 +25,7 @@
   $smarty->assign('SUCCESS_MESSAGES', $_SESSION['success_messages']);
   $smarty->assign('FORM_VALUES', $_SESSION['form_values']);
   $smarty->assign('USERNAME', $_SESSION['username']);
+  $smarty->assign('FORNECEDOR', $_SESSION['fornecedor']);
   $smarty->assign('NITEMS', $_SESSION['nitems']);
   
   unset($_SESSION['success_messages']);

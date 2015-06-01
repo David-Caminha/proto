@@ -26,7 +26,7 @@
     }
     else if(isSupplierLoginCorrect($username, $password))
     {
-        $_SESSION['username'] = $username;
+        $_SESSION['fornecedor'] = $username;
         $_SESSION['success_messages'][] = 'Login successful'; 
     }
     else

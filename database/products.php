@@ -211,3 +211,43 @@
 		echo "<script type='text/javascript'>alert('O seu comentário foi inserido com sucesso!');</script>";
 		return true;
 	}
+	
+	function getFavourites($u_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT produto.id, produto.nome 
+			FROM produto, favorito, utilizador 
+			WHERE favorito.idUser = utilizador.id AND
+			favorito.idProduto = produto.id AND
+			utilizador.username = ?
+		");
+		$stmt->execute(array($u_name));
+		return $stmt->fetchALL();
+	}
+	
+	function removeFav($u_name, $p_id) {
+		global $conn;
+		$item = checkFav($p_id, $u_name);
+		
+		if(!empty($item)) {
+			$stmt = $conn->prepare("
+				DELETE FROM favorito WHERE favorito.idProduto = ? AND favorito.idUser = (SELECT id FROM utilizador WHERE username = ?)
+			");
+			
+			$stmt->execute(array($p_id, $u_name));
+			return true;
+		}
+		return false;
+	}
+	
+	function checkFav($p_id, $u_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT * 
+			FROM favorito 
+			WHERE favorito.idProduto = ? 
+			AND favorito.idUser = (SELECT id FROM utilizador WHERE username = ?)
+			");
+		$stmt->execute(array($p_id, $u_name));
+		return $stmt->fetchALL();
+	}

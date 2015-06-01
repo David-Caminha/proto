@@ -4,6 +4,14 @@
 	$pp = populate_product_comment($_GET['idProd']);
 	$info = populate_product_info($_GET['idProd']);
 	$a_b = also_bought($_GET['idProd']);
+	$checker = checkFav($_GET['idProd'], $_SESSION['username']);
+	
+	if(!empty($checker)) {
+		$fav_bool=1;
+	}	else {
+		$fav_bool=0;
+	}
+	
 	
 	if (!empty($_GET['qtd_receiver'])) {
 	  addItem($_GET['qtd_receiver'], $_GET['prd_receiver'], $_SESSION['username']);
@@ -17,6 +25,7 @@
 	}
 	
 	$smarty->assign('Result', $pp);
+	$smarty->assign('fav', $fav_bool);
 	$smarty->assign('p', $info);
 	$smarty->assign('a_bought', $a_b);
 	$smarty->display('products/single_product_page.tpl');
