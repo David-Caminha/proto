@@ -13,7 +13,7 @@
 	
 	if (!empty($_POST['text_comment'])) {
 		insertComment($_POST['username_comment'],$_POST['text_comment'],$_GET['idProd'] );
-		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['prd_receiver']);
+		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd']);
 	}
 	
 	$smarty->assign('Result', $pp);
