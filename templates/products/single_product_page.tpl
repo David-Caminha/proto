@@ -61,7 +61,7 @@
 		</div>
 		{$number=$number+1}
 		{/foreach}
-		
+		{if $USERNAME}
 		<div id="write_comment">
 			<form method="post" action="{$BASE_URL}pages/products/product.php" >
 				{foreach $p as $prd}
@@ -80,5 +80,6 @@
 				<button type="reset">Limpar</button>
 			</form>
 		</div>
+		{/if}
 	</div>
 {include file='common/footer.tpl'}

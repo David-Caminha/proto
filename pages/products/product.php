@@ -12,7 +12,7 @@
 	}
 	
 	if (!empty($_POST['text_comment'])) {
-		insertComment($_SESSION['username'],$_POST['text_comment'],$_POST['idProd_comment'] );
+		insertComment($_SESSION['username'], $_POST['text_comment'], $_POST['idProd_comment'] );
 		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_POST['idProd_comment']);
 	}
 	
