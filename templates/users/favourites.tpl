@@ -11,7 +11,7 @@
 		<a href="?idProd={$fav.id}"><td>{$fav.nome}</td></a>
 		<a href="?idP={$fav.id}"><button>Remover</button></a>
 		</tr>
-		{foreach}
+		{/foreach}
 		<table>
 	</div>
 	
