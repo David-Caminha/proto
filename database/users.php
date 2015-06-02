@@ -10,18 +10,43 @@
 
     function createUser($username, $password, $email, $birthDate, $realname, $phone, $address) {
         global $conn;
-        $stmt = $conn->prepare("
-            INSERT INTO utilizador (username, password, datanascimento, nome, email, telemovel)
-            VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, crypt($password), $birthDate, $realname, $email, $phone));
+		
+		$stmtVerify = $conn->prepare("
+			SELECT * 
+			FROM utilizador
+			WHERE username= ?
+		");
+		$stmtVerify->execute(array($username));
+		$checker = $stmtVerify->fetchALL();
+		
+		if(empty($checker)) {
+			$stmt = $conn->prepare("
+				INSERT INTO utilizador (username, password, datanascimento, nome, email, telemovel)
+				VALUES (?, ?, ?, ?, ?, ?)");
+			$stmt->execute(array($username, crypt($password), $birthDate, $realname, $email, $phone));
+			return true;
+		}
+		return false;
     }
 
     function createSuplier($username, $password, $email, $contactName, $contactPhone) {
         global $conn;
-        $stmt = $conn->prepare("
-            INSERT INTO fornecedor 
-            VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute(array($username, crypt($password), $email, $contactName, $contactPhone));
+		$stmtVerify = $conn->prepare("
+			SELECT * 
+			FROM fornecedor
+			WHERE nome = ?
+		");
+		$stmtVerify->execute(array($username));
+		$checker = $stmtVerify->fetchALL();
+		
+		if(empty($checker)) {
+			$stmt = $conn->prepare("
+				INSERT INTO fornecedor (nome, email, telemovel, responsavel, password)
+				VALUES (?, ?, ?, ?, ?)");
+			$stmt->execute(array($username, $email, $contactPhone, $contactName, crypt($password) ));
+			return true;
+		}
+		return false;
     }
 
     function isUserLoginCorrect($username, $password) {
