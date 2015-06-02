@@ -67,7 +67,7 @@
         $stmt = $conn->prepare("SELECT password 
                             FROM fornecedor 
                             WHERE nome = ?");
-        $stmt->execute(array($username, crypt($password)));
+        $stmt->execute(array($username));
         $stmt->bindColumn(1, $pass);
         if($stmt->fetch())
             return ($pass == crypt($password, $pass));
