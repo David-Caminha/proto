@@ -7,13 +7,13 @@
 	
 		Username: <input type="text" value="{$u.username}" name="username" /><br />
 		Nome Completo: <input type="text" value="{$u.nome}" name="nome" /><br />
-		Data de Nascimento: <input type="date" value="{$u.dataNascimento}" name="data_nascimento" /><br />
+		Data de Nascimento: <input type="date" value="{$u.datanascimento}" name="data_nascimento" /><br />
 		Email: <input type="text" value="{$u.email}" name="email" /><br />
 		Telemóvel: <input type="text" value="{$u.telemovel}" name="telemovel" /><br />
-		País: <input type="text" value="{$u.nomePais}" name="pais" /><br /> <!-- MUDAR PARA COMBOBOX -->
+		País: <input type="text" value="{$u.nomepais}" name="pais" /><br /> <!-- MUDAR PARA COMBOBOX -->
 		Cidade: <input type="text" value="{$u.nome_cidade}" name="cidade" /><br />
 		Rua: <input type="text" value="{$u.rua}" name="rua" /><br />
-		Código Postal: <input type="text" value="{$u.CP1}" name="CP1" /><input type="text" value="{$u.CP2}" name="CP2" /><br />
+		Código Postal: <input type="text" value="{$u.cp1}" name="CP1" /><input type="text" value="{$u.cp2}" name="CP2" /><br />
 		<button>Confirmar alterações</button>
 	</form>
 	<form id="password_perfil_form" method="post">
