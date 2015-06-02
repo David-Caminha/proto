@@ -97,7 +97,7 @@
 			WHERE utilizador.id = morada.idUser AND
 			morada.idCidade = cidade.id AND
 			utilizador.username = ?
-			GROUP BY utilizador.id
+			GROUP BY utilizador.id, morada.rua
 		");
 		$stmt->execute(array($u_name));
 		return $stmt->fetchALL();
