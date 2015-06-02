@@ -1,23 +1,28 @@
 {include file='common/header.tpl'}
 
 {if $USERNAME}
-
+	<h3>Editar Perfil</h3>
+	{foreach $user as $u}
 	<form id="perfil_form" method="post">
-		Username: <input type="text" value="luizfvpereira" name="username" /><br />
-		Nome Completo: <input type="text" value="Luís Pereira" name="nome" /><br />
-		Data de Nascimento: <input type="date" value="" name="data_nascimento" /><br />
-		Email: <input type="text" value="" name="email" /><br />
-		Telemóvel: <input type="text" value="" name="telemovel" /><br />
-		Rua: <input type="text" value="" name="rua" /><br />
-		Código Postal: <input type="text" value="" name="CP1" /><input type="text" value="" name="CP2" /><br />
+	
+		Username: <input type="text" value="{$u.username}" name="username" /><br />
+		Nome Completo: <input type="text" value="{$u.nome}" name="nome" /><br />
+		Data de Nascimento: <input type="date" value="{$u.dataNascimento}" name="data_nascimento" /><br />
+		Email: <input type="text" value="{$u.email}" name="email" /><br />
+		Telemóvel: <input type="text" value="{$u.telemovel}" name="telemovel" /><br />
+		País: <input type="text" value="{$u.nomePais}" name="rua" /><br /> <!-- MUDAR PARA COMBOBOX -->
+		Cidade: <input type="text" value="{$u.nome_cidade}" name="cidade" /><br />
+		Rua: <input type="text" value="{$u.rua}" name="pais" /><br />
+		Código Postal: <input type="text" value="{$u.CP1}" name="CP1" /><input type="text" value="{$u.CP2}" name="CP2" /><br />
 		<button>Confirmar alterações</button>
 	</form>
 	<form id="password_perfil_form" method="post">
-		Old Password: <input type="password" name="old_password" /><br />
-		New Password: <input type="password" value="" name="password" /><br />
-		Confirm New Password: <input type="password" value="" name="confirm_password" /><br />
+		Old Password: <input type="password" value="{$u.password}" name="old.password" /><br />
+		New Password: <input type="password" name="password" /><br />
+		Confirm New Password: <input type="password" name="confirm_password" /><br />
 		<button>Confirmar alterações</button>
 	</form>
+	{/foreach}
 {else}
 
 	{include file='common/nopermission.tpl'}

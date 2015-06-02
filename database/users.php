@@ -87,3 +87,18 @@
 		return $stmt->fetchALL();
 		
 	}
+	
+	function getUserInfo($u_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT utilizador.username, utilizador.nome, utilizador.password, utilizador.email, utilizador.telemovel, 
+			utilizador.dataNascimento, morada.rua, morada.CP2, cidade.CP1, cidade.nome as nome_cidade, cidade.nomePais
+			FROM utilizador, morada, cidade
+			WHERE utilizador.id = morada.idUser AND
+			morada.idCidade = cidade.id AND
+			utilizador.username = ?
+			GROUP BY utilizador.id
+		");
+		$stmt->execute(array($u_name));
+		return $stmt->fetchALL();
+	}
