@@ -2,7 +2,7 @@
 
 {if $USERNAME}
 	<h3>Editar Perfil</h3>
-	{foreach $user as $u}
+	{foreach $info as $u}
 	<form id="perfil_form" method="post">
 	
 		Username: <input type="text" value="{$u.username}" name="username" /><br />
