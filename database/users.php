@@ -64,9 +64,9 @@
 
     function isSupplierLoginCorrect($username, $password) {
         global $conn;
-        $stmt = $conn->prepare("SELECT * 
+        $stmt = $conn->prepare("SELECT password 
                             FROM fornecedor 
-                            WHERE nome = ? AND password = ?");
+                            WHERE nome = ?");
         $stmt->execute(array($username, crypt($password)));
         $stmt->bindColumn(1, $pass);
         if($stmt->fetch())
