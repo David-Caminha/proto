@@ -106,7 +106,7 @@
 	function updateInfoUser($u_nome, $u_email, $u_telemovel, $u_date, $m_rua, $m_cp2, $c_nome, $u_name) {
 		global $conn;
 		$stmt = $conn->prepare("
-			UPDATE utilizador, morada, SET utilizador.nome = ?, utilizador.email = ?, utilizador.telemovel = ?,
+			UPDATE utilizador, morada SET utilizador.nome = ?, utilizador.email = ?, utilizador.telemovel = ?,
 			utilizador.dataNascimento = ?, morada.rua = ?, morada.CP2 = ?, morada.idCidade = (SELECT id FROM cidade WHERE cidade.nome = ?)
 			WHERE utilizador.id = morada.idUser AND
 			utilizador.id = (SELECT id FROM utilizador WHERE username = ?)
