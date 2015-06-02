@@ -29,7 +29,7 @@
 		return false;
     }
 
-    function createSuplier($username, $password, $email, $contactName, $contactPhone) {
+    function createSupplier($username, $password, $email, $contactName, $contactPhone) {
         global $conn;
 		$stmtVerify = $conn->prepare("
 			SELECT * 
