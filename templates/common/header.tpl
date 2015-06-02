@@ -30,9 +30,13 @@
                     {if $USERNAME}
                         {include file='common/menu_logged_in.tpl'}
                     {else}
-						<section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
-							{include file='common/menu_logged_out.tpl'}
-						</section>
+						{if $FORNECEDOR}
+							{include file='common/menu_supplier.tpl'}
+						{else}
+							<section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
+								{include file='common/menu_logged_out.tpl'}
+							</section>
+						{/if}
                     {/if}
              
             </div>

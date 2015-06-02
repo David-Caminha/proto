@@ -27,6 +27,7 @@
   $smarty->assign('USERNAME', $_SESSION['username']);
   $smarty->assign('FORNECEDOR', $_SESSION['fornecedor']);
   $smarty->assign('NITEMS', $_SESSION['nitems']);
+  $smarty->assign('NPRODUTOS', $_SESSION['nprodutos']);
   
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);  

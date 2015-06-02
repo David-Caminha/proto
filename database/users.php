@@ -158,3 +158,15 @@
 		}
 		return false;
 	}
+	
+	function getNumberOfProducts($f_nome) {
+			global $conn;
+			$stmt = $conn->prepare("
+				SELECT COUNT(produto.id) AS qtd
+				FROM produto, fornecedor
+				WHERE produto.idFornecedor = fornecedor.id AND
+				fornecedor.nome = ?
+			");
+			$stmt->execute(array($f_nome));
+			return $stmt->fetchALL();
+	}
