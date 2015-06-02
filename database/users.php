@@ -41,7 +41,7 @@
         global $conn;
         $stmt = $conn->prepare("SELECT * 
                             FROM fornecedor 
-                            WHERE username = ? AND password = ?");
+                            WHERE nome = ? AND password = ?");
         $stmt->execute(array($username, crypt($password)));
         return $stmt->fetch() == true;
     }
@@ -126,7 +126,7 @@
 		
 		if($checker) {
 			$stmt = $conn->prepare("
-				UPDATE utilizador SET password = ? WHERE username = ?
+				UPDATE utilizador SET password = ? WHERE  username = ?
 			");
 			$stmt->execute(array(crypt($new_p),$username));
 			return true;
