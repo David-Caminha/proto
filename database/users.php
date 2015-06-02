@@ -68,7 +68,11 @@
                             FROM fornecedor 
                             WHERE nome = ? AND password = ?");
         $stmt->execute(array($username, crypt($password)));
-        return $stmt->fetch() == true;
+        $stmt->bindColumn(1, $pass);
+        if($stmt->fetch())
+            return ($pass == crypt($password, $pass));
+        else
+            return false;
     }
 
     function getFornecedores() {

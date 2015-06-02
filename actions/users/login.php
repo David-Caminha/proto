@@ -23,8 +23,9 @@
     }
     else if(isSupplierLoginCorrect($username, $password))
     {
+		$n_prod = getNumberOfProducts($username);
         $_SESSION['fornecedor'] = $username;
-		$_SESSION['nprodutos'] = getNumberOfProducts($_POST['fornecedor']);
+		$_SESSION['nprodutos'] = $n_prod[0]['qtd'];
         $_SESSION['success_messages'][] = 'Login successful'; 
     }
     else
