@@ -1,11 +1,11 @@
-{include file='header.tpl'}
+{include file='common/header.tpl'}
 
 {if $USERNAME}
 
 {else}
 
-	{include file='nopermission.tpl'}
+	{include file='common/nopermission.tpl'}
 
 {/if}
 
-{include file='footer.tpl'}
+{include file='common/footer.tpl'}
