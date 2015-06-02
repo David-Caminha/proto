@@ -128,7 +128,7 @@
 			$stmt = $conn->prepare("
 				UPDATE utilizador SET password = ? WHERE  username = ?
 			");
-			$stmt->execute(array(crypt($new_p),$username));
+			$stmt->execute(array(crypt($new_p),$u_name));
 			return true;
 		}
 		return false;
