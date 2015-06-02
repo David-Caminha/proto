@@ -8,8 +8,6 @@
     }
 	$info = getUserInfo($_SESSION['username']);
 	
-	print_r($info);
-	
 	$smarty->assign('info', $info);
-	// $smarty->display('users/perfil.tpl');
+	$smarty->display('users/perfil.tpl');
 ?>
