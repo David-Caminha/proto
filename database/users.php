@@ -91,7 +91,7 @@
 	function getUserInfo($u_name) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT utilizador.username, utilizador.nome, utilizador.password, utilizador.email, utilizador.telemovel, 
+			SELECT utilizador.username, utilizador.nome, utilizador.email, utilizador.telemovel, 
 			utilizador.dataNascimento, morada.rua, morada.CP2, cidade.CP1, cidade.nome as nome_cidade, cidade.nomePais
 			FROM utilizador, morada, cidade
 			WHERE utilizador.id = morada.idUser AND
@@ -101,4 +101,30 @@
 		");
 		$stmt->execute(array($u_name));
 		return $stmt->fetchALL();
+	}
+
+	function updateInfoUser($u_nome, $u_email, $u_telemovel, $u_date, $m_rua, $m_cp2, $c_nome, $u_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE utilizador, morada, SET utilizador.nome = ?, utilizador.email = ?, utilizador.telemovel = ?,
+			utilizador.dataNascimento = ?, morada.rua = ?, morada.CP2 = ?, morada.idCidade = (SELECT id FROM cidade WHERE cidade.nome = ?)
+			WHERE utilizador.id = morada.idUser AND
+			utilizador.id = (SELECT id FROM utilizador WHERE username = ?)
+		");
+		$stmt->execute(array($u_nome, $u_email, $u_telemovel, $u_date, $m_rua, $m_cp2, $c_nome, $u_name));
+		return true;
+	}
+	
+	function updateUserPassword($old_p, $new_p, $u_name) {
+		global $conn;
+		$checker = isUserLoginCorrect($u_name, $old_p);
+		
+		if($checker) {
+			$stmt = $conn->prepare("
+				UPDATE utilizador SET utilizador.password = ? WHERE utilizador.username = ?
+			");
+			$stmt->execute(array(crypt($new_p),$username));
+			return true;
+		}
+		return false;
 	}

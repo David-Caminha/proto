@@ -3,9 +3,8 @@
 {if $USERNAME}
 	<h3>Editar Perfil</h3>
 	{foreach $info as $u}
-	<form id="perfil_form" method="post">
+	<form id="perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 	
-		Username: <input type="text" value="{$u.username}" name="username" /><br />
 		Nome Completo: <input type="text" value="{$u.nome}" name="nome" /><br />
 		Data de Nascimento: <input type="date" value="{$u.datanascimento}" name="data_nascimento" /><br />
 		Email: <input type="text" value="{$u.email}" name="email" /><br />
@@ -13,10 +12,10 @@
 		País: <input type="text" value="{$u.nomepais}" name="pais" /><br /> <!-- MUDAR PARA COMBOBOX -->
 		Cidade: <input type="text" value="{$u.nome_cidade}" name="cidade" /><br />
 		Rua: <input type="text" value="{$u.rua}" name="rua" /><br />
-		Código Postal: <input type="text" value="{$u.cp1}" name="CP1" /><input type="text" value="{$u.cp2}" name="CP2" /><br />
+		Código Postal: <input type="text" value="{$u.cp1}" name="CP1" readonly /><input type="text" value="{$u.cp2}" name="CP2" /><br />
 		<button>Confirmar alterações</button>
 	</form>
-	<form id="password_perfil_form" method="post">
+	<form id="password_perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 		Old Password: <input type="password" value="" name="old.password" /><br />
 		New Password: <input type="password" name="password" /><br />
 		Confirm New Password: <input type="password" name="confirm_password" /><br />
