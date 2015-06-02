@@ -51,7 +51,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM fornecedor");
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetchALL();
     }
 
     function getAdmins() {
