@@ -7,5 +7,5 @@
         header('Location: '.$BASE_URL. 'pages/users/pagDono.php');
     }
 	
-	smarty->display('users/perfil.tpl');
+	$smarty->display('users/perfil.tpl');
 ?>
