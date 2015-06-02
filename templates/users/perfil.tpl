@@ -25,8 +25,7 @@
 	{/foreach}
 {else}
 
-	{include file='common/nopermission.tpl'}
-
+	{include file='common/no_permission.tpl'}
 {/if}
 
 {include file='common/footer.tpl'}
