@@ -60,7 +60,7 @@
                             FROM utilizador
                             WHERE tipo = 1");
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetchALL();
     }
 
     function getTipo($username) {
