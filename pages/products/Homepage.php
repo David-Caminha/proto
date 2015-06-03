@@ -18,7 +18,7 @@
 		}
 		
 		if(!empty($_GET['addStock'])) {
-			if(is_numeric($_GET['qtd_stock'])) {
+			if(is_numeric($_GET['qtd_stock'])&&$_GET['qtd_stock']>=0) {
 				addStock($_GET['addStock'],$_GET['qtd_stock'],$_SESSION['fornecedor']);
 				header("Location: $BASE_URL" . 'pages/products/Homepage.php');
 			}
