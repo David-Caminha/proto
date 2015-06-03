@@ -9,7 +9,6 @@
 			Stock Inicial:<input type="number" name="stock" /><br/>
 			Imagem:
 			<input type="file" name="fileToUpload" id="fileToUpload">
-			<input type="submit" value="Upload Image" name="submit"><br/>
 			Ficha Técnica:<textarea rows="10" cols="50" name="technic_details" placeholder="Escreva aqui os tópicos da ficha técnica..."></textarea><br/>
 			Marca:<input type="text" name="" /><br/>
 			Tipo de Produto:
@@ -19,7 +18,7 @@
 				<option value="3">Periférico</option>
 				<option value="4">Cabo</option>
 			</select><br/>
-			<button>Inserir</button>
+			<button>Inserir Produto</button>
 		</form>
 	</div>
 {else}
