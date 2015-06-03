@@ -30,17 +30,15 @@
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
                     <a  class=" btn btn-default" href="http://www.google.com">Home</a>
-                    <form >
+                    <form class="row col-xs-12 col-md-12">
                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Pesquisa">
                     </form>
-                </section>
-                <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
                 </section>
             </div>
             <section id="linkagem" class="col-xs-12 col-md-12" >
                 <a  href="http://www.google.com">HOME</a>
                  > 
-                <a href="http://www.google.com">LOGIN</a>
+                <a href="http://www.google.com">REGISTER</a>
             </section>
             <section id="line"></section>
         </div>
