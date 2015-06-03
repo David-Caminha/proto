@@ -14,8 +14,11 @@
 					<td>{$p.vendas}</td>
 					<td>{$p.stock}</td>
 					<td>
-						<a href="?addStock={$p.id}"><button>Adicionar Stock</button></a>
-						<input type="text" name="qtd_stock" placeholder="0" value="0" />
+						<form action="{$BASE_URL}pages/products/homepage.php" method="get">
+							<input type="hidden" name="addStock" value="{$p.id}" />
+							<input type="text" name="qtd_stock" placeholder="0" value="0" />
+							<button>Adicionar Stock</button>
+						</form>
 					</td>
 					<td><a href="?kill={$p.id}"><button>Descontinuar</button></a></td>
 				</tr>
