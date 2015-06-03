@@ -10,7 +10,7 @@
       <div class="error">{$error}  {$FORM_VALUES.dataNascimento}<a class="close" href="#">X</a></div>
     {/foreach}
         <section id="forms">
-            <div class="col-xs-10 col-sm-4 col-md-4 col-md-offset-1">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-md-offset-1">
                 <form class="signIn-form" action="{$BASE_URL}actions/users/login.php" method="post">
                     <input class="form-control" type="text" name="username" placeholder="Username"> <br>
                     <input class="form-control" type="password" name="password" placeholder="Password"> <br>
@@ -18,7 +18,7 @@
                     <input type="submit" class="btn btn-primary" value="Login">  
                 </form>
             </div>
-            <div class="col-xs-10 col-md-4 col-md-offset-2">
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
                 <form class="register-form" action="{$BASE_URL}actions/users/register.php" method="post">
                     <input class="form-control" type="text" name="username" placeholder="Username" value="{$FORM_VALUES.username}"> <br>
                     <input class="form-control" type="email" name="email" placeholder="Email" value="{$FORM_VALUES.email}"><br>
@@ -32,7 +32,7 @@
                         <input class="form-control" type="text" name="nome" placeholder="Nome completo" value="{$FORM_VALUES.nome}"> <br>
                         <input class="form-control" type="text" name="contacto" placeholder="Contacto" value="{$FORM_VALUES.contacto}"> <br>
                         <input class="form-control" type="text" name="morada" placeholder="Morada" value="{$FORM_VALUES.morada}"> <br>
-                        <h7 class=" col-xs-2  col-sm-2 col-md-3 ">Codigo Postal</h7>
+                        <h7 class=" col-xs-3  col-sm-2 col-md-3 ">Codigo Postal</h7>
                          <div class=" col-xs-2  col-sm-2 col-md-3 ">
                         <input class=" form-control" type="text" name="cp1"  value="{$FORM_VALUES.cp1}"> 
                         </div>
