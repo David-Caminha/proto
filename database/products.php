@@ -265,4 +265,15 @@
 		}
 		return false;
 	}
+
+    function updatePath($id, $path) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE produto 
+			SET caminhoimagem = ? 
+			WHERE id = ?
+			");
+		$stmt->execute(array($path, $id));
+		$stmt->fetch();
+    }
 ?>

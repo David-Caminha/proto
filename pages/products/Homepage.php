@@ -27,7 +27,6 @@
           $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
         else
             $photo = 'images/assets/Logo.png';
-        $product['caminhoimagem'] = $photo;
     }
 	
 	if (!empty($_GET['idP'])) {
