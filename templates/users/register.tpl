@@ -70,11 +70,11 @@
                         <input class="form-control" type="text" name="contacto" placeholder="Contacto" value="{$FORM_VALUES.contacto}"> <br>
                         <input class="form-control" type="text" name="morada" placeholder="Morada" value="{$FORM_VALUES.morada}"> <br>
                         <h7 class="col-xs-2">Codigo Postal</h7> 
-                         <div class="col-xs-2">
+                         <div class=" col-xs-2  col-sm-4 col-md-4 ">
                         <input class=" form-control" type="text" name="cp1"  value="{$FORM_VALUES.cp1}"> 
                         </div>
                             <h7>-</h7>
-                         <div class="col-xs-2">
+                         <div class="col-xs-2  col-sm-4 col-md-4 ">
                         <input class=" form-control" type="text" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
                         </div>
                         <input class="form-control" type="text" name="cidade" placeholder="Cidade" value="{$FORM_VALUES.nome}"> <br> 
