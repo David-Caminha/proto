@@ -265,4 +265,17 @@
 		}
 		return false;
 	}
-?>
+	
+	function getProductsSupplier($f_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT produto.nome, produto.stock, SUM(itemEncomenda.idProduto) as valor
+			FROM produto, fornecedor, itemEncomenda
+			WHERE produto.id = itemEncomenda.idProduto AND
+			fornecedor.id = produto.idFornecedor AND
+			fornecedor.id = (SELECT id FROM fornecedor WHERE fornecedor.nome = ?)
+			GROUP BY produto.id
+		");
+		$stmt->execute(array($f_name));
+		return $stmt->fetchALL();
+	}
