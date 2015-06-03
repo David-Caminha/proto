@@ -46,6 +46,7 @@
 		if (!empty($_GET['idProd'])) {
 			header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd']);
 		}
+        sleep(1);
 		$smarty->assign('recentementeVendidos', $recentementeVendidos);
 		$smarty->assign('maisVendidos', $maisVendidos);
 		$smarty->display('products/home.tpl');
