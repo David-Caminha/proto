@@ -15,7 +15,7 @@
           $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
         else
             $photo = 'images/produtos/default.png';
-        $product['photo'] = $photo;
+        $product['caminhoimagem'] = $photo;
     }
     foreach ($maisVendidos as $product)
     {
