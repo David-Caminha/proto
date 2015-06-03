@@ -35,7 +35,7 @@
 			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
 			else
 				$photo = 'images/assets/Logo.png';
-			$product['caminhoimagem'] = $photo;
+			updatePath($product['id'], $photo);
 		}
 	
 		if (!empty($_GET['idP'])) {
