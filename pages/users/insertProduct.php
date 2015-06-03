@@ -2,7 +2,7 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
     
-	if($_GET['name'] && $_GET['price'] && $_GET['description'] && $_GET['stock'] && $_GET['fileToUpload'] && $_GET['technic_details'] && $_GET['brand'] && $_GET['type'])
+	if($_POST['name'] && $_POST['price'] && $_POST['description'] && $_POST['stock'] && $_POST['fileToUpload'] && $_POST['technic_details'] && $_POST['brand'] && $_POST['type'])
 	{
 		$target_file = $BASE_DIR .'\images'. basename($_FILES["fileToUpload"]["name"]);
 		$uploadOk = 1;
@@ -42,7 +42,8 @@
 				echo "<script type='text/javascript'>alert('Sorry, there was an error uploading your file.');</script>";
 			}
 		}
-	} else {
+	} 
+	else {
 		echo "<script type='text/javascript'>alert('Preencha todos os campos por favor.');</script>";
 	}
 	
