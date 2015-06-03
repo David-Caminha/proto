@@ -4,7 +4,7 @@
 	<div id="product_wrapper">
 		<form action="{$BASE_URL}pages/users/insertProduct.php" method="post" enctype="multipart/form-data">
 			Nome do Produto:<input type="text" name="name" /><br/>
-			Preço:<input type="number" name="price" /><br/>
+			Preço:<input type="number" name="price" min="0" step="0.01"/><br/>
 			Descrição:<textarea rows="10" cols="50" name="description" placeholder="Escreva aqui uma descrição do produto..."></textarea><br/>
 			Stock Inicial:<input type="number" name="stock" /><br/>
 			Imagem:
