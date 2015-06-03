@@ -69,12 +69,12 @@
                         <input class="form-control" type="text" name="nome" placeholder="Nome completo" value="{$FORM_VALUES.nome}"> <br>
                         <input class="form-control" type="text" name="contacto" placeholder="Contacto" value="{$FORM_VALUES.contacto}"> <br>
                         <input class="form-control" type="text" name="morada" placeholder="Morada" value="{$FORM_VALUES.morada}"> <br>
-                        <h7 class=" col-xs-2  col-sm-2 col-md-2 ">Codigo Postal</h7>
+                        <h7 class=" col-xs-2  col-sm-2 col-md-3 ">Codigo Postal</h7>
                          <div class=" col-xs-2  col-sm-2 col-md-2 ">
                         <input class=" form-control" type="text" name="cp1"  value="{$FORM_VALUES.cp1}"> 
                         </div>
                         <h7 class=" col-xs-1  col-sm-1 col-md-1 "> - </h7>
-                         <div class="col-xs-2  col-sm-2 col-md-1">
+                         <div class="col-xs-2  col-sm-2 col-md-2">
                         <input class=" form-control" type="text" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
                         </div>
                         <input class="form-control" type="text" name="cidade" placeholder="Cidade" value="{$FORM_VALUES.nome}"> <br> 
