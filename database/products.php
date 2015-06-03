@@ -274,8 +274,19 @@
 			WHERE produto.id = itemEncomenda.idProduto AND
 			fornecedor.id = produto.idFornecedor AND
 			fornecedor.id = (SELECT id FROM fornecedor WHERE fornecedor.nome = ?)
-			GROUP BY produto.id
+			GROUP BY produto.id 
 		");
 		$stmt->execute(array($f_name));
 		return $stmt->fetchALL();
 	}
+	
+	function updatePath($id, $path) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE produto 
+			SET caminhoimagem = ? 
+			WHERE id = ?
+			");
+		$stmt->execute(array($path, $id));
+		$stmt->fetch();
+    }
