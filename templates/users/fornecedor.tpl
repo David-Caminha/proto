@@ -10,7 +10,7 @@
 			</tr>
 			{foreach $produto as $p}
 				<tr>
-					<td>{$p.nome}</td>
+					<td>{$p.pnome}</td>
 					<td>{$p.vendas}</td>
 					<td>{$p.stock}</td>
 					<td><button>Adicionar Stock</button></td>
