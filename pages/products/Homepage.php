@@ -23,7 +23,7 @@
 			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
 			else
 				$photo = 'images/produtos/default.png';
-			$product['caminhoimagem'] = $photo;
+			updatePath($product['id'], $photo);
 		}
 		foreach ($maisVendidos as $product)
 		{
