@@ -4,6 +4,7 @@
 		
         <link rel="stylesheet" href="{$BASE_URL}css/Style.css"/>
         <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
     </head>
     <body id="pagina">

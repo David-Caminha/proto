@@ -48,7 +48,7 @@
       <div class="error">{$error}  {$FORM_VALUES.dataNascimento}<a class="close" href="#">X</a></div>
     {/foreach}
         <section id="forms">
-            <div class=" col-md-4 col-md-offset-1">
+            <div class="col-xs-10 col-sm-4 col-md-4 col-md-offset-1">
                 <form class="signIn-form" action="{$BASE_URL}actions/users/login.php" method="post">
                     <input class="form-control" type="text" name="username" placeholder="Username"> <br>
                     <input class="form-control" type="password" name="password" placeholder="Password"> <br>
@@ -56,7 +56,7 @@
                     <input type="submit" class="btn btn-primary" value="Login">  
                 </form>
             </div>
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-xs-10 col-md-4 col-md-offset-2">
                 <form class="register-form" action="{$BASE_URL}actions/users/register.php" method="post">
                     <input class="form-control" type="text" name="username" placeholder="Username" value="{$FORM_VALUES.username}"> <br>
                     <input class="form-control" type="email" name="email" placeholder="Email" value="{$FORM_VALUES.email}"><br>
@@ -92,8 +92,9 @@
                 </form>
             </div>
         </section>
+                 </div>
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-        </div>
+     
     </body>
 </html>
