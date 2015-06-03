@@ -47,6 +47,8 @@
 				$photo = 'images/produtos/default.png';
 			updatePath($product['id'], $photo);
 		}
+        $recentementeVendidos = getRecentementeVendidos();
+		$maisVendidos = getMaisVendidos();
 	
 		if (!empty($_GET['idP'])) {
 		  $result=addItem(1,$_GET['idP'], $_SESSION['username']); //o primeiro 1 sera substituido pela quantidade e o segundo 1 sera substituido pelo id do utilizador com sessão aberta
