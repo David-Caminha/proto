@@ -5,11 +5,19 @@
 	if($_SESSION['fornecedor']) {
 		
 		$supplier_p = getProductsSupplier($_SESSION['fornecedor']);
+		$supplier_p_bought = getSupplierProductsBought($_SESSION['fornecedor']);
+		foreach ($supplier_p_bought as $sb) {
+			foreach ($supplier_p as $p) {
+				if($p.pnome == $sb.nome) {
+					$p.vendas = $sb.valor;
+					break;
+			}
+		}
+		}
 		
 		$smarty->assign('produto', $supplier_p);
 		$smarty->display('users/fornecedor.tpl');
-		
-	} 
+	}
 	else {
 		$recentementeVendidos = getRecentementeVendidos();
 		$maisVendidos = getMaisVendidos();
