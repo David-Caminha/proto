@@ -57,7 +57,7 @@
                     <input type="submit" class="btn btn-primary" value="Login">  
                 </form>
             </div>
-            <div class="col-xs-12 col-md-4 col-sm-offset-2 col-md-offset-2">
+            <div class="col-xs-12  col-sm-4 col-md-4 col-sm-offset-2 col-md-offset-2">
 
                 <form class="register-form" action="{$BASE_URL}actions/users/register.php" method="post">
                     <input class="form-control" type="text" name="username" placeholder="Username" value="{$FORM_VALUES.username}"> <br>
