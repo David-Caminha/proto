@@ -30,8 +30,8 @@
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
                     <a  class=" btn btn-default" href="http://www.google.com">Home</a>
-                    <form class="row col-xs-12 col-md-12">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Pesquisa">
+                    <form >
+                        <input type="email" class="form-control" id="Pesquisa" placeholder="Pesquisa">
                     </form>
                 </section>
             </div>
