@@ -28,7 +28,7 @@
                <img  src="{$BASE_URL}images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
             </section>
             <div id="ferramentas" class=" col-xs-12 col-md-12">
-                <section class="row col-xs-12 col-md-4">
+                <section class="row col-xs-12 col-sm-6 col-md-4">
                     <a  class=" btn btn-default" href="http://www.google.com">Home</a>
                     <form >
                         <input type="email" class="form-control" id="Pesquisa" placeholder="Pesquisa">
