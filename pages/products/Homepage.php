@@ -8,7 +8,7 @@
 		$supplier_p_bought = getSupplierProductsBought($_SESSION['fornecedor']);
 		if(!empty($supplier_p_bought)&&!empty($supplier_p)) {
 		foreach ($supplier_p_bought as $sb) {
-			foreach ($supplier_p as $p) {
+			foreach ($supplier_p as &$p) {
 			if($p['pnome'] == $sb['nome']) {
 				$p['vendas'] = $sb['valor'];
 				break;
