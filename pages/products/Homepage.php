@@ -34,7 +34,7 @@
 			else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
 			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
 			else
-				$photo = 'images/assets/Logo.png';
+				$photo = 'images/produtos/default.png';
 			updatePath($product['id'], $photo);
 		}
 	
