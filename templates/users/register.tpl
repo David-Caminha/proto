@@ -22,7 +22,7 @@
     </script>
   
     <body id="pagina">
-          <div class="container">
+        <div class="container">
         <div id="header" class="col-xs-12 col-md-12 ">
             <section >
                <img  src="{$BASE_URL}images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
