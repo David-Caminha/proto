@@ -276,7 +276,7 @@
 			GROUP BY produto.id 
 		");
 		$stmt->execute(array($f_name));
-		$stmt->fetchALL();
+		return $stmt->fetchALL();
 	}
 	
 	function getSupplierProductsBought($f_name) {
