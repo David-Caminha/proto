@@ -25,7 +25,6 @@
 			else
 			{
 				echo "<script type='text/javascript'>alert('Por favor insira um valor numérico.');</script>";
-
 			}
 		}
 		

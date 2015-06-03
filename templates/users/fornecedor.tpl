@@ -23,7 +23,8 @@
 					<td><a href="?kill={$p.id}"><button>Descontinuar</button></a></td>
 				</tr>
 			{/foreach}
-		</table>	
+		</table>
+		<a href="{$BASE_URL}pages/users/insertProduct.php"><button>Inserir novo produto</button></a>
 	</div>
 {else}
 	{include file='common/no_permission.tpl'}
