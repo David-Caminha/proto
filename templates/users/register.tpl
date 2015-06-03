@@ -1,45 +1,4 @@
-<!DOCTYPE HTML>
-<html >
-    <head>
-        <link rel="stylesheet" href="{$BASE_URL}css/Style.css"/>
-           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-        
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta charset="utf-8">
-    </head>
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('input[type="radio"]').click(function(){
-                if($(this).attr("value")=="user"){
-                    $(".box").hide();
-                    $(".user").show();
-                }
-                if($(this).attr("value")=="fornecedor"){
-                    $(".box").hide();
-                    $(".fornecedor").show();
-                }
-            });
-        });
-    </script>
-  
-    <body id="pagina">
-          <div class="container">
-        <div id="header" class="col-xs-12 col-md-12 ">
-            <section >
-               <img  src="{$BASE_URL}images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
-            </section>
-            <div id="ferramentas" class=" col-xs-12 col-md-12">
-                <section class="row col-xs-6 col-md-4">
-                    <a  class=" btn btn-default" href="http://www.google.com">Home</a>
-                    <form >
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Pesquisa">
-                    </form>
-                </section>
-                <section class="col-xs-6 col-md-4 col-md-offset-4" id="UserMenu">
-                </section>
-            </div>
+{include file='common/header.tpl'}
             <section id="linkagem" class="col-xs-12 col-md-12" >
                 <a  href="http://www.google.com">HOME</a>
                  > 
