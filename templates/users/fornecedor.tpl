@@ -14,7 +14,7 @@
 					<td>{$p.vendas}</td>
 					<td>{$p.stock}</td>
 					<td>
-						<form action="{$BASE_URL}pages/products/homepage.php" method="get">
+						<form action="{$BASE_URL}pages/products/Homepage.php" method="get">
 							<input type="hidden" name="addStock" value="{$p.id}" />
 							<input type="text" name="qtd_stock" placeholder="0" value="0" />
 							<button>Adicionar Stock</button>
