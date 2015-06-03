@@ -13,7 +13,7 @@
         <div id="TopCompras" class=" col-xs-12 col-md-12 ">
             {foreach $maisVendidos as $produto}
                         <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 ">
-                            <a href="?idProd={$produto.id}"><img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="{$produto.photo}" height="100" width="100"></a>
+                            <a href="?idProd={$produto.id}"><img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="{$produto.caminhoimagem}" height="100" width="100"></a>
                             <a href="?idProd={$produto.id}"><span id="Imagem" class="glyphicon glyphicon-zoom-in"></span></a>
                             <p class=" col-xs-12 col-md-12 "> {$produto.nome}</p>
                             <p class=" col-xs-12 col-md-12 "> {$produto.preco}€</p>

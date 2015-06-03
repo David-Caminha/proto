@@ -16,9 +16,8 @@
 
 		foreach ($recentementeVendidos as  $product)
 		{
-			if(isset($photo))
-				unset($photo);
-			if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
+            unset($photo);
+            if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
 				$photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
 			else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
 			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
