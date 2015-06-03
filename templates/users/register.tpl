@@ -71,8 +71,8 @@
                         <input class="form-control" type="text" name="morada" placeholder="Morada" value="{$FORM_VALUES.morada}"> <br>
                         <h7>Codigo Postal</h7> 
                         
-                        <input class=" col-xs-10 col-sm-4 col-md-4  form-control" type="text" name="cp1"  value="{$FORM_VALUES.cp1}"> <br>
-                        <input class=" col-xs-10 col-sm-4 col-md-4  form-control" type="text" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
+                        <input class=" form-control" type="text" name="cp1"  value="{$FORM_VALUES.cp1}"> <br>
+                        <input class=" form-control" type="text" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
                         
                         <input class="form-control" type="text" name="cidade" placeholder="Cidade" value="{$FORM_VALUES.nome}"> <br> 
                         <input class="form-control" type="text" name="País" placeholder="País" value="{$FORM_VALUES.nomepais}"> <br>
