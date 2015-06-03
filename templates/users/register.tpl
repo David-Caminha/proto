@@ -20,8 +20,9 @@
             });
         });
     </script>
+  
     <body id="pagina">
-
+          <div class="container">
         <div id="header" class="col-xs-12 col-md-12 ">
             <section >
                <img  src="{$BASE_URL}images/assets/Logo.png" alt="Logo" class="img-responsive" alt="Responsive image" >    
@@ -93,5 +94,6 @@
         </section>
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+        </div>
     </body>
 </html>
