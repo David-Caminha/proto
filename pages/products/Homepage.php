@@ -24,7 +24,7 @@
 		$recentementeVendidos = getRecentementeVendidos();
 		$maisVendidos = getMaisVendidos();
 
-		foreach ($recentementeVendidos as  $product)
+		foreach ($recentementeVendidos as $key => $product)
 		{
             unset($photo);
             if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
@@ -33,19 +33,17 @@
 			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
 			else
 				$photo = 'images/produtos/default.png';
-			updatePath($product['id'], $photo);
 		}
-		foreach ($maisVendidos as $product)
+		foreach ($maisVendidos as $key => $product)
 		{
-			if(isset($photo))
-				unset($photo);
+            unset($photo);
 			if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
 				$photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
 			else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
 			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
 			else
 				$photo = 'images/produtos/default.png';
-			updatePath($product['id'], $photo);
+            $maisVendidos[$key]['photo'] = $photo;
 		}
         $recentementeVendidos = getRecentementeVendidos();
 		$maisVendidos = getMaisVendidos();
