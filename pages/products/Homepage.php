@@ -6,8 +6,9 @@
 		
 		$supplier_p = getProductsSupplier($_SESSION['fornecedor']);
 		
-		$smarty->display('users/fornecedor.tpl');
 		$smarty->assign('produto', $supplier_p);
+		$smarty->display('users/fornecedor.tpl');
+		
 	} 
 	else {
 		$recentementeVendidos = getRecentementeVendidos();
