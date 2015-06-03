@@ -269,7 +269,7 @@
 	function getProductsSupplier($f_name) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT produto.nome AS pnome, produto.stock, 0 as vendas
+			SELECT produto.id, produto.nome AS pnome, produto.stock, 0 as vendas
 			FROM produto, fornecedor
 			WHERE fornecedor.id = produto.idFornecedor AND
 			fornecedor.id = (SELECT id FROM fornecedor WHERE fornecedor.nome = ?)
