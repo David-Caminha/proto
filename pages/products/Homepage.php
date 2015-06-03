@@ -17,6 +17,18 @@
 		}
 		}
 		
+		if(!empty($_GET['addStock'])) {
+			if(ctype_digit($_GET['qtd_stock'])) {
+				addStock($_GET['addStock'],$_GET['qtd_stock'],$_SESSION['fornecedor']);
+				header("Location: $BASE_URL" . 'pages/products/Homepage.php');
+			}
+			else
+			{
+				echo "<script type='text/javascript'>alert('Por favor insira um valor numérico.');</script>";
+
+			}
+		}
+		
 		$smarty->assign('produto', $supplier_p);
 		$smarty->display('users/fornecedor.tpl');
 	}

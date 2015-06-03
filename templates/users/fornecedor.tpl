@@ -13,8 +13,11 @@
 					<td>{$p.pnome}</td>
 					<td>{$p.vendas}</td>
 					<td>{$p.stock}</td>
-					<td><button>Adicionar Stock</button></td>
-					<td><button>Descontinuar</button></td>
+					<td>
+						<a href="?addStock={$p.id}"><button>Adicionar Stock</button></a>
+						<input type="text" name="qtd_stock" placeholder="0" value="0" />
+					</td>
+					<td><a href="?kill={$p.id}"><button>Descontinuar</button></a></td>
 				</tr>
 			{/foreach}
 		</table>	

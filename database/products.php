@@ -303,3 +303,23 @@
 		$stmt->execute(array($path, $id));
 		$stmt->fetch();
     }
+	
+	function addStock($p_id, $p_stock, $f_name) {
+		global $conn;
+		$checker = $conn->prepare("
+			SELECT * FROM produto WHERE produto.id = ? AND produto.idFornecedor = (SELECT id FROM fornecedor WHERE nome = ?)
+		");
+		$checker->execute(array($p_id, $f_name));
+		$items = $checker->fetchALL();
+		
+		if(!empty($items)) {
+			$stmt = $conn->prepare("
+				UPDATE produto 
+				SET stock = (stock + ?)
+				WHERE id = ?
+			");
+			$stmt->execute(array($p_stock, $p_id));
+			return true;
+		}
+		return false;
+	}
