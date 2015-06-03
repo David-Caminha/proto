@@ -2,9 +2,6 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
     
-    
-    $smarty->assign('recentementeVendidos', $recentementeVendidos);
-    $smarty->assign('maisVendidos', $maisVendidos);
 	if($_SESSION['fornecedor']) {
 		
 		$supplier_p = getProductsSupplier($_SESSION['fornecedor']);
@@ -49,6 +46,8 @@
 		if (!empty($_GET['idProd'])) {
 			header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd']);
 		}
+		$smarty->assign('recentementeVendidos', $recentementeVendidos);
+		$smarty->assign('maisVendidos', $maisVendidos);
 		$smarty->display('products/home.tpl');
 	}
 ?>
