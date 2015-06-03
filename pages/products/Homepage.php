@@ -6,7 +6,7 @@
 		
 		$supplier_p = getProductsSupplier($_SESSION['fornecedor']);
 		$supplier_p_bought = getSupplierProductsBought($_SESSION['fornecedor']);
-		if(!empty($supplier_p)) {
+		if(!empty($supplier_p_bought)&&!empty($supplier_p)) {
 		foreach ($supplier_p_bought as $sb) {
 			foreach ($supplier_p as $p) {
 			if($p['pnome'] == $sb['nome']) {
@@ -56,6 +56,7 @@
 		if (!empty($_GET['idProd'])) {
 			header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd']);
 		}
+        usleep(250000);
 		$smarty->assign('recentementeVendidos', $recentementeVendidos);
 		$smarty->assign('maisVendidos', $maisVendidos);
 		$smarty->display('products/home.tpl');
