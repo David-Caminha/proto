@@ -28,7 +28,7 @@
 			}
 		}
 		
-		if(!empty($_GET['editProduct'])) {
+		if(!empty($_GET['editProd'])) {
 			header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $_GET['editProduct']);
 		}
 		
