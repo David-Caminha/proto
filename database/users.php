@@ -102,22 +102,28 @@
         return $stmt->fetchALL();
     }
 	
-	function promoverUtilizador($u_id) {
+	function promoverUtilizador($u_id, $owner) {
 		global $conn;
-		$stmt = $conn->prepare("
-			UPDATE utilizador SET tipo = 1 WHERE utilizador.id = ?
-		");
-		$stmt->execute(array($u_id));
-		return true;
+		if($owner) {
+			$stmt = $conn->prepare("
+				UPDATE utilizador SET tipo = 1 WHERE utilizador.id = ?
+			");
+			$stmt->execute(array($u_id));
+			return true;
+		}
+		return false;
 	}
 	
-	function despromoverAdmin($a_id) {
+	function despromoverAdmin($a_id, $owner) {
 		global $conn;
-		$stmt = $conn->prepare("
-			UPDATE utilizador SET tipo = 0 WHERE utilizador.id = ?
-		");
-		$stmt->execute(array($a_id));
-		return true;
+		if($owner) {
+			$stmt = $conn->prepare("
+				UPDATE utilizador SET tipo = 0 WHERE utilizador.id = ?
+			");
+			$stmt->execute(array($a_id));
+			return true;
+		}
+		return false;
 	}
 
     function getTipo($username) {
@@ -264,25 +270,52 @@
 		return $stmt->fetchALL();
 	}
 	
-	function aceitarFornecedor($f_id) {
+	function aceitarFornecedor($f_id, $owner) {
 		global $conn;
-		$stmt = $conn->prepare("
-			UPDATE fornecedor SET aceite = TRUE WHERE fornecedor.id = ?
-		");
-		$stmt->execute(array($f_id));
-		return true;
+		if($owner) {
+			$stmt = $conn->prepare("
+				UPDATE fornecedor SET aceite = TRUE WHERE fornecedor.id = ?
+			");
+			$stmt->execute(array($f_id));
+			return true;
+			}
+		return false;
 	}
 	
-	function recusarFornecedor($f_id) {
+	function recusarFornecedor($f_id, $owner) {
+		global $conn;
+		if($owner) {
+			$stmt = $conn->prepare("
+				UPDATE fornecedor SET removido = TRUE WHERE fornecedor.id = ?
+			");
+			$stmt->execute(array($f_id));
+			
+			$stmtUpdate = $conn->prepare("
+				UPDATE produto SET aceite = FALSE WHERE produto.idFornecedor = ?
+			");
+			$stmtUpdate->execute(array($f_id));
+			return true;
+		}
+		return false;
+	}
+	
+	function aprovarProd($p_id, $owner){
+		global $conn;
+		if($owner) {
+			$stmt = $conn->prepare("
+				UPDATE produto SET aceite = TRUE WHERE produto.id = ?
+			");
+			$stmt->execute(array($p_id));
+			return true;
+			}
+		return false;
+	}
+	
+	function rejeitarProd($p_id, $owner){
 		global $conn;
 		$stmt = $conn->prepare("
-			UPDATE fornecedor SET removido = TRUE WHERE fornecedor.id = ?
+			UPDATE produto SET removido = TRUE WHERE produto.id = ?
 		");
-		$stmt->execute(array($f_id));
-		
-		$stmtUpdate = $conn->prepare("
-			UPDATE produto SET aceite = FALSE WHERE produto.idFornecedor = ?
-		");
-		$stmtUpdate->execute(array($f_id));
+		$stmt->execute(array($p_id));
 		return true;
 	}

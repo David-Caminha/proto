@@ -21,7 +21,7 @@
 			<td >{$p.tipo}</td>
 			
 			<td><a href="?aprovar={$p.id}">Aprovar</a></td>
-			<td><a href="?recusar={$p.id}">Recusar</a></td>
+			<td><a href="?rejeitar={$p.id}">Rejeitar</a></td>
 
 		</tr>
 		{/foreach}
