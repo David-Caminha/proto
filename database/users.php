@@ -78,7 +78,8 @@
     function getFornecedores() {
         global $conn;
         $stmt = $conn->prepare("SELECT * 
-                            FROM fornecedor");
+                            FROM fornecedor
+							ORDER BY aceite");
         $stmt->execute();
         return $stmt->fetchALL();
     }
@@ -209,4 +210,22 @@
 			");
 			$stmt->execute(array($f_nome));
 			return $stmt->fetchALL();
+	}
+	
+	function aceitarFornecedor($f_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE fornecedor SET aceite = TRUE WHERE fornecedor.id = ?
+		");
+		$stmt->execute(array($f_id));
+		return true;
+	}
+	
+	function recusarFornecedor($f_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE fornecedor SET aceite = FALSE WHERE fornecedor.id = ?
+		");
+		$stmt->execute(array($f_id));
+		return true;
 	}
