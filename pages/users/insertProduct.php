@@ -2,7 +2,7 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
     
-	if($_POST['name'] && $_POST['price'] && $_POST['description'] && $_POST['stock'] && $_POST['fileToUpload'] && $_POST['technic_details'] && $_POST['brand'] && $_POST['type'])
+	if($_POST['name'] && $_POST['price'] && $_POST['description'] && $_POST['stock'] && $_POST['fileToUpload'] && $_POST['technic_details'] && $_POST['brand'] && $_POST['tipo'])
 	{
 		$target_file = $BASE_DIR .'\images'. basename($_FILES["fileToUpload"]["name"]);
 		$uploadOk = 1;

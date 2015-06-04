@@ -12,7 +12,7 @@
 			Ficha Técnica:<textarea rows="6" cols="50" name="technic_details" placeholder="Escreva aqui os tópicos da ficha técnica..."></textarea><br/>
 			Marca:<input type="text" name="brand" /><br/>
 			Tipo de Produto:
-			<select name="type">
+			<select name="tipo">
 				<option value="1" selected>Laptop</option>
 				<option value="2">Desktop</option>
 				<option value="3">Periférico</option>
