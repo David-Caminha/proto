@@ -116,7 +116,7 @@
 		$stmt = $conn->prepare("
 			UPDATE utilizador SET tipo = 0 WHERE utilizador.id = ?
 		");
-		$stmt->execute($a_id);
+		$stmt->execute(array($a_id));
 		return true;
 	}
 

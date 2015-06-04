@@ -45,7 +45,7 @@
                 
                 {foreach $admins as $admin}
                 <tr>
-                    <td >{$admin.nome}</td>
+                    <td >{$admin.username}</td>
                     <td >{$admin.email}</td>
                     <td><a href="">ver histórico</a></td>
                     <td><a href="?despromover={$admin.id}">Despromover Administrador</a></td>
