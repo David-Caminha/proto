@@ -149,6 +149,17 @@
 		return true;
 	}
 	
+	function updateSupplierInfo($f_email, $f_telemovel, $f_responsavel, $f_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE fornecedor SET email = ?, telemovel = ?, responsavel = ?
+			WHERE id = (SELECT id FROM fornecedor WHERE nome = ?)
+		");
+		$stmt->execute(array($f_email, $f_telemovel, $f_responsavel, $f_name));
+		
+		return true;
+	}
+	
 	function updateUserPassword($old_p, $new_p, $u_name) {
 		global $conn;
 		$checker = isUserLoginCorrect($u_name, $old_p);
@@ -163,12 +174,27 @@
 		return false;
 	}
 	
+	function updateSupplierPassword($old_p, $new_p, $f_name) {
+		global $conn;
+		$checker = isSupplierLoginCorrect($f_name, $old_p);
+		
+		if($checker) {
+			$stmt = $conn->prepare("
+				UPDATE fornecedor SET password = ? WHERE  nome = ?
+			");
+			$stmt->execute(array(crypt($new_p),$f_name));
+			return true;
+		}
+		return false;
+	}
+	
 	function getNumberOfProducts($f_nome) {
 			global $conn;
 			$stmt = $conn->prepare("
 				SELECT COUNT(produto.id) AS qtd
 				FROM produto, fornecedor
 				WHERE produto.idFornecedor = fornecedor.id AND
+				produto.aceite = TRUE AND
 				fornecedor.nome = ?
 			");
 			$stmt->execute(array($f_nome));

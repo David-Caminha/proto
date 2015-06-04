@@ -16,7 +16,7 @@
 		<button>Confirmar alterações</button>
 	</form>
 	<form id="password_perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
-		Old Password: <input type="password" value="" name="old.password" /><br />
+		Old Password: <input type="password" name="old.password" /><br />
 		New Password: <input type="password" name="password" /><br />
 		Confirm New Password: <input type="password" name="confirm_password" /><br />
 		<button>Confirmar alterações</button>
