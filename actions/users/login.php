@@ -16,6 +16,11 @@
     if (isUserLoginCorrect($username, $password))
     {
         $n_items = getNumberOfItems($_POST['username']);
+		if(getTipo($username)==2){
+			$_SESSION['owner']= TRUE;
+			$n_n_prod = getNumberOfNewProducts();
+			$_SESSION['nnprod'] = $n_n_prod[0]['qtd'];
+		}
 		$_SESSION['username'] = $username;
 		$_SESSION['nitems'] = $n_items[0]['qtd'];
         $_SESSION['success_messages'][] = 'Login successful'; 

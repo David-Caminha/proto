@@ -239,6 +239,17 @@
 			return $stmt->fetchALL();
 	}
 	
+	function getNumberOfNewProducts(){
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT COUNT(produto.id) AS qtd
+			FROM produto
+			WHERE aceite = FALSE
+		");
+		$stmt->execute();
+		return $stmt->fetchALL();
+	}
+	
 	function aceitarFornecedor($f_id) {
 		global $conn;
 		$stmt = $conn->prepare("

@@ -3,10 +3,6 @@
     include_once($BASE_DIR .'database/users.php');
 	
 	if($_SESSION['username']) {
-		$type = getTipo($_SESSION['username']);
-		if($type == 2) {
-			header('Location: '.$BASE_URL. 'pages/users/pagDono.php');
-		}
 		$info = getUserInfo($_SESSION['username']);
 		
 		

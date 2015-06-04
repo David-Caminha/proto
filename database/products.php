@@ -375,7 +375,7 @@
 		
 		if(!empty($checker)) {
 			$stmt = $conn->prepare("
-				UPDATE produto SET aceite = FALSE WHERE produto.id = ?
+				UPDATE produto SET removido = TRUE WHERE produto.id = ?
 			");
 			$stmt->execute(array($p_id));
 			return true;

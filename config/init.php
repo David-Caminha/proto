@@ -24,8 +24,10 @@
   $smarty->assign('SUCCESS_MESSAGES', $_SESSION['success_messages']);
   $smarty->assign('FORM_VALUES', $_SESSION['form_values']);
   $smarty->assign('USERNAME', $_SESSION['username']);
+  $smarty->assign('OWNER', $_SESSION['owner']);
   $smarty->assign('FORNECEDOR', $_SESSION['fornecedor']);
   $smarty->assign('NITEMS', $_SESSION['nitems']);
+  $smarty->assign('NNPROD', $_SESSION['nnprod']);
   $smarty->assign('NPRODUTOS', $_SESSION['nprodutos']);
   
   unset($_SESSION['success_messages']);
