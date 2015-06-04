@@ -22,7 +22,12 @@
                     <td >{$fornecedor.nome}</td>
                     <td >{$fornecedor.email}</td>
                     <td >{$fornecedor.telemovel}</td>
-                    <td><a href="">remover</a></td>
+					{if $fornecedor.aceite == FALSE}
+					<td><a href="">Aceitar</a></td>
+					<td><a href="">Recusar</a></td>
+					{else}
+                    <td><a href="">Remover</a></td>
+					{/if}
                 </tr>
                 {/foreach}
                 
