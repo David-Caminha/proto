@@ -8,7 +8,7 @@
 	
 	if($_POST['name'] && $_POST['price'] && $_POST['description'] && $_POST['technic_details'] && $_POST['brand'] && $_POST['tipo'])
 	{
-		$checker=editProduct($_SESSION['fornecedor'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['technic_details'], $_POST['brand'], $_POST['tipo'], $p_id);
+		$checker=editProduct($_SESSION['fornecedor'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['technic_details'], $_POST['brand'], $_POST['tipo'], $_POST['idProduct']);
 		if($checker){
 			header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $_POST['idProduct']);
 		} else {
