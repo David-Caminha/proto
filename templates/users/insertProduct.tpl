@@ -17,10 +17,10 @@
 			</select><br/>
 			Tipo de Produto:
 			<select name="tipo">
-				<option value="1" selected>Laptop</option>
-				<option value="2">Desktop</option>
-				<option value="3">Periférico</option>
-				<option value="4">Cabo</option>
+				<option value="laptop" selected>Laptop</option>
+				<option value="desktop">Desktop</option>
+				<option value="periferico">Periférico</option>
+				<option value="cabo">Cabo</option>
 			</select><br/>
 			<input type="submit" name="submit" value="Inserir Produto">
 		</form>

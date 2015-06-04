@@ -42,13 +42,13 @@
 			// if everything is ok, try to upload file
 			} else {
 				if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+					newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], $target_file);
 					echo "<script type='text/javascript'>alert('Uploaded.');</script>";
 				} else {
 					echo "<script type='text/javascript'>alert('Sorry, there was an error uploading your file.');</script>";
 				}
 			}
 		 
-			newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], $target_file);
 			break;
 		default:
 			newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], 'images/produtos/default.png');
