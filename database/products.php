@@ -327,7 +327,7 @@
 	function newProduct($f_name, $p_nome, $p_price, $p_description, $p_stock, $p_techdetails, $p_brand, $p_tipo, $p_imageurl) {
 		global $conn;
 		$stmt = $conn->prepare("
-			INSERT INTO produto (idFonecedor, nome, preco, descricao, stock, fichaTecnica, idMarca, tipo, caminhoImagem) VALUES 
+			INSERT INTO produto (idFornecedor, nome, preco, descricao, stock, fichaTecnica, idMarca, tipo, caminhoImagem) VALUES 
 			((SELECT id FROM fornecedor WHERE nome = ?), ?, ?, ?, ?, ?, (SELECT id FROM marca WHERE nome = ?), ?, ?)
 		");
 		$stmt->execute(array($f_name, $p_nome, $p_price, $p_description, $p_stock, $p_techdetails, $p_brand, $p_tipo, $p_imageurl));
