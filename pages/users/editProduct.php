@@ -3,17 +3,20 @@
     include_once($BASE_DIR .'database/products.php');
 	
 	$p_id = $_GET['idProd'];
-	$info = populate_product_info($p_id);
-	$brands = getBrands();
+	if (empty($p_id)) {
+		header("Location: $BASE_URL" . 'pages/products/Homepage.php');
+	}else{
+		$info = populate_product_info($p_id);
+		$brands = getBrands();
 	
 	if($_POST['name'] && $_POST['price'] && $_POST['description'] && $_POST['technic_details'] && $_POST['brand'] && $_POST['tipo'])
 	{
 		editProduct($_SESSION['fornecedor'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['technic_details'], $_POST['brand'], $_POST['tipo']);
-		header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $_GET['idProd']);
+		header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $p_id);
 	}
-
+		$smarty->assign('p', $info[0]);
+		$smarty->assign('brands', $brands);
+	}
 	
-	$smarty->assign('p', $info[0]);
-	$smarty->assign('brands', $brands);
 	$smarty->display('users/editProduct.tpl');
 ?>
