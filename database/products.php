@@ -348,7 +348,7 @@
 		$stmtVerify = $conn->prepare("
 			SELECT * FROM produto WHERE produto.id = ? AND produto.idFornecedor = (SELECT id FROM fornecedor WHERE nome = ?)
 		");
-		$stmtVerify->execute(array($p_id, $f_nome));
+		$stmtVerify->execute(array($p_id, $f_name));
 		$checker = $stmtVerify->fetchALL();
 		
 		if(!empty($checker)) {
