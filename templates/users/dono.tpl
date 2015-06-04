@@ -48,7 +48,28 @@
                     <td >{$admin.nome}</td>
                     <td >{$admin.email}</td>
                     <td><a href="">ver histórico</a></td>
-                    <td><a href="">remover</a></td>
+                    <td><a href="?despromover={$admin.id}">Despromover Administrador</a></td>
+                </tr>
+                {/foreach}
+                
+            </table>
+        </div>
+		<br />
+		<div id="utilizadores" class="table-responsive " >
+            <table class="table table-striped">
+                <tr>
+                    <th class="col-sm-3 col-md-3">Utilizador</th>
+                    <th class="col-sm-3 col-md-3">Email</th>
+                    <th class="col-sm-3 col-md-3">Contacto</th>
+                    <th class="col-sm-3 col-md-3"></th>
+                </tr>
+                
+                {foreach $utilizadores as $utilizador}
+                <tr>
+                    <td >{$utilizador.username}</td>
+                    <td >{$utilizador.email}</td>
+                    <td >{$utilizador.telemovel}</td>
+                    <td><a href="?promover={$utilizador.id}">Promover a Administrador</a></td>
                 </tr>
                 {/foreach}
                 

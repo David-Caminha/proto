@@ -92,6 +92,33 @@
         $stmt->execute();
         return $stmt->fetchALL();
     }
+	
+	function getUtilizadores() {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                            FROM utilizador
+                            WHERE tipo = 0");
+        $stmt->execute();
+        return $stmt->fetchALL();
+    }
+	
+	function promoverUtilizador($u_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE utilizador SET tipo = 1 WHERE utilizador.id = ?
+		");
+		$stmt->execute($u_id);
+		return true;
+	}
+	
+	function despromoverAdmin($a_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE utilizador SET tipo = 0 WHERE utilizador.id = ?
+		");
+		$stmt->execute($a_id);
+		return true;
+	}
 
     function getTipo($username) {
         global $conn;
@@ -227,5 +254,10 @@
 			UPDATE fornecedor SET aceite = FALSE WHERE fornecedor.id = ?
 		");
 		$stmt->execute(array($f_id));
+		
+		$stmtUpdate = $conn->prepare("
+			UPDATE produto SET aceite = FALSE WHERE produto.idFornecedor = ?
+		");
+		$stmtUpdate->execute(array($f_id));
 		return true;
 	}
