@@ -343,7 +343,7 @@
 		return $stmt->fetchALL();
 	}
 	
-	function editProduct($f_name, $p_nome, $p_price, $p_description, $p_techdetails, $p_brand, $p_tipo) {
+	function editProduct($f_name, $p_nome, $p_price, $p_description, $p_techdetails, $p_brand, $p_tipo, $p_id) {
 		global $conn;
 		$stmtVerify = $conn->prepare("
 			SELECT * FROM produto WHERE produto.id = ? AND produto.idFornecedor = (SELECT id FROM fornecedor WHERE nome = ?)

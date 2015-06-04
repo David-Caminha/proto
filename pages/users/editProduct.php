@@ -11,7 +11,7 @@
 	
 	if($_POST['name'] && $_POST['price'] && $_POST['description'] && $_POST['technic_details'] && $_POST['brand'] && $_POST['tipo'])
 	{
-		editProduct($_SESSION['fornecedor'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['technic_details'], $_POST['brand'], $_POST['tipo']);
+		editProduct($_SESSION['fornecedor'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['technic_details'], $_POST['brand'], $_POST['tipo'], $p_id);
 		header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $p_id);
 	}
 		$smarty->assign('p', $info[0]);
