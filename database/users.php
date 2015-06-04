@@ -259,7 +259,7 @@
 	function getNewProducts(){
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT produto.nome, produto.preco, fornecedor.nome AS fornecedor, marca.nome AS marca, produto.tipo 
+			SELECT produto.id, produto.nome, produto.preco, fornecedor.nome AS fornecedor, marca.nome AS marca, produto.tipo 
 			FROM produto, fornecedor, marca
 			WHERE produto.idFornecedor = fornecedor.id AND
 			marca.id = produto.idMarca AND
@@ -313,9 +313,12 @@
 	
 	function rejeitarProd($p_id, $owner){
 		global $conn;
-		$stmt = $conn->prepare("
-			UPDATE produto SET removido = TRUE WHERE produto.id = ?
-		");
-		$stmt->execute(array($p_id));
-		return true;
+		if($owner) {
+			$stmt = $conn->prepare("
+				UPDATE produto SET removido = TRUE WHERE produto.id = ?
+			");
+			$stmt->execute(array($p_id));
+			return true;
+		}
+		return false;
 	}
