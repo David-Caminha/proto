@@ -2,7 +2,7 @@
 
 {if $FORNECEDOR}
 	<div id="edit_product_wrapper">
-		<form action="{$BASE_URL}pages/users/insertProduct.php" method="post" >
+		<form action="{$BASE_URL}pages/users/editProduct.php" method="post" >
 			Nome do Produto:<input type="text" name="name" value="{$p.nome}" /><br/>
 			Preço:<input type="number" name="price" value="{$p.preco}" min="0.01" step="0.01"/><br/>
 			Descrição:<textarea rows="6" cols="50" name="description" placeholder="Escreva aqui uma descrição do produto..." >{$p.descricao}</textarea><br/>
@@ -42,7 +42,7 @@
 					<option value="cabo" selected>Cabo</option>
 				{/if}
 			</select><br/>
-			<input type="submit" name="submit" value="Inserir Produto">
+			<input type="submit" name="submit" value="Editar Produto">
 		</form>
 	</div>
 {else}

@@ -343,6 +343,22 @@
 		return $stmt->fetchALL();
 	}
 	
-	function editProduct() {
+	function editProduct($f_name, $p_nome, $p_price, $p_description, $p_techdetails, $p_brand, $p_tipo) {
+		global $conn;
+		$stmtVerify = $conn->prepare("
+			SELECT * FROM produto WHERE produto.id = ? AND produto.idFornecedor = (SELECT id FROM fornecedor WHERE nome = ?)
+		");
+		$stmtVerify->execute(array($p_id, $f_nome));
+		$checker = $stmtVerify->fetchALL();
 		
+		if(!empty($checker)) {
+			$stmt = $conn->prepare("
+				UPDATE produto 
+				SET nome = ?, preco = ?, descricao = ?, fichaTecnica = ?, idMarca = (SELECT id FROM marca WHERE nome = ?), tipo = ?
+				WHERE produto.id = ?
+			");
+			$stmt->execute(array($p_nome, $p_price, $p_description, $p_techdetails, $p_brand, $p_tipo));
+			return true;
+		} 
+		return false;
 	}
