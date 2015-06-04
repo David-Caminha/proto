@@ -4,7 +4,7 @@
     
 	if($_POST['name'] && $_POST['price'] && $_POST['description'] && $_POST['stock'] && $_POST['technic_details'] && $_POST['brand'] && $_POST['tipo'])
 	{
-		$target_file = '/images/products/'. basename($_FILES["fileToUpload"]["name"]);
+		$target_file = '/images/produtos/'. basename($_FILES["fileToUpload"]["name"]);
 		$uploadOk = 1;
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		// Check if image file is a actual image or fake image
