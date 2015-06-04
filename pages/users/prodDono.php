@@ -8,10 +8,12 @@
 		
 		if(!empty($_GET['aprovar'])){
 			aprovarProd($_GET['aprovar'], $_SESSION['owner']);
+			$_SESSION['nnprod'] = $_SESSION['nnprod'] -1;
 			header('Location: '.$BASE_URL. 'pages/users/prodDono.php');
 		}
 		if(!empty($_GET['rejeitar'])){
 			rejeitarProd($_GET['rejeitar'], $_SESSION['owner']);
+			$_SESSION['nnprod'] = $_SESSION['nnprod'] -1;
 			header('Location: '.$BASE_URL. 'pages/users/prodDono.php');
 		}
 		

@@ -250,7 +250,8 @@
 		$stmt = $conn->prepare("
 			SELECT COUNT(produto.id) AS qtd
 			FROM produto
-			WHERE aceite = FALSE
+			WHERE aceite = FALSE AND
+			removido = FALSE
 		");
 		$stmt->execute();
 		return $stmt->fetchALL();
