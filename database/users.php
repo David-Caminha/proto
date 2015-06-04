@@ -250,6 +250,20 @@
 		return $stmt->fetchALL();
 	}
 	
+	function getNewProducts(){
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT produto.nome, produto.preco, fornecedor.nome AS fornecedor, marca.nome AS marca, produto.tipo 
+			FROM produto, fornecedor, marca
+			WHERE produto.idFornecedor = fornecedor.id AND
+			marca.id = produto.idMarca AND
+			produto.aceite = FALSE AND
+			produto.removido = FALSE
+		");
+		$stmt->execute();
+		return $stmt->fetchALL();
+	}
+	
 	function aceitarFornecedor($f_id) {
 		global $conn;
 		$stmt = $conn->prepare("

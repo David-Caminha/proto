@@ -28,6 +28,6 @@
 	  
 	  $smarty->display('users/dono.tpl');
   } else {
-		header('Location: '.$BASE_URL. 'pages/users/perfil.php');
+		header('Location: '.$BASE_URL. 'pages/users/Homepage.php');
   }
 ?>
