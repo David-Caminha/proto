@@ -273,6 +273,7 @@
 			FROM produto, fornecedor
 			WHERE fornecedor.id = produto.idFornecedor AND
 			produto.aceite = TRUE AND
+			produto.removido = FALSE AND
 			fornecedor.id = (SELECT id FROM fornecedor WHERE fornecedor.nome = ?)
 			GROUP BY produto.id 
 		");
@@ -288,6 +289,7 @@
 			WHERE itemEncomenda.idProduto = produto.id AND
 			produto.idFornecedor = fornecedor.id AND
 			produto.aceite = TRUE AND
+			produto.removido = FALSE AND
 			fornecedor.id = (SELECT id FROM fornecedor WHERE nome = ?)
 			GROUP BY produto.id
 		");
