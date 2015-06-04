@@ -78,7 +78,7 @@
     function getFornecedores() {
         global $conn;
         $stmt = $conn->prepare("SELECT * 
-                            FROM fornecedor
+                            FROM fornecedor WHERE removido = FALSE
 							ORDER BY aceite");
         $stmt->execute();
         return $stmt->fetchALL();
@@ -251,7 +251,7 @@
 	function recusarFornecedor($f_id) {
 		global $conn;
 		$stmt = $conn->prepare("
-			UPDATE fornecedor SET aceite = FALSE WHERE fornecedor.id = ?
+			UPDATE fornecedor SET removido = TRUE WHERE fornecedor.id = ?
 		");
 		$stmt->execute(array($f_id));
 		
