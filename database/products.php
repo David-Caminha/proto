@@ -272,6 +272,7 @@
 			SELECT produto.id, produto.nome AS pnome, produto.stock, 0 as vendas
 			FROM produto, fornecedor
 			WHERE fornecedor.id = produto.idFornecedor AND
+			produto.aceite = TRUE AND
 			fornecedor.id = (SELECT id FROM fornecedor WHERE fornecedor.nome = ?)
 			GROUP BY produto.id 
 		");
@@ -286,6 +287,7 @@
 			FROM produto, fornecedor, itemEncomenda
 			WHERE itemEncomenda.idProduto = produto.id AND
 			produto.idFornecedor = fornecedor.id AND
+			produto.aceite = TRUE AND
 			fornecedor.id = (SELECT id FROM fornecedor WHERE nome = ?)
 			GROUP BY produto.id
 		");
@@ -360,5 +362,23 @@
 			$stmt->execute(array($p_nome, $p_price, $p_description, $p_techdetails, $p_brand, $p_tipo, $p_id));
 			return true;
 		} 
+		return false;
+	}
+	
+	function killProduct($p_id, $f_name) {
+		global $conn;
+		$stmtVerify = $conn->prepare("
+			SELECT * FROM produto WHERE produto.id = ? AND produto.idFornecedor = (SELECT id FROM fornecedor WHERE nome = ?)
+		");
+		$stmtVerify->execute(array($p_id, $f_name));
+		$checker = $stmtVerify->fetchALL();
+		
+		if(!empty($checker)) {
+			$stmt = $conn->prepare("
+				UPDATE produto SET aceite = FALSE WHERE produto.id = ?
+			");
+			$stmt->execute(array($p_id));
+			return true;
+		}
 		return false;
 	}

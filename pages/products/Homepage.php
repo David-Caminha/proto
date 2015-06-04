@@ -32,6 +32,11 @@
 			header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $_GET['editProd']);
 		}
 		
+		if(!empty($_GET['kill'])) {
+			killProduct($_GET['kill'], $_SESSION['fornecedor']);
+			header("Location: $BASE_URL" . 'pages/products/Homepage.php');
+		}
+		
 		$smarty->assign('produto', $supplier_p);
 		$smarty->display('users/fornecedor.tpl');
 	}
