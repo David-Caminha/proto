@@ -292,7 +292,7 @@
 			$stmt->execute(array($f_id));
 			
 			$stmtUpdate = $conn->prepare("
-				UPDATE produto SET aceite = FALSE WHERE produto.idFornecedor = ?
+				UPDATE produto SET removido = FALSE WHERE produto.idFornecedor = ?
 			");
 			$stmtUpdate->execute(array($f_id));
 			return true;
