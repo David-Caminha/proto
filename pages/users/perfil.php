@@ -26,7 +26,7 @@
 			updateSupplierInfo($_POST['email'], $_POST['telemovel'], $_POST['responsavel'], $_SESSION['fornecedor']);
 		}
 		if($_POST['password']==$_POST['confirm_password'] && $_POST['password']!='' && $_POST['password']!='' && $_POST['password'] && $_POST['confirm_password']) {
-			updateSupplierPassword($_POST['old_password'], $_POST['password'], $_SESSION['username']);
+			updateSupplierPassword($_POST['old_password'], $_POST['password'], $_SESSION['fornecedor']);
 		}
 		$smarty->assign('info', $info);
 		$smarty->display('users/perfil_frn.tpl');

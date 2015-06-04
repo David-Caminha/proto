@@ -6,6 +6,7 @@
 		Responsável: <input type="text" value="{$f.responsavel}" name="responsavel" /><br />
 		Email: <input type="text" value="{$f.email}" name="email" /><br />
 		Telemóvel: <input type="text" value="{$f.telemovel}" name="telemovel" /><br />
+		<button>Confirmar alterações</button>
 	</form>
 	<form class="password_perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 		Old Password: <input type="password" name="old.password" /><br />
