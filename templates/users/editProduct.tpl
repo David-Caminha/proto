@@ -11,7 +11,7 @@
 			Ficha Técnica:<textarea rows="6" cols="50" name="technic_details" placeholder="Escreva aqui os tópicos da ficha técnica...">{$p.fichatecnica}</textarea><br/>
 			Marca:<select name="brand">
 				{foreach $brands as $b}
-					{if $b.nome==$p.marca}
+					{if $b.id==$p.idMarca}
 						<option value="{$b.nome}" selected>{$b.nome}</option>
 					{else}
 						<option value="{$b.nome}" >{$b.nome}</option>

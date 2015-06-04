@@ -337,7 +337,7 @@
 	function getBrands() {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT nome FROM marca
+			SELECT id, nome FROM marca
 		");
 		$stmt->execute();
 		return $stmt->fetchALL();
