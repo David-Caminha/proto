@@ -6,7 +6,7 @@
 		<input type="hidden" name="prd_receiver" value="{$prd.id}" />
 		{/foreach}
 		Quantidade: <select name="qtd" onchange="this.form.qtd_receiver.value=this.value">
-			<option value="1">1</option>
+			<option value="1" selected>1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
 			<option value="4">4</option>

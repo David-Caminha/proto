@@ -28,6 +28,10 @@
 			}
 		}
 		
+		if(!empty($_GET['editProduct'])) {
+			header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $_GET['editProduct']);
+		}
+		
 		$smarty->assign('produto', $supplier_p);
 		$smarty->display('users/fornecedor.tpl');
 	}

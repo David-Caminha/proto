@@ -20,6 +20,7 @@
 							<button>Adicionar Stock</button>
 						</form>
 					</td>
+					<td><a href="?editProd={$p.id}"><button>Editar Produto</button></a></td>
 					<td><a href="?kill={$p.id}"><button>Descontinuar</button></a></td>
 				</tr>
 			{/foreach}
