@@ -357,7 +357,7 @@
 				SET nome = ?, preco = ?, descricao = ?, fichaTecnica = ?, idMarca = (SELECT id FROM marca WHERE nome = ?), tipo = ?
 				WHERE produto.id = ?
 			");
-			$stmt->execute(array($p_nome, $p_price, $p_description, $p_techdetails, $p_brand, $p_tipo));
+			$stmt->execute(array($p_nome, $p_price, $p_description, $p_techdetails, $p_brand, $p_tipo, $p_id));
 			return true;
 		} 
 		return false;
