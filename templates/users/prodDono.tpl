@@ -12,7 +12,7 @@
 			<th class="col-sm-3 col-md-3"></th>
 		</tr>
 		
-		{foreach $produto as $p}
+		{foreach $products as $p}
 		<tr>
 			<td >{$p.nome}</td>
 			<td >{$p.preco}</td>
