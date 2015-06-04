@@ -29,7 +29,7 @@
 		}
 		
 		if(!empty($_GET['editProd'])) {
-			header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $_GET['editProduct']);
+			header("Location: $BASE_URL" . 'pages/users/editProduct.php?idProd=' . $_GET['editProd']);
 		}
 		
 		$smarty->assign('produto', $supplier_p);
