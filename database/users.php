@@ -131,6 +131,16 @@
 		$stmt->execute(array($u_name));
 		return $stmt->fetchALL();
 	}
+	
+	function getSupplierInfo($f_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT * FROM fornecedor WHERE fornecedor.nome = ?
+			
+		");
+		$stmt->execute(array($f_name));
+		return $stmt->fetchALL();
+	}
 
 	function updateInfoUser($u_nome, $u_email, $u_telemovel, $u_date, $m_rua, $m_cp2, $c_nome, $u_name) {
 		global $conn;
