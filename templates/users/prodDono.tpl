@@ -15,7 +15,7 @@
 		{foreach $products as $p}
 		<tr>
 			<td >{$p.nome}</td>
-			<td >{$p.preco}</td>
+			<td >{$p.preco}€</td>
 			<td >{$p.fornecedor}</td>
 			<td >{$p.marca}</td>
 			<td >{$p.tipo}</td>
