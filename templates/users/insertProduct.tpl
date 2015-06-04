@@ -10,7 +10,11 @@
 			Imagem:
 			<input type="file" name="fileToUpload" id="fileToUpload">
 			Ficha Técnica:<textarea rows="6" cols="50" name="technic_details" placeholder="Escreva aqui os tópicos da ficha técnica..."></textarea><br/>
-			Marca:<input type="text" name="brand" /><br/>
+			Marca:<select name="brand">
+				{foreach $brands as $b}
+					<option value="{$b.nome}">{$b.nome}</option>
+				{/foreach}
+			</select><br/>
 			Tipo de Produto:
 			<select name="tipo">
 				<option value="1" selected>Laptop</option>
