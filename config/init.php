@@ -12,7 +12,7 @@
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   $conn->exec('SET SCHEMA \'lbaw1463\''); //FIXME
-  file_uploads = On;
+  $BASE_DIR .'\images'. basename($_FILES["fileToUpload"]["name"]); = On;
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
   
   $smarty = new Smarty;
