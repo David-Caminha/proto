@@ -29,3 +29,16 @@ function searchItems($usernameU) {
 		
 		return false;
 	}
+	
+	function alterQuantity($new_q, $u_name, $p_id) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE itemEncomenda 
+			SET itemEncomenda.quantidade = ? 
+			WHERE itemEncomenda.idUser = (SELECT id FROM utilizador WHERE username = ?) AND
+			itemEncomenda.idProduto = ?
+		");
+		$stmt->execute(array($new_q, $u_name, $p_id));
+		return true;
+		
+	}

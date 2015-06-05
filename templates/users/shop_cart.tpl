@@ -7,9 +7,11 @@
 	<h3>Items</h3>
 	<table class="table table-striped">
 		<tr>
-			<td><b>Produto</b></td>
-			<td><b>Quantidade</b></td>
-			<td><b>Total</b></td>
+			<th>Produto</th>
+			<th>Quantidade</th>
+			<th>Total</th>
+			<th></th>
+			<th></th>
 		</tr>
 		{$valorfinal = 0}
 		{foreach $Result as $itemEncomenda}
@@ -17,6 +19,13 @@
 			<td><a href="?idProd={$itemEncomenda.idproduto}">{$itemEncomenda.nome}</a></td>
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
+			<td>
+				<form action="{$BASE_URL}pages/products/Homepage.php" method="get">
+					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto}" />
+					<input value="{itemEncomenda.quantidade}" type="number" name="qtd" />
+					<button>Alterar Quantidade</button>
+				</form>	
+			</td>
 			<td><a href="?idC={$itemEncomenda.idcarrinho}&idP={$itemEncomenda.idproduto}"><button type="button" >Remover</button></a></td> 
 		</tr>
 		{$valorfinal = $valorfinal + $itemEncomenda.total}
@@ -26,12 +35,7 @@
 		</tr>
 	</table>
 	<a href="#"><button type="button">Finalizar Compra</button></a>
-	<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="hosted_button_id" value="4W77NEDS3XSF2">
-		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-	</form> -->
+
 </section>
 
 {else}

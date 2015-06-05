@@ -10,7 +10,17 @@
   if (!empty($_GET['idProd'])) {
 		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_GET['idProd']);
 	}
-
+	
+  if(!empty($_GET['qtd'])) {
+	if(is_numeric($_GET['qtd'])&&$_GET['qtd']>=0) {
+		alterQuantity($_GET['qtd'],$_SESSION['utilizador'],$_GET['idProduct']);
+		header("Location: $BASE_URL" . 'pages/users/shop_cart.php');
+	}
+	else
+	{
+		echo "<script type='text/javascript'>alert('Por favor insira um valor numérico.');</script>";
+	}
+  }
   $smarty->assign('Result', $itemEncomenda);
   $smarty->display('users/shop_cart.tpl');
 ?>
