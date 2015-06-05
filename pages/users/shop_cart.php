@@ -13,7 +13,7 @@
 	
   if(!empty($_GET['qtd'])) {
 	if(is_numeric($_GET['qtd'])&&$_GET['qtd']>=0) {
-		alterQuantity($_GET['qtd'],$_SESSION['utilizador'],$_GET['idProduct']);
+		alterQuantity($_GET['qtd'],$_SESSION['username'],$_GET['idProduct']);
 		header("Location: $BASE_URL" . 'pages/users/shop_cart.php');
 	}
 	else
