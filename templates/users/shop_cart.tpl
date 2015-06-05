@@ -20,7 +20,7 @@
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
 			<td>
-				<form action="{$BASE_URL}pages/products/shop_cart.php" method="get">
+				<form action="{$BASE_URL}pages/users/shop_cart.php" method="get">
 					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto}" />
 					<input value="{$itemEncomenda.quantidade}" type="number" name="qtd" />
 					<button>Alterar Quantidade</button>
