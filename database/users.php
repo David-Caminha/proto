@@ -323,3 +323,12 @@
 		}
 		return false;
 	}
+	
+	function insertBrand($b_name){
+		global $conn;
+		$stmt = $conn->prepare("
+			INSERT INTO marca (nome) VALUES (?)
+		");
+		$stmt->execute(array($b_name));
+		return true;
+	}
