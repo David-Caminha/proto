@@ -22,7 +22,7 @@
 			<td>
 				<form action="{$BASE_URL}pages/products/Homepage.php" method="get">
 					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto}" />
-					<input value="{itemEncomenda.quantidade}" type="number" name="qtd" />
+					<input value="{$itemEncomenda.quantidade}" type="number" name="qtd" />
 					<button>Alterar Quantidade</button>
 				</form>	
 			</td>
