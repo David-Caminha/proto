@@ -6,5 +6,5 @@
 		insertBrand($_POST['name']);
 	}
 	
-	$smarty->display('pages/users/insertBrand.tpl');
+	$smarty->display('users/insertBrand.tpl');
 ?>
