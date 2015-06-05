@@ -34,7 +34,7 @@ function searchItems($usernameU) {
 		global $conn;
 		$stmt = $conn->prepare("
 			UPDATE itemEncomenda 
-			SET itemEncomenda.quantidade = ? 
+			SET quantidade = ? 
 			WHERE itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE estado=FALSE AND 
 			carrinhoCompras.idUser = (SELECT id FROM utilizador WHERE username = ?)) AND
 			itemEncomenda.idProduto = ?
