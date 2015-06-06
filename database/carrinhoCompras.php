@@ -66,9 +66,9 @@
 			");
 			$stmtInfo->execute(array($u_name));
 			$Info = $stmtInfo->fetchALL();
-			foreach($Info as $p) {
+			foreach ($Info as $p) {
 				$stmtStock = $conn->prepare("
-				UPDATE produto SET stock = (stock - ?) WHERE produto.id = ?
+					UPDATE produto SET stock = (stock - ?) WHERE id = ?
 				");
 				$stmtStock->execute(array($p['quantidade'], $p['idProduto']));
 			}
