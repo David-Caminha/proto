@@ -195,6 +195,7 @@
 			WHERE itemEncomenda.idCarrinho = carrinhoCompras.id AND
 			itemEncomenda.idProduto = ?) AND
 			itemEncomenda.idCarrinho = carrinhoCompras.id AND
+			carrinhoCompras.estado = TRUE AND
 			itemEncomenda.idProduto <> ? AND
 			itemEncomenda.idProduto = produto.id
 			GROUP BY produto.id
