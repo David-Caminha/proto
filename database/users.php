@@ -308,6 +308,32 @@
 				UPDATE produto SET aceite = TRUE WHERE produto.id = ?
 			");
 			$stmt->execute(array($p_id));
+			$stmtGet = $conn->prepare("
+				SELECT tipo FROM produto WHERE produto.id = ?
+			");
+			$stmtGet->execute(array($p_id));
+			$tipo = $stmtGet->fetchALL();
+			if($tipo[0]['tipo'] == 'laptop') {
+				$stmtInsert = $conn->prepare("
+					INSERT INTO laptop (idProduto) VALUES (?)
+				");
+				$stmtInsert->execute(array($p_id));
+			} elseif($tipo[0]['tipo'] == 'desktop') {
+				$stmtInsert = $conn->prepare("
+					INSERT INTO desktop (idProduto) VALUES (?)
+				");
+				$stmtInsert->execute(array($p_id));
+			} elseif($tipo[0]['tipo'] == 'periferico') {
+				$stmtInsert = $conn->prepare("
+					INSERT INTO periferico (idProduto) VALUES (?)
+				");
+				$stmtInsert->execute(array($p_id));
+			} elseif($tipo[0]['tipo'] == 'cabo') {
+				$stmtInsert = $conn->prepare("
+					INSERT INTO cabo (idProduto) VALUES (?)
+				");
+				$stmtInsert->execute(array($p_id));
+			}
 			return true;
 			}
 		return false;
