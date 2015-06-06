@@ -72,14 +72,17 @@
 				");
 				$stmtStock->execute(array($p->quantidade, $p->idProduto));
 			}
-			$stmt = $conn->prepare("
-				UPDATE carrinhoCompras SET estado = TRUE WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
-			");
-			$stmt->execute(array($u_name));
+			
 			$stmtPayout = $conn->prepare("
-				INSERT INTO pagamento (datapagamento, iduser) VALUES ( CURRENT_DATE , (SELECT id FROM utilizador WHERE username = ?))
+				INSERT INTO pagamento (datapagamento, iduser) VALUES ( CURRENT_DATE , (SELECT id FROM utilizador WHERE username = ?)) RETURNING id
 			");
 			$stmtPayout->execute(array($u_name));
+			
+			$id =$stmtPayout->fetchALL();
+			$stmt = $conn->prepare("
+				UPDATE carrinhoCompras SET estado = TRUE, idPagamento = ?  WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
+			");
+			$stmt->execute(array($u_name, $id[0]['id']));
 			return true;
 		}
 		return false;
