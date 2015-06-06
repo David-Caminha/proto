@@ -70,7 +70,7 @@
 				$stmtStock = $conn->prepare("
 				UPDATE produto SET stock = (stock - ?) WHERE produto.id = ?
 				");
-				$stmtStock->execute(array($p_>quantidade, $p->idProduto));
+				$stmtStock->execute(array($p->quantidade, $p->idProduto));
 			}
 			$stmt = $conn->prepare("
 				UPDATE carrinhoCompras SET estado = TRUE WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
