@@ -6,7 +6,8 @@
             SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, Produto.id 
             FROM Produto, carrinhoCompras, itemEncomenda 
             WHERE carrinhoCompras.id = itemEncomenda.idCarrinho
-            AND Produto.id = itemEncomenda.idProduto 
+            AND Produto.id = itemEncomenda.idProduto AND
+			carrinhoCompras.estado = TRUE
             ORDER by carrinhoCompras.id DESC 
             LIMIT 4");
         $stmt->execute();
@@ -17,8 +18,10 @@
         global $conn;
         $stmt = $conn->prepare("
             SELECT Produto.id, Produto.nome, Produto.preco, Produto.caminhoImagem, SUM(itemEncomenda.quantidade) as quantidade
-            FROM Produto, itemEncomenda 
-            WHERE Produto.id = itemEncomenda.idProduto 
+            FROM Produto, itemEncomenda, carrinhoCompras
+            WHERE Produto.id = itemEncomenda.idProduto AND
+			carrinhoCompras.id = itemEncomenda.idCarrinho AND
+			carrinhoCompras.estado = TRUE
             GROUP by Produto.id
             ORDER by Quantidade DESC 
             LIMIT 4");
