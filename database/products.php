@@ -60,7 +60,7 @@
 		global $conn;
 		
 		$stmtVER = $conn->prepare("
-			SELECT * FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
+			SELECT * FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE
 			");
 		$stmtVER->execute(array($u_username));
 		$exists = $stmtVER->fetchALL();
