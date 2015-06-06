@@ -5,7 +5,7 @@
 	if($_GET['confirm'])
 	{
 		checkout($_SESSION['username']);
-		// header("Location: $BASE_URL" . 'pages/users/shop_cart.php');
+		header("Location: $BASE_URL" . 'pages/users/shop_cart.php');
 	}
 	
 	$smarty->display('users/checkout.tpl');
