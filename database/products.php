@@ -289,9 +289,11 @@
 		global $conn;
 		$stmt = $conn->prepare("
 			SELECT produto.nome, SUM(itemEncomenda.quantidade) AS valor 
-			FROM produto, fornecedor, itemEncomenda
+			FROM produto, fornecedor, itemEncomenda, carrinhoCompras
 			WHERE itemEncomenda.idProduto = produto.id AND
 			produto.idFornecedor = fornecedor.id AND
+			itemEncomenda.idCarrinho = carrinhoCompras.id AND
+			carrinhoCompras.estado = TRUE AND
 			produto.aceite = TRUE AND
 			produto.removido = FALSE AND
 			fornecedor.id = (SELECT id FROM fornecedor WHERE nome = ?)
