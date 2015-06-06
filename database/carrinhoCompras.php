@@ -80,7 +80,7 @@
 			
 			$id =$stmtPayout->fetchALL();
 			$stmt = $conn->prepare("
-				UPDATE carrinhoCompras SET estado = TRUE, idPagamento = ?  WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
+				UPDATE carrinhoCompras SET estado = TRUE, idPagamento = ?  WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE
 			");
 			$stmt->execute(array($id[0]['id'],$u_name));
 			return true;
