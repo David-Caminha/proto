@@ -70,7 +70,7 @@
 				$stmtStock = $conn->prepare("
 				UPDATE produto SET stock = (stock - ?) WHERE produto.id = ?
 				");
-				$stmtStock->execute(array($p->quantidade, $p->idProduto));
+				$stmtStock->execute(array($p['quantidade'], $p['idProduto']));
 			}
 			
 			$stmtPayout = $conn->prepare("
