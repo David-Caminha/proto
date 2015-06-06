@@ -46,14 +46,41 @@
 	
 	function checkout($u_name) {
 		global $conn;
-		$stmt = $conn->prepare("
-			UPDATE carrinhoCompras SET estado = TRUE WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
+		$stmtTotal = $conn->prepare("
+			SELECT carrinhoCompras.total 
+			FROM carrinhoCompras 
+			WHERE carrinhoCompras.estado = FALSE AND
+			carrinhoCompras.idUser = (SELECT id FROM utilizador WHERE username = ?)
 		");
-		$stmt->execute(array($u_name));
+		$stmtTotal->execute(array($u_name));
+		$total = $stmtTotal->fetchALL();
+		if($total[0]['total'] != 0)
+		{
 		
-		$stmtPayout = $conn->prepare("
-			INSERT INTO pagamento (datapagamento, iduser) VALUES ( CURRENT_DATE , (SELECT id FROM utilizador WHERE username = ?))
-		");
-		$stmtPayout->execute(array($u_name));
-		return true;
+			$stmtInfo = $conn->prepare("
+				SELECT itemEncomenda.idProduto, itemEncomenda.quantidade
+				FROM itemEncomenda, carrinhoCompras 
+				WHERE itemEncomenda.idCarrinho = carrinhoCompras.id AND
+				carrinhoCompras.estado = FALSE AND
+				carrinhoCompras.idUser = (SELECT id FROM utilizador WHERE username = ?) 
+			");
+			$stmtInfo->execute(array($u_name));
+			$Info = $stmtInfo->fetchALL();
+			foreach($Info as $p) {
+				$stmtStock = $conn->prepare("
+				UPDATE produto SET stock = (stock - ?) WHERE produto.id = ?
+				");
+				$stmtStock->execute(array($p_>quantidade, $p->idProduto));
+			}
+			$stmt = $conn->prepare("
+				UPDATE carrinhoCompras SET estado = TRUE WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
+			");
+			$stmt->execute(array($u_name));
+			$stmtPayout = $conn->prepare("
+				INSERT INTO pagamento (datapagamento, iduser) VALUES ( CURRENT_DATE , (SELECT id FROM utilizador WHERE username = ?))
+			");
+			$stmtPayout->execute(array($u_name));
+			return true;
+		}
+		return false;
 	}
