@@ -239,6 +239,7 @@
 				FROM produto, fornecedor
 				WHERE produto.idFornecedor = fornecedor.id AND
 				produto.aceite = TRUE AND
+				produto.removido = FALSE AND
 				fornecedor.nome = ?
 			");
 			$stmt->execute(array($f_nome));

@@ -34,7 +34,7 @@
 			<td><b>Valor Final:</b> {$valorfinal}</td>
 		</tr>
 	</table>
-	<a href="#"><button type="button">Finalizar Compra</button></a>
+	<a href="{$BASE_URL}pages/users/checkout.php"><button type="button">Finalizar Compra</button></a>
 
 </section>
 

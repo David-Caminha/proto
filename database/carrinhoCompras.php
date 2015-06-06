@@ -1,5 +1,5 @@
 <?php
-function searchItems($usernameU) {
+	function searchItems($usernameU) {
         global $conn;
         $stmt = $conn->prepare("            
 			SELECT itemEncomenda.idcarrinho, itemEncomenda.idproduto, itemEncomenda.quantidade, produto.nome, (itemEncomenda.quantidade*produto.preco) as total
@@ -42,4 +42,18 @@ function searchItems($usernameU) {
 		$stmt->execute(array($new_q, $u_name, $p_id));
 		return true;
 		
+	}
+	
+	function checkout($u_name) {
+		global $conn;
+		$stmt = $conn->prepare("
+			UPDATE carrinhoCompras SET estado = TRUE WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
+		");
+		$stmt->execute(array($u_name));
+		
+		$stmtPayout = $conn->prepare("
+			INSERT INTO pagamento (datapagamento, iduser) VALUES ( CURRENT_DATE , (SELECT id FROM utilizador WHERE username = ?))
+		");
+		$stmtPayout->execute(array($u_name));
+		return true;
 	}
