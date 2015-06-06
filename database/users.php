@@ -333,3 +333,16 @@
 		$stmt->execute(array($b_name));
 		return true;
 	}
+	
+	function killShopCart($u_name){
+		global $conn;
+		$stmtIE = $conn->prepare("
+			DELETE FROM itemEncomenda WHERE idCarrinho = (SELECT id FROM carrinhoCompras WHERE estado = FALSE AND idUser = (SELECT id FROM utilizador WHERE username = ?))
+		");
+		$stmtIE->execute(array($u_name));
+		$stmtCart = $conn->prepare("
+			DELETE FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE
+		");
+		$stmtCart->execute(array($u_name));
+		return true;
+	}
