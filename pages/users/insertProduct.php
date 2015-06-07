@@ -55,7 +55,8 @@
 		 
 			break;
 		default:
-			newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], 'images/produtos/default.png');
+			$file = $BASE_DIR . 'images/produtos/default.png';
+			newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], $file);
 		}
 	}
 	else {
