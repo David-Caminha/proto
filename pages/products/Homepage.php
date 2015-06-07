@@ -47,23 +47,46 @@
 		foreach ($recentementeVendidos as $key => $product)
 		{
             unset($photo);
-            if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
+            if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png') && $product['caminhoimagem'] != 'images/produtos/'.$product['id'].'.png')
+            {
 				$photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
-			else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
-			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
-			else
+                updatePath($product['id'], $photo);
+                $recentementeVendidos = getRecentementeVendidos();
+            }
+			else if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg') && $product['caminhoimagem'] != 'images/produtos/'.$product['id'].'.jpg')
+            {
+                $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
+                updatePath($product['id'], $photo);
+                $recentementeVendidos = getRecentementeVendidos();
+            }
+			else if($product['caminhoimagem'] != 'images/produtos/default.png')
+            {
 				$photo = 'images/produtos/default.png';
+                updatePath($product['id'], $photo);
+                $recentementeVendidos = getRecentementeVendidos();
+            }
 		}
 		foreach ($maisVendidos as $key => $product)
 		{
             unset($photo);
-			if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.png'))
+            if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png') && $product['caminhoimagem'] != 'images/produtos/'.$product['id'].'.png')
+            {
 				$photo = 'images/produtos/'.$product['caminhoimagem'].'.png';
-			else if(file_exists($BASE_DIR.'images/produtos/'.$product['caminhoimagem'].'.jpg'))
-			  $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
-			else
+                updatePath($product['id'], $photo);
+                $maisVendidos = getMaisVendidos();
+            }
+			else if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg') && $product['caminhoimagem'] != 'images/produtos/'.$product['id'].'.jpg')
+            {
+                $photo = 'images/produtos/'.$product['caminhoimagem'].'.jpg';
+                updatePath($product['id'], $photo);
+                $maisVendidos = getMaisVendidos();
+            }
+			else if($product['caminhoimagem'] != 'images/produtos/default.png')
+            {
 				$photo = 'images/produtos/default.png';
-            $maisVendidos[$key]['photo'] = $photo;
+                updatePath($product['id'], $photo);
+                $maisVendidos = getMaisVendidos();
+            }
 		}
 	
 		if (!empty($_GET['idP'])) {
