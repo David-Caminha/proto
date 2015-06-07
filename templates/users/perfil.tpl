@@ -2,6 +2,7 @@
 
 {if $USERNAME}
 	<h3>Editar Perfil</h3>
+{$info|@print_r}
 	<form id="perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 	
 		Nome Completo: <input type="text" value="{$info.nome}" name="nome" /><br />
@@ -21,7 +22,6 @@
 		<button>Confirmar alterações</button>
 	</form>
 {else}
-
 	{include file='common/no_permission.tpl'}
 {/if}
 
