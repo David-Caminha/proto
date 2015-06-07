@@ -1,5 +1,9 @@
 {include file='common/header.tpl'}
-	<div id="right_column" class="column" >
+            <section id="line"></section>
+        </div>
+        
+        
+        	<div id="right_column" class="column" >
 	<form action="{$BASE_URL}pages/products/product.php" method="get">
 		<input type="hidden" name="qtd_receiver" />
 		{foreach $p as $prd}
@@ -22,45 +26,75 @@
 	</form>
 	<br />
 	<br />
-	{if $USERNAME}{if $fav==0}{foreach $p as $pp}<a href="?idFav={$pp.id}"><button>Adicionar aos Favoritos</button></a>{/foreach}{/if}{/if}
+        {if $USERNAME}{if $fav==0}{foreach $p as $pp}<a href="?idFav={$pp.id}"><button>Adicionar aos Favoritos</button></a>{/foreach}{/if}{/if}
 	</div>
-	<div id="left_column" class="column" >
-		<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" />
-	</div>
-	<div id="center_column" class="column" >
-	{foreach $p as $product}
-		<span id="p_name">{$product.nome}</span>
-		<br />
-		de: <span id="fornecedor">{$product.f_nome}</span>
-		<p id="price">Preço: <span id="price_value">{$product.preco}€</span> </p>
-		<p>
-		{$product.descricao}
-		</p>
-	{/foreach}
-	</div>
-	<div class="separation-line-big">
-	</div>
-	<table id="also_bought_container">
-		<tr><h3>Quem comprou este produto, também comprou:</h3></tr>
-		<tr>
-		{foreach $a_bought as $ab}
-			<td>		
-				<span class="a_b_name">{$ab.nome}</span><br />
-				<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" /><br />
-				<span class="a_b_price">{$ab.preco}€</span>
-			</td>
-		{/foreach}
-		</tr>
-	</table>
-	<div class="separation-line-big">
-	</div>
-	<div id="comments">
-		<h3>Comentários</h3>
-		{$number=0}
+                
+        <div id="Item" class=" col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+            <h7>490 votes</h7>
+            <section id="Item" class=" col-xs-12  col-sm-6 col-md-6 " >         
+                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" class="img-responsive" alt="Responsive image" >
+                    <p class=" col-xs-12 col-md-12 "> </p>
+                  
+            </section>
+            <section id="descricao" class="col-sm-6 col-md-6">
+                <h3>Samsung TV Monitor T24D390 23,6" 59cm</h3>
+                
+                TV Essencial <br>
+                Samsung <br>
+                Garantia 2 anos. ** <br>
+                Resolução Nativa	Full HD 1920 x 1080 <br>
+                Luminosidade	250 Cd/m² <br><br>
+                Em stock <br>
+                200.00€
+            </section>
+              <button type="button" class=" btn btn-default col-xs-12  col-sm-6 col-md-6 ">Adicionar</button>
+        </div>
+        <div id="content">
+            
+            <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                <li class="active">
+                    <a href="#sugeridos" data-toggle="tab">Sugeridos</a>                 </li>
+                <li>
+                <a href="#comentarios" data-toggle="tab">Comentarios</a>                 </li>
+            </ul>
+            
+            
+            <div id="my-tab-content" class="tab-content">
+                <div class="tab-pane active" id="sugeridos">
+                                  <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
+                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" height="100" width="100">
+                    <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" alt="Smiley face" height="40" width="40">
+                    <p class=" col-xs-12 col-md-12 "> Smile</p>
+                    <p class=" col-xs-12 col-md-12 "> 200.00€</p>
+                    <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
+                </section>
+                                    <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
+                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" height="100" width="100">
+                    <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" alt="Smiley face" height="40" width="40">
+                    <p class=" col-xs-12 col-md-12 "> Smile</p>
+                    <p class=" col-xs-12 col-md-12 "> 200.00€</p>
+                    <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
+                </section>
+                                    <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
+                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" height="100" width="100">
+                    <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" alt="Smiley face" height="40" width="40">
+                    <p class=" col-xs-12 col-md-12 "> Smile</p>
+                    <p class=" col-xs-12 col-md-12 "> 200.00€</p>
+                    <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
+                </section>
+                </div>
+                <div class="tab-pane" id="comentarios">
+                    <h3>Joao Ferreira</h3>
+      	<div class="tab-pane"  id="commentarios">
+			{$number=0}
 		{foreach $Result as $comment}
-		<p class="c_username">{$comment.username}</p>
+		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
-		<div class="separation-line">
 		</div>
 		{$number=$number+1}
 		{/foreach}
@@ -85,4 +119,7 @@
 		</div>
 		{/if}
 	</div>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    </body>
 {include file='common/footer.tpl'}
