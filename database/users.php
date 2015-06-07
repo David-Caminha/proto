@@ -158,9 +158,9 @@
 			FROM utilizador, morada, cidade
 			WHERE utilizador.id = morada.idUser AND
 			morada.idCidade = cidade.id AND
-			utilizador.username = '?'
+			utilizador.username = :username
 		");
-		$stmt->execute(array($u_name));
+		$stmt->execute(array(':username' => $u_name));
 		return $stmt->fetchALL();
 	}
 	
