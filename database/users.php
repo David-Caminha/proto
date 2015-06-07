@@ -154,8 +154,7 @@
 	function getUserInfo($u_name) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT utilizador.username, utilizador.nome, utilizador.email, utilizador.telemovel, 
-			utilizador.dataNascimento, morada.rua, morada.CP2, cidade.CP1, cidade.nome as nome_cidade, cidade.nomePais
+			SELECT utilizador.username, utilizador.nome, utilizador.email, utilizador.telemovel, utilizador.dataNascimento, morada.rua, morada.CP2, cidade.CP1, cidade.nome as nome_cidade, cidade.nomePais
 			FROM utilizador, morada, cidade
 			WHERE utilizador.id = morada.idUser AND
 			morada.idCidade = cidade.id AND
