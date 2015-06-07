@@ -158,8 +158,7 @@
 			FROM utilizador, morada, cidade
 			WHERE utilizador.id = morada.idUser AND
 			morada.idCidade = cidade.id AND
-			utilizador.username = ?
-			
+			utilizador.username = '?'
 		");
 		$stmt->execute(array($u_name));
 		return $stmt->fetchALL();
