@@ -1,5 +1,5 @@
 <?php
-//nao esquecer de adicionar condicao estado = true
+
     function getRecentementeVendidos() {
         global $conn;
         $stmt = $conn->prepare("
@@ -64,7 +64,7 @@
 			");
 		$stmtVER->execute(array($u_username));
 		$exists = $stmtVER->fetchALL();
-		//se n?o existir nenhum carrinho para esse utilizador, cria-o
+
 		if(empty($exists)) {
 			$stmtInsert = $conn->prepare("
 				INSERT INTO carrinhoCompras (idUser) VALUES ((SELECT id FROM utilizador WHERE username = ?))
@@ -80,7 +80,7 @@
 		}
 		else
 		{
-			//verifica se existe algum itemEncomenda nesse carrinho para o mesmo produto.
+		
 			$stmtVerify = $conn->prepare(" 
 				SELECT * FROM itemEncomenda WHERE itemEncomenda.idCarrinho = (SELECT id FROM carrinhoCompras WHERE idUser = (SELECT id FROM utilizador WHERE username = ?) AND estado = FALSE) AND itemEncomenda.idProduto = ? 
 				");
@@ -389,4 +389,15 @@
 			return true;
 		}
 		return false;
+	}
+	
+	function getLastId() {
+		global $conn;
+		$stmt = $conn->prepare("
+			SELECT id FROM produto 
+			ORDER BY id DESC
+			LIMIT 1
+		");
+		$stmt->execute();
+		return $stmt->fetchALL();
 	}
