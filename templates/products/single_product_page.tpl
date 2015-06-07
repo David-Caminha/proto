@@ -2,7 +2,7 @@
             <section id="line"></section>
         </div>
         
-        
+        {if $USERNAME}
         	<div id="right_column" class="column" >
 	<form action="{$BASE_URL}pages/products/product.php" method="get">
 		<input type="hidden" name="qtd_receiver" />
@@ -22,10 +22,10 @@
 			<option value="10">10</option>
 		</select>
 		<br />
-		{if $USERNAME}<button>Adicionar ao Carrinho</button>{/if}
+		<button>Adicionar ao Carrinho</button>
 	</form>
-        {if $USERNAME}{if $fav==0}{foreach $p as $pp}<a href="?idFav={$pp.id}"><button>Adicionar aos Favoritos</button></a>{/foreach}{/if}{/if}
-	</div>
+        {if $fav==0}{foreach $p as $pp}<a href="?idFav={$pp.id}"><button>Adicionar aos Favoritos</button></a>{/foreach}{/if}
+	</div>{/if}
                 
         <div id="Item" class=" col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
             <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
