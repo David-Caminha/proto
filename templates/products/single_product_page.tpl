@@ -66,27 +66,18 @@
             
             <div id="my-tab-content" class="tab-content">
                 <div class="tab-pane active" id="sugeridos">
-                                  <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
-                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" height="100" width="100">
-                    <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" alt="Smiley face" height="40" width="40">
-                    <p class=" col-xs-12 col-md-12 "> Smile</p>
-                    <p class=" col-xs-12 col-md-12 "> 200.00€</p>
-                    <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
-                </section>
-                                    <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
-                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" height="100" width="100">
-                    <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" alt="Smiley face" height="40" width="40">
-                    <p class=" col-xs-12 col-md-12 "> Smile</p>
-                    <p class=" col-xs-12 col-md-12 "> 200.00€</p>
-                    <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
-                </section>
-                                    <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
-                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" height="100" width="100">
-                    <img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg" alt="Smiley face" height="40" width="40">
-                    <p class=" col-xs-12 col-md-12 "> Smile</p>
-                    <p class=" col-xs-12 col-md-12 "> 200.00€</p>
-                    <button type="button" class=" btn btn-default col-xs-6  col-sm-6 col-md-6 ">Adicionar</button>
-                </section>
+                                  <table id="also_bought_container">
+		<tr><h3>Quem comprou este produto, também comprou:</h3></tr>
+		<tr>
+		{foreach $a_bought as $ab}
+			<td>		
+				<span class="a_b_name">{$ab.nome}</span><br />
+				<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" /><br />
+				<span class="a_b_price">{$ab.preco}€</span>
+			</td>
+		{/foreach}
+		</tr>
+	</table>
                 </div>
                 <div class="tab-pane" id="comentarios">
 			{$number=0}
