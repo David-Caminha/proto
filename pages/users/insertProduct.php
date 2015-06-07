@@ -26,7 +26,7 @@
 				}
 			}
 			// Check if file already exists
-			if (file_exists($target_file)) {
+			if (file_exists($target_file2)) {
 				echo "<script type='text/javascript'>alert('Sorry, file already exists.');</script>";
 				$uploadOk = 0;
 			}
