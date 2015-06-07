@@ -37,7 +37,7 @@
             
             {foreach $p as $product}
             <section id="Item" class=" col-xs-12  col-sm-6 col-md-6 " >         
-                    <img  src="{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" >
+                    <img  src="{$BASE_URL}{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" >
                     <p class=" col-xs-12 col-md-12 "> </p>
                   
             </section>
@@ -72,7 +72,7 @@
 		{foreach $a_bought as $ab}
 			<td>		
 				<span class="a_b_name">{$ab.nome}</span><br />
-				<img src="{$ab.caminhoimagem}" alt="Imagem do Artigo" width="100" height="100" /><br />
+				<img src="{$BASE_URL}{$ab.caminhoimagem}" alt="Imagem do Artigo" width="100" height="100" /><br />
 				<span class="a_b_price">{$ab.preco}€</span>
 			</td>
 		{/foreach}
