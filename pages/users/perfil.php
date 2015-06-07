@@ -5,7 +5,6 @@
 	if($_SESSION['username']) {
 		$info = getUserInfo($_SESSION['username']);
 		
-		
 		if($_POST['nome'] && $_POST['email'] && $_POST['telemovel'] && $_POST['data_nascimento'] && $_POST['rua'] && $_POST['CP2'] && $_POST['cidade'] ) {
 			updateInfoUser($_POST['nome'], $_POST['email'], $_POST['telemovel'], $_POST['data_nascimento'], $_POST['rua'], $_POST['CP2'], $_POST['cidade'], $_SESSION['username']);
 			header('Location: '.$BASE_URL. 'pages/users/perfil.php');
