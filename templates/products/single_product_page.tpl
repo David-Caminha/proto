@@ -89,13 +89,10 @@
                 </section>
                 </div>
                 <div class="tab-pane" id="comentarios">
-                    <h3>Joao Ferreira</h3>
-      	<div class="tab-pane"  id="commentarios">
 			{$number=0}
 		{foreach $Result as $comment}
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
-		</div>
 		{$number=$number+1}
 		{/foreach}
 		{if $USERNAME}
@@ -118,7 +115,7 @@
 			</form>
 		</div>
 		{/if}
-	</d62iv>
+	</div>
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
     </body>
