@@ -52,7 +52,7 @@
             </section>
             
             
-      
+      	{/foreach}
         </div>
         <div id="content">
             
