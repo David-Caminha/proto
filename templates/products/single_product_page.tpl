@@ -24,8 +24,6 @@
 		<br />
 		{if $USERNAME}<button>Adicionar ao Carrinho</button>{/if}
 	</form>
-	<br />
-	<br />
         {if $USERNAME}{if $fav==0}{foreach $p as $pp}<a href="?idFav={$pp.id}"><button>Adicionar aos Favoritos</button></a>{/foreach}{/if}{/if}
 	</div>
                 
@@ -36,23 +34,25 @@
             <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
             <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
             <h7>490 votes</h7>
+            
+            {foreach $p as $product}
             <section id="Item" class=" col-xs-12  col-sm-6 col-md-6 " >         
-                    <img  src="http://www.phoca.cz/templatedemo/components/com_virtuemart/shop_image/product/23__LED_Monitor__4ce304ffdc47f.jpg" alt="Monitor alpha" class="img-responsive" alt="Responsive image" >
+                    <img  src="{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" >
                     <p class=" col-xs-12 col-md-12 "> </p>
                   
             </section>
             <section id="descricao" class="col-sm-6 col-md-6">
-                <h3>Samsung TV Monitor T24D390 23,6" 59cm</h3>
+                <h3>{$product.nome}</h3>
                 
-                TV Essencial <br>
-                Samsung <br>
-                Garantia 2 anos. ** <br>
-                Resolução Nativa	Full HD 1920 x 1080 <br>
-                Luminosidade	250 Cd/m² <br><br>
-                Em stock <br>
-                200.00€
+                de: <span id="fornecedor">{$product.f_nome}</span>
+		<p id="price">Preço: <span id="price_value">{$product.preco}€</span> </p>
+		<p>
+		{$product.descricao}
+		</p>
             </section>
-              <button type="button" class=" btn btn-default col-xs-12  col-sm-6 col-md-6 ">Adicionar</button>
+            
+            
+      
         </div>
         <div id="content">
             
@@ -72,7 +72,7 @@
 		{foreach $a_bought as $ab}
 			<td>		
 				<span class="a_b_name">{$ab.nome}</span><br />
-				<img src="http://gnomo.fe.up.pt/~lbaw1463/proto/images/produtos/default.png" alt="Imagem do Artigo" width="100" height="100" /><br />
+				<img src="{$ab.caminhoimagem}" alt="Imagem do Artigo" width="100" height="100" /><br />
 				<span class="a_b_price">{$ab.preco}€</span>
 			</td>
 		{/foreach}
