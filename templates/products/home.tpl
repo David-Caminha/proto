@@ -9,6 +9,8 @@
         </div>
            <br>
 
+{$maisVendidos|@print_r}
+
         <h7 id="Tab" > Top Compras</h7>
         <div id="TopCompras" class=" col-xs-12 col-md-12 ">
             {foreach $maisVendidos as $produto}
