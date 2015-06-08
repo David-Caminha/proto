@@ -42,7 +42,7 @@
     </script>
     <script>
     function getCps(city) {
-        var strURL="{$BASE_URL}actions/users/findCity.php?city="+city;
+        var strURL="{$BASE_URL}actions/users/findCp.php?city="+city;
         var req = new XMLHttpRequest();
         if (req) {
             req.onreadystatechange = function() {
