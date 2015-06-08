@@ -99,6 +99,8 @@
                 {/foreach}
                 <input type="submit" class="btn btn-default" value="Remove" />
             </form>
+                    <br>
+                    <br>
         {/if}
 		{$number=$number+1}
 		{/foreach}
