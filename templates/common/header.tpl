@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta charset="utf-8">
     </head>
-    <body>
+    <body id="pagina">
 	
         <div id="header" class="col-xs-12 col-md-12 ">
             <section >
@@ -36,4 +36,3 @@
                     {/if}
              
             </div>
-		<section id="pagina">

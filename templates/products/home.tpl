@@ -4,7 +4,7 @@
                 <a  href="http://www.google.com">HOME</a>
                  > 
                 <a href="http://www.google.com">LOGIN</a>
-        </div>
+        </section>
            <br>
 
         <h7 id="Tab" > Top Compras</h7>
