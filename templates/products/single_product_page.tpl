@@ -97,7 +97,7 @@
                 {foreach $p as $prd}
                 <input type="hidden" name="idProduto" value="{$prd.id}" />
                 {/foreach}
-                <input type="submit" value="Remover comentario" />
+                <input type="submit" class="btn btn-default" value="Remove" />
             </form>
         {/if}
 		{$number=$number+1}
