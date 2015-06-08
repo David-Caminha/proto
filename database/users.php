@@ -119,7 +119,8 @@
         global $conn;
         $stmt = $conn->prepare("SELECT password 
                             FROM utilizador 
-                            WHERE username = ?");
+                            WHERE username = ?
+							AND tipo <> 3");
         $stmt->execute(array($username));
         $stmt->bindColumn(1, $pass);
         if($stmt->fetch())
