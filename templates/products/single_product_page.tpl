@@ -146,7 +146,7 @@
     </script>
     <script> 
         $(function () {
-            $('.calssificacao').on('submit', function (e) {
+            $('.classificacao').on('submit', function (e) {
                 $.ajax({
                     type: 'post',
                     url: '{$BASE_URL}actions/products/vote.php',
