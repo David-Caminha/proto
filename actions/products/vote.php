@@ -2,7 +2,7 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
 
-    vote($_SESSION['username'], $_POST['idProduct']);
+    vote($_SESSION['username'], $_POST['idProduct'], $_POST['star']);
 
 	$votes = getVotes($_POST['idProduct']);
 
