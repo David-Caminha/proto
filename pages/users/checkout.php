@@ -5,6 +5,7 @@
 	if($_GET['confirm'])
 	{
 		checkout($_SESSION['username']);
+		$_SESSION['nitems'] = 0;
 		header("Location: $BASE_URL" . 'pages/users/shop_cart.php');
 	}
 	
