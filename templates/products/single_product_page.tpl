@@ -121,7 +121,7 @@
  
     <script> 
         $(function () {
-            $('form').on('submit', function (e) {
+            $('#myform').on('submit', function (e) {
                 $.ajax({
                     type: 'post',
                     url: '{$BASE_URL}actions/products/removeComment.php',
