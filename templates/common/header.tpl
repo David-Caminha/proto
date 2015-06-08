@@ -21,6 +21,15 @@
                         <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
 						<input type="hidden" name="method_receiver" />
 					</form>
+                         {if $USERNAME}
+                        {include file='common/menu_logged_in.tpl'}
+                    {else}
+						{if $FORNECEDOR}
+							{include file='common/menu_supplier.tpl'}
+						{else}
+                      <a href="{$BASE_URL}pages/users/register.php">Register</a>
+                    	{/if}
+                    {/if}
                 </section>
           
                     {if $USERNAME}
