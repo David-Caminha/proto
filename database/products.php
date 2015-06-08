@@ -2,7 +2,7 @@
     function hasVoted($username) {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT * as value
+            SELECT *
             FROM classificacao 
             WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)");
         $stmt->execute(array($idProduct));
