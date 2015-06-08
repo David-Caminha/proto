@@ -99,18 +99,16 @@
                         <input class=" form-control" type="text" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
                         </div>
                         
-                        <input class="form-control" type="text" name="País" placeholder="País" value="{$FORM_VALUES.nomepais}">
-                        <select name="pais" onChange="getCity(this.value)">
+                        <select class="form-control" name="pais" onChange="getCity(this.value)" value="{$FORM_VALUES.nomepais}">
  <option value="">Select Country</option>
  {foreach $paises as $pais}
  <option value="{$pais.nome}">{$pais.nome}</option>
  {/foreach}
      </select>
                         <br> 
-                        
-                        <input class="form-control" type="text" name="cidade" placeholder="Cidade" value="{$FORM_VALUES.nome}"> 
+                         
                         <div id="citydiv">
-          <select name="cidade">
+          <select class="form-control" name="cidade" value="{$FORM_VALUES.nomepais}">
           <option>Select City</option>
 
            </select>
