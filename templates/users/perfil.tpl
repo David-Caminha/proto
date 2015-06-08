@@ -3,7 +3,6 @@
 {if $USERNAME}
 	<h3>Editar Perfil</h3>
 
-{$info|@print_r}
 {foreach $info as $i}
 	<form id="perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 		Nome Completo: <input type="text" value="{$i.nome}" name="nome" /><br />
