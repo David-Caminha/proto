@@ -3,9 +3,10 @@
 <h3 class="c_username">{$comment.username}</h3>
 <p class="c_text">{$comment.texto}</p>
 {if $tipo == 1}
-<form method="post" action="{$BASE_URL}actions/users/removeComentario.php">
+<form>
     <input type="hidden" name="idComentario" value="{$comment.id}" />
-    <button type="submit">Remover comentario</button>
+    <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
+    <button value="{$comment.id}" onclick="remove(this.form)">Remover comentario</button>
 </form>
 {/if}
 {$number=$number+1}
@@ -22,7 +23,6 @@
         {else}
         <span>Escreva um Comentário:</span>
         <br />
-        {/if}
         <textarea rows="10" cols="120" name="text_comment" placeholder="Escreva aqui o seu comentário..."></textarea>
         <br />
         <button type="submit">Submeter</button>

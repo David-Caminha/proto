@@ -85,10 +85,10 @@
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
         {if $tipo == 1}
-                <form>
+                <form id="my-form">
                     <input type="hidden" name="idComentario" value="{$comment.id}" />
                     <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
-				    <button value="{$comment.id}" onclick="remove(this.form)">Remover comentario</button>
+				    <button type="submit">Remover comentario</button>
                 </form>
         {/if}
 		{$number=$number+1}
@@ -115,27 +115,28 @@
 		{/if}
 	</div>
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    function remove(form) {
-        var strURL="{$BASE_URL}actions/products/removeComment.php?idProd=" + form.idProduto.val;
-        var req = new XMLHttpRequest();
-        if (req) {
-            req.onreadystatechange = function() {
-                if (req.readyState == 4) {
-                    // only if "OK"
-                    if (req.status == 200) {
-                        document.getElementById('comentarios').innerHTML=req.responseText;
-                    } else {
-                        alert("Problem while using XMLHTTP:\n" + req.statusText);
-                    }
+    <script>
+    (function($){
+        function processForm( e ){
+            $.ajax({
+                url: 'users.php',
+                dataType: 'text',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+                data: $(this).serialize(),
+                success: function( data, textStatus, jQxhr ){
+                    $('#comentarios').html( data );
+                },
+                error: function( jqXhr, textStatus, errorThrown ){
+                    console.log( errorThrown );
                 }
-            }
-            req.open("POST", strURL, true);
-            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-xmlhttp.send("id=" + form.idComentario.val);
+            });
+
+            e.preventDefault();
         }
-    }
-    </script>
+
+        $('#my-form').submit( processForm );
+    })(jQuery);
+</script>
     </body>
 {include file='common/footer.tpl'}
