@@ -85,10 +85,10 @@
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
         {if $tipo == 1}
-                <form id="my-form">
+                <form id="my-form" method="post">
                     <input type="hidden" name="idComentario" value="{$comment.id}" />
                     {foreach $p as $prd}
-                    <input type="hidden" name="prd_receiver" value="{$prd.id}" />
+                    <input type="hidden" name="idProduto" value="{$prd.id}" />
                     {/foreach}
 				    <button type="submit">Remover comentario</button>
                 </form>
