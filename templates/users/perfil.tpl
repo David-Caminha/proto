@@ -1,12 +1,4 @@
 {include file='common/header.tpl'}
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script>
-    $( document ).ready(function () {
-        $("#country").val({$i.pais});
-        $("#cid").val({$i.nome_cidade});
-        $("#cp").val({$i.cp1});
-    });
-</script>
 <script>
 function getCity(country) {
     var strURL="{$BASE_URL}actions/users/findCity.php?cidade="+country;
