@@ -20,13 +20,13 @@
 							<button>Adicionar Stock</button>
 						</form>
 					</td>
-					<td><a href="?editProd={$p.id}"><button>Editar Produto</button></a></td>
-					<td><a href="?kill={$p.id}"><button>Descontinuar</button></a></td>
+                    <td><a  class=" btn btn-default" href="?editProd={$p.id}">Editar Produto</a></td>
+                    <td><a  class=" btn btn-default" href="?kill={$p.id}">Descontinuar</a></td>
 				</tr>
 			{/foreach}
 		</table>
-		<a href="{$BASE_URL}pages/users/insertProduct.php"><button>Inserir novo produto</button></a>
-		<a href="{$BASE_URL}pages/users/insertBrand.php"><button>Inserir nova marca</button></a>
+        <a  class=" btn btn-default" href="{$BASE_URL}pages/users/insertProduct.php">Inserir novo produto</a>
+        <a  class=" btn btn-default" href="{$BASE_URL}pages/users/insertBrand.php">Inserir nova marca</a>
 	</div>
 {else}
 	{include file='common/no_permission.tpl'}
