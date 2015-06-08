@@ -44,7 +44,7 @@
             
             {foreach $p as $product}
             <section id="Item" class=" col-xs-12  col-sm-6 col-md-6 " >         
-                    <img  src="{$BASE_URL}{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" >
+                    <img  src="{$BASE_URL}{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" height="350" width="350" >
                     <p class=" col-xs-12 col-md-12 "> </p>
                   
             </section>
