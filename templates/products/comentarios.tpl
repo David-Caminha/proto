@@ -5,7 +5,7 @@
 <form id="my-form">
     <input type="hidden" name="idComentario" value="{$comment.id}" />
     <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
-    <button type="submit">Remover comentario</button>
+    <button type="submit" class="btn btn-default">Remover comentario</button>
 </form>
 {$number=$number+1}
 {/foreach}
@@ -24,8 +24,8 @@
         {/if}
         <textarea rows="10" cols="120" name="text_comment" placeholder="Escreva aqui o seu comentário..."></textarea>
         <br />
-        <button type="submit">Submeter</button>
-        <button type="reset">Limpar</button>
+        <button type="submit" class="btn btn-default">Submeter</button>
+        <button type="reset" class="btn btn-default">Limpar</button>
     </form>
 </div>
 {/if}
