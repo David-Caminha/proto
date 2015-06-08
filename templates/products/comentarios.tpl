@@ -29,3 +29,19 @@
     </form>
 </div>
 {/if}
+
+<script> 
+        $(function () {
+            $('.myform').on('submit', function (e) {
+                $.ajax({
+                    type: 'post',
+                    url: '{$BASE_URL}actions/products/removeComment.php',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $('#comentarios').html(data);
+                    }
+                });
+                e.preventDefault();
+            });
+        }); 
+    </script>
