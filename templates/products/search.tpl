@@ -7,7 +7,12 @@
             </section>
             <section id="line"></section>
         </div>
-
+				<select id="search_method" onchange="this.form.method_receiver.value=this.value" class="col-xs-12 col-md-3 col-md-offset-9" >
+							<option value="asc_price" selected> Preço crescente</option>
+							<option value="desc_price"> Preço decrescente</option>
+							<option value="best_rate"> Maior classificação</option>
+							<option value="recent"> Mais recentes</option>
+						</select>
         <div id="headerItens">
             <p class="col-xs-6 col-md-4"> Showing 1-7 of 7 results</p>
             
