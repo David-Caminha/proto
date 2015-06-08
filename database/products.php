@@ -6,7 +6,11 @@
             FROM classificacao 
             WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)");
         $stmt->execute(array($idProduct));
-        return $stmt->fetchAll();
+        $checker = $stmt->fetchAll();
+        if(empty($checker))
+            return false;
+        else
+            return true;
     }
 
     function vote($username, $idProduct, $value) {
