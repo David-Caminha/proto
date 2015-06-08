@@ -1,5 +1,5 @@
 {foreach $votes as $avg}
-<form>
+<form class="classificacao">
     {if $avg.value == 5}
   <input class="star star-5" id="star-5" type="radio" name="star" checked />
     {else}
