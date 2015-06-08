@@ -30,7 +30,7 @@
                 
         <div id="Item" class=" col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
             <div id="votesdiv">
-            <form id="classificacao" action="">
+            <form class="classificacao" action="">
               <input class="star star-5" id="star-5" type="radio" name="star"/>
               <label class="star star-5" for="star-5"></label>
               <input class="star star-4" id="star-4" type="radio" name="star"/>
@@ -145,7 +145,7 @@
     </script>
     <script> 
         $(function () {
-            $('#calssificacao').on('submit', function (e) {
+            $('.calssificacao').on('submit', function (e) {
                 $.ajax({
                     type: 'post',
                     url: '{$BASE_URL}actions/products/vote.php',

@@ -2,7 +2,7 @@
 {foreach $Result as $comment}
 <h3 class="c_username">{$comment.username}</h3>
 <p class="c_text">{$comment.texto}</p>
-<form id="my-form">
+<form class="myform">
     <input type="hidden" name="idComentario" value="{$comment.id}" />
     <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
     <button type="submit" class="btn btn-default">Remove</button>
