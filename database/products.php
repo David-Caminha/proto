@@ -1,4 +1,21 @@
 <?php
+    function vote($username, $idProduct, $value) {
+		global $conn;
+		$stmt = $conn->prepare("
+			INSERT INTO comentario (idUser, idProduto, valor) VALUES ((SELECT id FROM utilizador WHERE username = ?), ?, ?)
+		");
+		$stmt->execute(array($username, $idProduct, $value));
+    }
+
+    function vote($idProduct) {
+        global $conn;
+        $stmt = $conn->prepare("
+            SELECT floor(AVG(valor)) as value
+            FROM classificacao 
+            WHERE idProduto = ?");
+        $stmt->execute(array($idProduct));
+        return $stmt->fetchAll();
+    }
 
     function removeComment($id) {
         global $conn;

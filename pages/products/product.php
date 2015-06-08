@@ -7,6 +7,7 @@
 	$a_b = also_bought($_GET['idProd']);
 	$checker = checkFav($_GET['idProd'], $_SESSION['username']);
     $tipo = getTipo($_SESSION['username']);
+	$votes = getVotes($_GET['idProd']);
 	
 	if(!empty($checker)) {
 		$fav_bool=1;
@@ -29,7 +30,8 @@
 		insertComment($_SESSION['username'], $_POST['text_comment'], $_POST['idProd_comment'] );
 		header("Location: $BASE_URL" . 'pages/products/product.php?idProd=' . $_POST['idProd_comment']);
 	}
-	
+
+    $smarty->assign('votes', $votes);
 	$smarty->assign('Result', $pp);
 	$smarty->assign('fav', $fav_bool);
 	$smarty->assign('p', $info);
