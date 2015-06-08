@@ -15,6 +15,7 @@
 			$uploadOk = 1;
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			$target_file2 = $BASE_DIR . "images/produtos/". $id .".". $imageFileType;
+			$target1 = "images/produtos/". $id .".". $imageFileType;
 			// Check if image file is a actual image or fake image
 			if(isset($_POST["submit"])) {
 				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -46,7 +47,7 @@
 			// if everything is ok, try to upload file
 			} else {
 				if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file2)) {
-					newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], $target_file2);
+					newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], $target1);
 					echo "<script type='text/javascript'>alert('Uploaded.');</script>";
 				} else {
 					echo "<script type='text/javascript'>alert('Sorry, there was an error uploading your file.');</script>";
@@ -55,7 +56,7 @@
 		 
 			break;
 		default:
-			$file = $BASE_DIR . 'images/produtos/default.png';
+			$file = 'images/produtos/default.png';
 			newProduct($_SESSION['fornecedor'],$_POST['name'],$_POST['price'],$_POST['description'],$_POST['stock'],$_POST['technic_details'],$_POST['brand'],$_POST['tipo'], $file);
 		}
 	}
