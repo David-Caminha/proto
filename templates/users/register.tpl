@@ -22,7 +22,7 @@
     </script>
     <script>
     function getCity(country) {
-        var strURL="{$BASE_URL}actions/findCity.php?cidade="+country;
+        var strURL="{$BASE_URL}actions/users/findCity.php?cidade="+country;
         var req = new XMLHttpRequest();
         if (req) {
             req.onreadystatechange = function() {
