@@ -5,6 +5,7 @@
 	$info = populate_product_info($_GET['idProd']);
 	$a_b = also_bought($_GET['idProd']);
 	$checker = checkFav($_GET['idProd'], $_SESSION['username']);
+    $tipo = getTipo($_SESSION['username'];
 	
 	if(!empty($checker)) {
 		$fav_bool=1;
@@ -32,5 +33,6 @@
 	$smarty->assign('fav', $fav_bool);
 	$smarty->assign('p', $info);
 	$smarty->assign('a_bought', $a_b);
+	$smarty->assign('tipo', $tipo);
 	$smarty->display('products/single_product_page.tpl');
 ?>

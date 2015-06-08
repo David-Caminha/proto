@@ -84,6 +84,13 @@
 		{foreach $Result as $comment}
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
+        {if $tipo == 1}
+                <form>
+                    <input type="hidden" name="idComentario" value="{$comment.id}" />
+                    <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
+				    <button value="{$comment.id}" onclick="remove(this.form)">Remover comentario</button>
+                </form>
+        {/if}
 		{$number=$number+1}
 		{/foreach}
 		{if $USERNAME}
@@ -109,5 +116,26 @@
 	</div>
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function remove(form) {
+        var strURL="{$BASE_URL}actions/products/removeComment.php?idProd=" + form.idProduto.val;
+        var req = new XMLHttpRequest();
+        if (req) {
+            req.onreadystatechange = function() {
+                if (req.readyState == 4) {
+                    // only if "OK"
+                    if (req.status == 200) {
+                        document.getElementById('comentarios').innerHTML=req.responseText;
+                    } else {
+                        alert("Problem while using XMLHTTP:\n" + req.statusText);
+                    }
+                }
+            }
+            req.open("POST", strURL, true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("id=" + form.idComentario.val);
+        }
+    }
+    </script>
     </body>
 {include file='common/footer.tpl'}
