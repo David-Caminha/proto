@@ -29,6 +29,7 @@
 	</div>{/if}
                 
         <div id="Item" class=" col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
+            <div id="votesdiv">
             <form id="classificacao" action="">
               <input class="star star-5" id="star-5" type="radio" name="star"/>
               <label class="star star-5" for="star-5"></label>
@@ -42,7 +43,7 @@
               <label class="star star-1" for="star-1"></label>
                 <input type="submit" value="Vote!"/>
             </form>
-            
+            </div>
             {foreach $p as $product}
             <section id="Item" class=" col-xs-12  col-sm-6 col-md-6 " >         
                     <img  src="{$BASE_URL}{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" >
@@ -93,7 +94,7 @@
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
         {if $tipo == 1}
-            <form id="myform">
+            <form class="myform">
                 <input type="hidden" name="idComentario" value="{$comment.id}" />
                 {foreach $p as $prd}
                 <input type="hidden" name="idProduto" value="{$prd.id}" />
@@ -129,7 +130,7 @@
  
     <script> 
         $(function () {
-            $('#myform').on('submit', function (e) {
+            $('.myform').on('submit', function (e) {
                 $.ajax({
                     type: 'post',
                     url: '{$BASE_URL}actions/products/removeComment.php',
@@ -150,7 +151,7 @@
                     url: '{$BASE_URL}actions/products/vote.php',
                     data: $(this).serialize(),
                     success: function (data) {
-                        $('#comentarios').html(data);
+                        $('#votesdiv').html(data);
                     }
                 });
                 e.preventDefault();
