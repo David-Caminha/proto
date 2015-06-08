@@ -85,7 +85,7 @@
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
         {if $tipo == 1}
-                <form id="myform" method="post" action="{$BASE_URL}/actions/products/removeComment.php">
+                <form id="myform" method="post" action="{$BASE_URL}actions/products/removeComment.php">
                     <input type="hidden" name="idComentario" value="{$comment.id}" />
                     {foreach $p as $prd}
                     <input type="hidden" name="idProduto" value="{$prd.id}" />
@@ -122,10 +122,11 @@
  
     <script> 
         // wait for the DOM to be loaded 
-        $(document).ready(function() { 
-            // bind 'myForm' and provide a simple callback function 
-            $('#myForm').ajaxForm(function() { 
-                alert("Thank you for your comment!"); 
+        $(document).ready(function() {
+            $('#myForm').ajaxForm({
+                success: function(responseText) {
+                    $('#comentarios').replaceWith(responseText);
+                }
             }); 
         }); 
     </script> 
