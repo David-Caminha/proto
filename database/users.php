@@ -158,9 +158,10 @@
 			FROM utilizador, morada, cidade
 			WHERE utilizador.id = morada.idUser AND
 			morada.idCidade = cidade.id AND
-			utilizador.username = :username
+			utilizador.username = ?
 		");
-		$stmt->execute(array(':username' => $u_name));
+        $stmt->bind_param('s', $u_name);
+		$stmt->execute();
 		return $stmt->fetchALL();
 	}
 	
