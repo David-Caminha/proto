@@ -6,18 +6,14 @@
 
 input.star{
   display: none;
-     max-width:100% !important;
-    height:auto;
 }
 
 label.star {
   float: right;
   padding: 10px;
-  font-size: 36px;
+  font-size: 20vw;
   color: #444;
   transition: all .2s;
-     max-width:100% !important;
-    height:auto;
 }
 
 input.star:checked ~ label.star:before {
