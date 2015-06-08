@@ -5,9 +5,8 @@
                  > 
                 <a href="#">SHOP</a>
             </section>
-            <section id="line"></section>
         </div>
-				<select id="search_method" onchange="this.form.method_receiver.value=this.value" class="col-xs-12 col-md-3 col-md-offset-8" >
+				<select id="search_method" onchange="this.form.method_receiver.value=this.value" class="col-xs-12 col-md-3" >
 							<option value="asc_price" selected> Preço crescente</option>
 							<option value="desc_price"> Preço decrescente</option>
 							<option value="best_rate"> Maior classificação</option>
