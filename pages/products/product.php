@@ -8,6 +8,7 @@
 	$checker = checkFav($_GET['idProd'], $_SESSION['username']);
     $tipo = getTipo($_SESSION['username']);
 	$votes = getVotes($_GET['idProd']);
+    $hasVoted = hasVoted($_SESSION['username']);
 	
 	if(!empty($checker)) {
 		$fav_bool=1;
@@ -32,6 +33,7 @@
 	}
 
     $smarty->assign('votes', $votes);
+    $smarty->assign('hasVoted', $hasVoted);
 	$smarty->assign('Result', $pp);
 	$smarty->assign('fav', $fav_bool);
 	$smarty->assign('p', $info);

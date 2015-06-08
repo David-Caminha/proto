@@ -7,6 +7,6 @@
 	$votes = getVotes($_POST['idProduct']);
 
     $smarty->assign('votes', $votes);
-    $output = $smarty->fetch('products/votes.tpl');
+    $output = $smarty->fetch('products/voted.tpl');
     echo $output;
 ?>

@@ -1,4 +1,14 @@
 <?php
+    function hasVoted($username) {
+        global $conn;
+        $stmt = $conn->prepare("
+            SELECT * as value
+            FROM classificacao 
+            WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)");
+        $stmt->execute(array($idProduct));
+        return $stmt->fetchAll() == true;
+    }
+
     function vote($username, $idProduct, $value) {
 		global $conn;
 		$stmt = $conn->prepare("
