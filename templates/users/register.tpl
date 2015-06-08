@@ -21,27 +21,24 @@
         });
     </script>
     <script>
-    function getCity(country) {   
-  var strURL="{$BASE_URL}actions/findCity.php?cidade="+country;
-  var req = getXMLHTTP();
-   
-  if (req) {
-   
-   req.onreadystatechange = function() {
-    if (req.readyState == 4) {
-     // only if "OK"
-     if (req.status == 200) {      
-      document.getElementById('citydiv').innerHTML=req.responseText;      
-     } else {
-      alert("Problem while using XMLHTTP:\n" + req.statusText);
-     }
-    }    
-   }   
-   req.open("GET", strURL, true);
-   req.send(null);
-  }
-    
- }
+    function getCity(country) {
+        var strURL="{$BASE_URL}actions/findCity.php?cidade="+country;
+        var req = new XMLHttpRequest();
+        if (req) {
+            req.onreadystatechange = function() {
+                if (req.readyState == 4) {
+                    // only if "OK"
+                    if (req.status == 200) {
+                        document.getElementById('citydiv').innerHTML=req.responseText;
+                    } else {
+                        alert("Problem while using XMLHTTP:\n" + req.statusText);
+                    }
+                }
+            }
+            req.open("GET", strURL, true);
+            req.send(null);
+        }
+    }
     </script>
   
     <body id="pagina">
