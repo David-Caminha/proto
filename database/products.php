@@ -10,7 +10,7 @@
     function getVotes($idProduct) {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT floor(AVG(valor)) as value
+            SELECT AVG(valor) as value
             FROM classificacao 
             WHERE idProduto = ?");
         $stmt->execute(array($idProduct));
