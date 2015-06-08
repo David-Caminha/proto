@@ -4,7 +4,7 @@
 	
 	if(!empty($_POST['name'])){
 		insertBrand($_POST['name']);
-		header('Location: '.$BASE_URL. 'pages/users/Homepage.php');
+		header('Location: '.$BASE_URL. 'pages/products/Homepage.php');
 	}
 	
 	$smarty->display('users/insertBrand.tpl');

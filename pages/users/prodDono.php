@@ -20,6 +20,6 @@
 		$smarty->assign('products', $n_prod);
 		$smarty->display('users/prodDono.tpl');
 	} else {
-		header('Location: '.$BASE_URL. 'pages/users/Homepage.php');
+		header('Location: '.$BASE_URL. 'pages/products/Homepage.php');
 	}
 ?>
