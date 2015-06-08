@@ -55,6 +55,7 @@ function getCps(city) {
     {if $i.tipo == 1}
     <a href="{$BASE_URL}pages/users/gerirUsers.php">Gerir Users</a>
     {/if}
+<section class="col-sm-6 col-md-6" >
 	<form id="perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 		Nome Completo: <input class="form-control" type="text" value="{$i.nome}" name="nome" /><br />
 		Data de Nascimento: <input class="form-control" type="date" value="{$i.datanascimento}" name="data_nascimento" /><br />
@@ -85,15 +86,18 @@ function getCps(city) {
                 <option>Codigo postal</option>
             </select>
         </div>
-        <input type="text" value="{$i.cp2}" name="CP2" /><br />
+        <input class="form-control" type="text" value="{$i.cp2}" name="CP2" /><br />
 		<button class="btn btn-default">Confirmar alterações</button>
 	</form>
+</section>
+<section class="col-sm-6 col-md-6" >
 	<form id="password_perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 		Old Password: <input class="form-control" type="password" name="old_password" /><br />
 		New Password: <input class="form-control" type="password" name="password" /><br />
 		Confirm New Password: <input class="form-control" type="password" name="confirm_password" /><br />
 		<button class="btn btn-default">Confirmar alterações</button>
 	</form>
+</section>
 {/foreach}
 {else}
 	{include file='common/no_permission.tpl'}
