@@ -2,7 +2,8 @@
     function banirUser($idUser, $admin) {
         $tipo = getTipo($admin);
         if($tipo == 1 || $tipo == 2)
-        {
+        {    
+            global $conn;
 			$stmt = $conn->prepare("
 				UPDATE utilizador
                 SET tipo = 3
@@ -19,6 +20,7 @@
         $tipo = getTipo($admin);
         if($tipo == 1 || $tipo == 2)
         {
+            global $conn;
 			$stmt = $conn->prepare("
 				UPDATE utilizador
                 SET tipo = 0
