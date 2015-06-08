@@ -23,6 +23,7 @@
         {else}
         <span>Escreva um Comentário:</span>
         <br />
+        {/if}
         <textarea rows="10" cols="120" name="text_comment" placeholder="Escreva aqui o seu comentário..."></textarea>
         <br />
         <button type="submit">Submeter</button>
