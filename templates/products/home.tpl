@@ -4,8 +4,6 @@
                 <a  href="http://www.google.com">HOME</a>
                  > 
                 <a href="http://www.google.com">LOGIN</a>
-            </section>
-            <section id="line"></section>
         </div>
            <br>
 
