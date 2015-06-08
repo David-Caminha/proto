@@ -6,7 +6,7 @@
             FROM classificacao 
             WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
             AND idProduto = ?");
-        $stmt->execute(array(username, $idProd));
+        $stmt->execute(array($username, $idProd));
         $checker = $stmt->fetchAll();
         if(empty($checker))
             return false;
