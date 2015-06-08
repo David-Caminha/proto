@@ -26,11 +26,16 @@
 			<td>{$itemEncomenda.quantidade}</td>
 			<td>{$itemEncomenda.total}</td>
 			<td>
-				<form action="{$BASE_URL}pages/users/shop_cart.php" method="get">
+				<form class="form-inline" action="{$BASE_URL}pages/users/shop_cart.php" method="get">
+                      <div class="form-group">
 					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto}" />
 					<input value="{$itemEncomenda.quantidade}" type="number" name="qtd" />
-					<button>Alterar Quantidade</button>
+                               </div>
+					<button class="btn btn-default" >Alterar Quantidade</button>
 				</form>	
+                
+                
+        
 			</td>
 			<td><a href="?idC={$itemEncomenda.idcarrinho}&idP={$itemEncomenda.idproduto}"><button type="button" >Remover</button></a></td> 
 		</tr>
