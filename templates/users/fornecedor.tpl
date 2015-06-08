@@ -1,6 +1,11 @@
 {include file='common/header.tpl'}
 
 {if $FORNECEDOR}
+            <section id="linkagem" class="col-xs-12 col-md-12" >
+                <a  href="http://www.google.com">HOME</a>
+        </section>
+           <br>
+
 	<div id="fornecedor_wrapper">
 		<table class="table table-striped">
 			<tr>
