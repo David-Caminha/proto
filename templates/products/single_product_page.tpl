@@ -72,7 +72,7 @@
 		{foreach $a_bought as $ab}
 			<td>		
 				<span class="a_b_name">{$ab.nome}</span><br />
-				<img src="{$BASE_URL}{$ab.caminhoimagem}" alt="Imagem do Artigo" width="100" height="100" /><br />
+                <a href="?idProd={$ab.id}"><img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="{$ab.caminhoimagem}" height="100" width="100"></a>
 				<span class="a_b_price">{$ab.preco}€</span>
 			</td>
 		{/foreach}
