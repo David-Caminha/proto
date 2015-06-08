@@ -85,13 +85,13 @@
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
         {if $tipo == 1}
-                <form id="myform" method="post" action="{$BASE_URL}actions/products/removeComment.php">
-                    <input type="hidden" name="idComentario" value="{$comment.id}" />
-                    {foreach $p as $prd}
-                    <input type="hidden" name="idProduto" value="{$prd.id}" />
-                    {/foreach}
-				    <input type="submit" value="Remover comentario" />
-                </form>
+            <form id="myform">
+                <input type="hidden" name="idComentario" value="{$comment.id}" />
+                {foreach $p as $prd}
+                <input type="hidden" name="idProduto" value="{$prd.id}" />
+                {/foreach}
+                <input type="submit" value="Remover comentario" />
+            </form>
         {/if}
 		{$number=$number+1}
 		{/foreach}
@@ -121,13 +121,18 @@
     <script src="http://malsup.github.com/jquery.form.js"></script> 
  
     <script> 
-        // wait for the DOM to be loaded 
-        $(document).ready(function() {
-            $('#myForm').ajaxForm({
-                success: function(responseText) {
-                    $('#comentarios').replaceWith(responseText);
-                }
-            }); 
+        $(function () {
+            $('#myform').on('submit', function (e) {
+                $.ajax({
+                    type: 'post',
+                    url: '{$BASE_URL}actions/products/removeComment.php',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $('#comentarios').html(data);
+                    }
+                });
+                e.preventDefault();
+            });
         }); 
     </script> 
     </body>
