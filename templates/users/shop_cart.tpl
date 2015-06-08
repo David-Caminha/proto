@@ -28,8 +28,8 @@
 			<td>
 				<form class="form-inline" action="{$BASE_URL}pages/users/shop_cart.php" method="get">
                       <div class="form-group">
-					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto} class="form-control"" />
-					<input value="{$itemEncomenda.quantidade}" type="number" name="qtd class="form-control"" />
+					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto}"  class="form-control"/>
+					<input value="{$itemEncomenda.quantidade}" type="number" name="qtd " class="form-control" />
                                </div>
 					<button class="btn btn-default" >Alterar Quantidade</button>
 				</form>	
@@ -37,7 +37,7 @@
                 
         
 			</td>
-			<td><a href="?idC={$itemEncomenda.idcarrinho}&idP={$itemEncomenda.idproduto}"><button type="button" >Remover</button></a></td> 
+			<td><a href="?idC={$itemEncomenda.idcarrinho}&idP={$itemEncomenda.idproduto}"><button type="button"  class="btn btn-default">Remover</button></a></td> 
 		</tr>
 		{$valorfinal = $valorfinal + $itemEncomenda.total}
 		{/foreach}
@@ -45,7 +45,7 @@
 			<td><b>Valor Final:</b> {$valorfinal}</td>
 		</tr>
 	</table>
-	<a href="{$BASE_URL}pages/users/checkout.php"><button type="button">Finalizar Compra</button></a>
+	<a href="{$BASE_URL}pages/users/checkout.php"><button type="button" class="btn btn-default" >Finalizar Compra</button></a>
 
 </section>
 
