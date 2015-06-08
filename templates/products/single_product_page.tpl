@@ -29,6 +29,7 @@
 	</div>{/if}
                 
         <div id="Item" class=" col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
+            {if $USERNAME}
             <div id="votesdiv">
             <form class="classificacao" action="">
               <input class="star star-5" id="star-5" type="radio" name="star"/>
@@ -44,6 +45,7 @@
                 <input type="submit" value="Vote!"/>
             </form>
             </div>
+            {/if}
             {foreach $p as $product}
             <section id="Item" class=" col-xs-12  col-sm-6 col-md-6 " >         
                     <img  src="{$BASE_URL}{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" >
