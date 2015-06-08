@@ -20,12 +20,6 @@
                     <form action="{$BASE_URL}pages/products/search.php" method="get">
                         <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
 						<input type="hidden" name="method_receiver" />
-						<select id="search_method" onchange="this.form.method_receiver.value=this.value">
-							<option value="asc_price" selected> Preço crescente</option>
-							<option value="desc_price"> Preço decrescente</option>
-							<option value="best_rate"> Maior classificação</option>
-							<option value="recent"> Mais recentes</option>
-						</select>
 					</form>
                 </section>
           
