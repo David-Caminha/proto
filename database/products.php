@@ -7,7 +7,7 @@
 		$stmt->execute(array($username, $idProduct, $value));
     }
 
-    function vote($idProduct) {
+    function getVotes($idProduct) {
         global $conn;
         $stmt = $conn->prepare("
             SELECT floor(AVG(valor)) as value
