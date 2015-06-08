@@ -120,7 +120,7 @@
     (function($){
         function processForm( e ){
             $.ajax({
-                url: 'users.php',
+                url: '{$BASE_URL}actions/products/removeComment.php',
                 dataType: 'text',
                 type: 'post',
                 contentType: 'application/x-www-form-urlencoded',
