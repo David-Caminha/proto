@@ -1,11 +1,12 @@
 <?php
-    function hasVoted($username) {
+    function hasVoted($username, $idProd) {
         global $conn;
         $stmt = $conn->prepare("
             SELECT idUser
             FROM classificacao 
-            WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)");
-        $stmt->execute(array($idProduct));
+            WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)
+            AND idProduto = ?");
+        $stmt->execute(array(username, $idProd));
         $checker = $stmt->fetchAll();
         if(empty($checker))
             return false;

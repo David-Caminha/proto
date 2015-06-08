@@ -8,7 +8,7 @@
 	$checker = checkFav($_GET['idProd'], $_SESSION['username']);
     $tipo = getTipo($_SESSION['username']);
 	$votes = getVotes($_GET['idProd']);
-    $voted = hasVoted($_SESSION['username']);
+    $voted = hasVoted($_SESSION['username'], $_GET['idProd']);
 	
 	if(!empty($checker)) {
 		$fav_bool=1;
