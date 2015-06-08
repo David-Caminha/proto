@@ -45,10 +45,10 @@
         $stmt = $conn->prepare("
             SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, Produto.id, carrinhoCompras.id
             FROM Produto, carrinhoCompras, itemEncomenda 
-            WHERE carrinhoCompras.id = itemEncomenda.idCarrinho
-            AND Produto.id = itemEncomenda.idProduto AND
+            WHERE carrinhoCompras.id = itemEncomenda.idCarrinho AND
+            Produto.id = itemEncomenda.idProduto AND
 			carrinhoCompras.estado = TRUE
-			GROUP BY Produto.id
+			GROUP BY itemEncomenda.idProduto
             ORDER by carrinhoCompras.id DESC 
             LIMIT 4");
         $stmt->execute();
