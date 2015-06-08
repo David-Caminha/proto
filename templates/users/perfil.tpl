@@ -90,7 +90,7 @@ function getCps(city) {
         <form class="form-inline">
             <div class="form-group">
         <h7 class=" col-xs-12  col-sm-2 col-md-3 ">Codigo Postal</h7>
-        <div id="cpdiv" class=" col-xs-3  col-sm-2 col-md-3 ">
+        <div id="cpdiv" >
             <select id="cp" class="form-control" name="cp1">
                 <option>Codigo postal</option>
             </select>
