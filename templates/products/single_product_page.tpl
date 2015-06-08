@@ -117,8 +117,8 @@
 				{/if}
 				<textarea rows="10" cols="120" name="text_comment" placeholder="Escreva aqui o seu comentário..."></textarea>
 				<br />
-				<button type="submit">Submeter</button>
-				<button type="reset">Limpar</button>
+				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="reset" class="btn btn-default" >Erase</button>
 			</form>
 		</div>
 		{/if}
