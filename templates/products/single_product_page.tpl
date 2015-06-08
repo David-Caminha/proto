@@ -29,20 +29,13 @@
 	</div>{/if}
                 
         <div id="Item" class=" col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
-<<<<<<< HEAD
             <form id="classificacao" action="">
               <input class="star star-5" id="star-5" type="radio" name="star"/>
               <label class="star star-5" for="star-5"></label>
               <input class="star star-4" id="star-4" type="radio" name="star"/>
-=======
-            <form action="">
-              <input class="star star-5 img-responsive" id="star-5" type="radio" name="star"/>
-              <label class="star star-5 img-responsive"  for="star-5"></label>
-              <input class="star star-4 img-responsive" id="star-4" type="radio" name="star"/>
->>>>>>> origin/master
               <label class="star star-4" for="star-4"></label>
               <input class="star star-3" id="star-3" type="radio" name="star"/>
-              <label class="star star-3 img-responsive" for="star-3"></label>
+              <label class="star star-3" for="star-3"></label>
               <input class="star star-2" id="star-2" type="radio" name="star"/>
               <label class="star star-2" for="star-2"></label>
               <input class="star star-1" id="star-1" type="radio" name="star"/>
@@ -52,7 +45,7 @@
             
             {foreach $p as $product}
             <section id="Item" class=" col-xs-12  col-sm-6 col-md-6 " >         
-                    <img  src="{$BASE_URL}{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" height="350" width="350" >
+                    <img  src="{$BASE_URL}{$product.caminhoimagem}" alt="Imagem produto" class="img-responsive" alt="Responsive image" >
                     <p class=" col-xs-12 col-md-12 "> </p>
                   
             </section>
@@ -105,10 +98,8 @@
                 {foreach $p as $prd}
                 <input type="hidden" name="idProduto" value="{$prd.id}" />
                 {/foreach}
-                <input type="submit" class="btn btn-default" value="Remove" />
+                <input type="submit" value="Remover comentario" />
             </form>
-                    <br>
-                    <br>
         {/if}
 		{$number=$number+1}
 		{/foreach}
@@ -127,8 +118,8 @@
 				{/if}
 				<textarea rows="10" cols="120" name="text_comment" placeholder="Escreva aqui o seu comentário..."></textarea>
 				<br />
-				<button type="submit" class="btn btn-default">Submit</button>
-				<button type="reset" class="btn btn-default" >Erase</button>
+				<button type="submit">Submeter</button>
+				<button type="reset">Limpar</button>
 			</form>
 		</div>
 		{/if}
