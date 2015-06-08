@@ -23,7 +23,7 @@
 						{if $FORNECEDOR}
 							{include file='common/menu_supplier.tpl'}
 						{else}
-                      <a href="{$BASE_URL}pages/users/register.php">Register</a>
+                      <a href="{$BASE_URL}pages/users/register.php" class=" btn btn-default" >Register</a>
                     	{/if}
                     {/if}
                     <form action="{$BASE_URL}pages/products/search.php" method="get">
