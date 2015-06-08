@@ -13,7 +13,9 @@
 			updateUserPassword($_POST['old_password'], $_POST['password'], $_SESSION['username']);
 			header('Location: '.$BASE_URL. 'pages/users/perfil.php');
 		}
-		
+        
+		$paises = getPaises();
+        $smarty->assign('paises', $paises);
 		$smarty->assign('info', $info);
 		$smarty->display('users/perfil.tpl');
 	} 
