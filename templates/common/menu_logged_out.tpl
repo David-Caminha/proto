@@ -6,6 +6,7 @@
        <div class="form-group">
   <input type="password" class="form-control" placeholder="password" name="password">
      </div>
-    <a href="{$BASE_URL}pages/users/register.php">Register</a>
+
   <button type="submit" class="btn btn-default">Log in</button>
 </form>
+    <a href="{$BASE_URL}pages/users/register.php">Register</a>
