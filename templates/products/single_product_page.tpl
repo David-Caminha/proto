@@ -85,12 +85,12 @@
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
         {if $tipo == 1}
-                <form id="my-form" method="post">
+                <form id="myform" method="post" action="{$BASE_URL}/actions/products/removeComment.php">
                     <input type="hidden" name="idComentario" value="{$comment.id}" />
                     {foreach $p as $prd}
                     <input type="hidden" name="idProduto" value="{$prd.id}" />
                     {/foreach}
-				    <button type="submit">Remover comentario</button>
+				    <input type="submit" value="Remover comentario" />
                 </form>
         {/if}
 		{$number=$number+1}
@@ -118,20 +118,16 @@
 	</div>
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#my-form').submit(function (event){
-            $.ajax({
-                type: 'POST',
-                url: '{$BASE_URL}actions/products/removeComment.php',
-                data: $(this).serialize(),
-                dataType: 'text'})
-            .done(function(data){
-                    $('#comentarios').html( data );
-            });
-            event.preventDefault();
-        });
-    });
-</script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+ 
+    <script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            $('#myForm').ajaxForm(function() { 
+                alert("Thank you for your comment!"); 
+            }); 
+        }); 
+    </script> 
     </body>
 {include file='common/footer.tpl'}
