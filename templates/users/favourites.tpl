@@ -9,7 +9,7 @@
 		{foreach $produto as $fav}
 		<tr>
 			<td><a href="?idProd={$fav.id}">{$fav.nome}</a></td>
-			<td><a href="?idP={$fav.id}"><button>Remover</button></a></td>
+			<td><a href="?idP={$fav.id}"><button class="btn btn-default">Remover</button></a></td>
 		</tr>
 		{/foreach}
 		<table>
