@@ -119,9 +119,8 @@
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
     <script>
-    (function($){
-        function processForm( e ){
-            e.preventDefault();
+    $(document).ready(function() {
+        $('#my-form').submit(function (event){
             $.ajax({
                 url: '{$BASE_URL}actions/products/removeComment.php',
                 dataType: 'text',
@@ -135,10 +134,9 @@
                     console.log( errorThrown );
                 }
             });
-        }
-
-        $('#my-form').on('submit', processForm );
-    })(jQuery);
+            event.preventDefault();
+        });
+    });
 </script>
     </body>
 {include file='common/footer.tpl'}
