@@ -4,7 +4,7 @@
 <p class="c_text">{$comment.texto}</p>
 <form class="myform">
     <input type="hidden" name="idComentario" value="{$comment.id}" />
-    <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
+    <input type="hidden" name="idProduto" value="{$idProd}" />
     <button type="submit" class="btn btn-default">Remove</button>
 </form>
 {$number=$number+1}
@@ -13,7 +13,7 @@
 <div id="write_comment">
     <form method="post" action="{$BASE_URL}pages/products/product.php" >
         {foreach $p as $prd}
-        <input type="hidden" name="idProd_comment" value="{$prd.id}" />
+        <input type="hidden" name="idProd_comment" value="{$idProd}" />
         {/foreach}
         {if $number==0}
         <span>Seja o Primeiro a comentar:</span>
@@ -29,19 +29,3 @@
     </form>
 </div>
 {/if}
-
-<script> 
-        $(function () {
-            $('.myform').on('submit', function (e) {
-                $.ajax({
-                    type: 'post',
-                    url: '{$BASE_URL}actions/products/removeComment.php',
-                    data: $(this).serialize(),
-                    success: function (data) {
-                        $('#comentarios').html(data);
-                    }
-                });
-                e.preventDefault();
-            });
-        }); 
-</script>
