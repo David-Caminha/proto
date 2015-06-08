@@ -1,6 +1,7 @@
 {include file='common/header.tpl'}
             <section id="line"></section>
         </div>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         
         {if $USERNAME}
         	<div id="right_column" class="column" >
