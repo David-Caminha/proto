@@ -160,7 +160,7 @@
 			morada.idCidade = cidade.id AND
 			utilizador.username = ?
 		");
-        $stmt->bind_param('s', $u_name);
+        $stmt->bindParam(2, $colour, PDO::PARAM_STR);
 		$stmt->execute();
 		return $stmt->fetchALL();
 	}
