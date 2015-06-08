@@ -48,6 +48,7 @@
             WHERE carrinhoCompras.id = itemEncomenda.idCarrinho
             AND Produto.id = itemEncomenda.idProduto AND
 			carrinhoCompras.estado = TRUE
+			GROUP BY Produto.id
             ORDER by carrinhoCompras.id DESC 
             LIMIT 4");
         $stmt->execute();
