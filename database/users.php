@@ -25,7 +25,7 @@
         return $stmt->fetch() == true;
     }
 
-    function createUser($username, $password, $email, $birthDate, $realname, $phone, $address) {
+    function createUser($username, $password, $email, $birthDate, $realname, $phone, $address, $cp1, $cp2, $idCidade) {
         global $conn;
 		
 		$stmtVerify = $conn->prepare("
@@ -37,10 +37,16 @@
 		$checker = $stmtVerify->fetchALL();
 		
 		if(empty($checker)) {
-			$stmt = $conn->prepare("
+			$stmtUser = $conn->prepare("
 				INSERT INTO utilizador (username, password, datanascimento, nome, email, telemovel)
-				VALUES (?, ?, ?, ?, ?, ?)");
-			$stmt->execute(array($username, crypt($password), $birthDate, $realname, $email, $phone));
+				VALUES (?, ?, ?, ?, ?, ?)
+                RETURNING id");
+			$stmtUser->execute(array($username, crypt($password), $birthDate, $realname, $email, $phone));
+            $result = $stmtUser->fetch(PDO::FETCH_ASSOC);
+			$stmtAddr = $conn->prepare("
+				INSERT INTO morada (rua, cp2, idUser, idCidade)
+				VALUES (?, ?, ?, ?)");
+			$stmtAddr->execute(array($address, $cp2, $result['id'], $idCidade));
 			return true;
 		}
 		return false;

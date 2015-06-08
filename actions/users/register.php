@@ -2,7 +2,7 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/users.php');
 
-    if ($_POST['choiceRadio'] == "user" && (!$_POST['username'] || !$_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['dataNascimento'] || !$_POST['nome'] || !$_POST['contacto'] || !$_POST['morada'])) 
+    if ($_POST['choiceRadio'] == "user" && (!$_POST['username'] || !$_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['dataNascimento'] || !$_POST['nome'] || !$_POST['contacto'] || !$_POST['morada'] || !$_POST['cp1']) || !$_POST['cp2']) || !$_POST['pais']) || !$_POST['cidade']))) 
     {
         $_SESSION['error_messages'][] = 'All fields are mandatory.';
         $_SESSION['form_values'] = $_POST;
@@ -19,8 +19,7 @@
 
     if(usernameExists($_POST['username']))
     {
-        $_SESSION['error_messages'][] = 'Duplicate username.';
-        $_SESSION['field_errors']['username'] = 'Username already exists.';
+        $_SESSION['error_messages'][] = 'Username already exists.';
         $_SESSION['form_values'] = $_POST;
         header("Location: $BASE_URL" . 'pages/users/register.php');
         exit;
@@ -29,6 +28,14 @@
     if($_POST['password'] != $_POST['confirmarPassword'])
     {
         $_SESSION['error_messages'][] = 'The passwords do not match.';
+        $_SESSION['form_values'] = $_POST;
+        header("Location: $BASE_URL" . 'pages/users/register.php');
+        exit;
+    }
+
+    if(!isset($_POST['termos']))
+    {
+        $_SESSION['error_messages'][] = 'Please accept the terms and conditions before continuing';
         $_SESSION['form_values'] = $_POST;
         header("Location: $BASE_URL" . 'pages/users/register.php');
         exit;
@@ -44,6 +51,9 @@
         $realname = strip_tags($_POST['nome']);
         $phone = strip_tags($_POST['contacto']);
         $address = strip_tags($_POST['morada']);
+        $cp1 = strip_tags($_POST['cp1']);
+        $cp2 = strip_tags($_POST['cp2']);
+        $idCidade = $_POST['cidade'];
     }
     else
     {
@@ -53,7 +63,7 @@
 
     try {
         if($_POST['choiceRadio'] == "user")
-            createUser($username, $password, $email, $birthDate, $realname, $phone, $address);
+            createUser($username, $password, $email, $birthDate, $realname, $phone, $address, $cp1, $cp2, $idCidade);
         else if($_POST['choiceRadio'] == "fornecedor")
             createSupplier($username, $password, $email, $contactName, $contactPhone);
         else

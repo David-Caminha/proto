@@ -100,7 +100,7 @@
                         </div>
                         
                         <select class="form-control" name="pais" onChange="getCity(this.value)">
- <option value="">Select Country</option>
+ <option value="">Selecione o país</option>
  {foreach $paises as $pais}
  <option value="{$pais.nome}">{$pais.nome}</option>
  {/foreach}
@@ -109,7 +109,7 @@
                          
                         <div id="citydiv">
                             <select class="form-control" name="cidade">
-                                <option>Select City</option>
+                                <option>Selecione a cidade</option>
                             </select>
                         </div>
                         
@@ -123,7 +123,7 @@
                         <input class="form-control" type="text" name="contactoResponsavel" placeholder="Contacto" value="{$FORM_VALUES.contactoResponsavel}"> 
                     </div>
                     <br>          
-                    <input type="checkbox"> <h7> Li e concordo com os</h7> <a href="http://www.google.com">Termos de utilização</a> <br><br>
+                    <input type="checkbox" name="termos"> <h7> Li e concordo com os</h7> <a href="http://www.google.com">Termos de utilização</a> <br><br>
                     <input type="submit" class="btn btn-primary" value="Registar">
                     <br>
                 </form>
