@@ -1,5 +1,13 @@
 <?php
 
+    function removeComment($id) {
+        global $conn;
+        $stmt = $conn->prepare("
+            DELETE FROM comentario
+            WHERE id = ?");
+        $stmt->execute(array($id));
+    }
+
     function getRecentementeVendidos() {
         global $conn;
         $stmt = $conn->prepare("
