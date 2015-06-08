@@ -158,9 +158,9 @@
 			FROM utilizador, morada, cidade
 			WHERE utilizador.id = morada.idUser AND
 			morada.idCidade = cidade.id AND
-			username = ?
+			username = :username
 		");
-        $stmt->bindParam(1, $u_name, PDO::PARAM_STR);
+        $stmt->bindParam(':username', $u_name, PDO::PARAM_STR);
 		$stmt->execute();
 		return $stmt->fetchALL();
 	}
