@@ -5,7 +5,7 @@
         {if $USERNAME}
         	<div id="right_column" class="column" >
 	<form action="{$BASE_URL}pages/products/product.php" method="get">
-		<input type="hidden" name="qtd_receiver" />
+		<input type="hidden" name="qtd_receiver" value="1"/>
 		{foreach $p as $prd}
 		<input type="hidden" name="prd_receiver" value="{$prd.id}" />
 		{/foreach}
@@ -87,7 +87,9 @@
         {if $tipo == 1}
                 <form id="my-form">
                     <input type="hidden" name="idComentario" value="{$comment.id}" />
-                    <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
+                    {foreach $p as $prd}
+                    <input type="hidden" name="prd_receiver" value="{$prd.id}" />
+                    {/foreach}
 				    <button type="submit">Remover comentario</button>
                 </form>
         {/if}
