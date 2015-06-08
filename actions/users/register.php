@@ -2,7 +2,7 @@
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/users.php');
 
-    if ($_POST['choiceRadio'] == "user" && (!$_POST['username'] || !$_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['dataNascimento'] || !$_POST['nome'] || !$_POST['contacto'] || !$_POST['morada'] || !$_POST['cp1'] || !$_POST['cp2'] || !$_POST['pais'] || !$_POST['cidade'])) 
+    if ($_POST['choiceRadio'] == "user" && (!$_POST['username'] || !$_POST['email'] || !$_POST['password'] || !$_POST['confirmarPassword'] || !$_POST['dataNascimento'] || !$_POST['nome'] || !$_POST['contacto'] || !$_POST['morada'] || !$_POST['cp1'] || !$_POST['cp2'])) 
     {
         $_SESSION['error_messages'][] = 'All fields are mandatory.';
         $_SESSION['form_values'] = $_POST;
