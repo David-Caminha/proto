@@ -2,7 +2,7 @@
     function vote($username, $idProduct, $value) {
 		global $conn;
 		$stmt = $conn->prepare("
-			INSERT INTO comentario (idUser, idProduto, valor) VALUES ((SELECT id FROM utilizador WHERE username = ?), ?, ?)
+			INSERT INTO classificacao (idUser, idProduto, valor) VALUES ((SELECT id FROM utilizador WHERE username = ?), ?, ?)
 		");
 		$stmt->execute(array($username, $idProduct, $value));
     }
