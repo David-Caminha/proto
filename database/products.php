@@ -6,7 +6,7 @@
             FROM classificacao 
             WHERE idUser = (SELECT id FROM utilizador WHERE username = ?)");
         $stmt->execute(array($idProduct));
-        return $stmt->fetchAll() == true;
+        return $stmt->fetchAll();
     }
 
     function vote($username, $idProduct, $value) {
