@@ -1,6 +1,7 @@
 <?php
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/products.php');
+    include_once($BASE_DIR .'database/users.php');
 	$pp = populate_product_comment($_GET['idProd']);
 	$info = populate_product_info($_GET['idProd']);
 	$a_b = also_bought($_GET['idProd']);
