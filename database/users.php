@@ -16,6 +16,15 @@
         return $stmt->fetchALL();
     }
 
+    function cpsPertencentes($city) {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                            FROM cidade 
+                            WHERE nome = ?");
+        $stmt->execute(array($city));
+        return $stmt->fetchALL();
+    }
+
     function usernameExists($username) {
         global $conn;
         $stmt = $conn->prepare("SELECT * 
