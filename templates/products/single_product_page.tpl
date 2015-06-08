@@ -122,17 +122,12 @@
     $(document).ready(function() {
         $('#my-form').submit(function (event){
             $.ajax({
+                type: 'POST',
                 url: '{$BASE_URL}actions/products/removeComment.php',
-                dataType: 'text',
-                type: 'post',
-                contentType: 'application/x-www-form-urlencoded',
                 data: $(this).serialize(),
-                success: function( data, textStatus, jQxhr ){
+                dataType: 'text'})
+            .done(function(data){
                     $('#comentarios').html( data );
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
-                }
             });
             event.preventDefault();
         });
