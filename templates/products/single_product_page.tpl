@@ -116,13 +116,13 @@
 		</div>
 		{/if}
 	</div>
-     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2"></script>
     <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script> 
  
     <script> 
         $(function () {
-            $('#myform').on('submit', function (e) {
+            $('form').on('submit', function (e) {
                 $.ajax({
                     type: 'post',
                     url: '{$BASE_URL}actions/products/removeComment.php',
