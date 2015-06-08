@@ -5,6 +5,6 @@
 
     $cidades = cidadesPertencentes($country);
     $smarty->assign('cidades', $cidades);
-    $output = $smarty->fetch('cities.tpl');
+    $output = $smarty->fetch('users/cities.tpl');
     echo $output;
 ?>
