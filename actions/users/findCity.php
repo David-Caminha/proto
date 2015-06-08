@@ -5,11 +5,6 @@
 
     $cidades = cidadesPertencentes($country);
     $smarty->assign('cidades', $cidades);
+    $output = $smarty->fetch('users/cities.tpl');
+    echo $output;
 ?>
-
-<select name="city">
-<option>Select City</option>
-<?php foreach($result as $row) { ?>
-<option value=<?php echo $row['id']?>><?php echo $row['nome']?></option>
-<?php } ?>
-</select>
