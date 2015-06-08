@@ -43,7 +43,7 @@
     function getRecentementeVendidos() {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, Produto.id 
+            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, Produto.id, carrinhoCompras.id
             FROM Produto, carrinhoCompras, itemEncomenda 
             WHERE carrinhoCompras.id = itemEncomenda.idCarrinho
             AND Produto.id = itemEncomenda.idProduto AND
