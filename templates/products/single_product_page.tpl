@@ -96,7 +96,7 @@
 		<h3 class="c_username">{$comment.username}</h3>
 		<p class="c_text">{$comment.texto}</p>
         {if $tipo == 1}
-            <form class="myform">
+            <form class="myform" onsubmit="myFunc();">
                 <input type="hidden" name="idComentario" value="{$comment.id}" />
                 {foreach $p as $prd}
                 <input type="hidden" name="idProduto" value="{$prd.id}" />
@@ -131,8 +131,7 @@
     <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
  
     <script> 
-        $(function () {
-            $('.myform').on('submit', function (e) {
+        function myFunc(e) {
                 $.ajax({
                     type: 'post',
                     url: '{$BASE_URL}actions/products/removeComment.php',
@@ -142,8 +141,7 @@
                     }
                 });
                 e.preventDefault();
-            });
-        }); 
+            }
     </script>
     <script> 
         $(function () {
