@@ -1,8 +1,14 @@
 {include file='common/header.tpl'}
 {if $USERNAME  }
 <link rel="stylesheet" href="{$BASE_URL}css/Style_carrinho.css"/>
+  <section id="linkagem" class="col-xs-12 col-md-12" >
+                <a  href="{$BASE_URL}">HOME</a>
+                 > 
+                <a href="#">SHOP CART</a>
+            </section>
 <section id="">
-	<h2>Carrinho de Compras</h2>
+    
+	<h2>Shopping cart</h2>
 	<br />
 	<h3>Items</h3>
 	<table class="table table-striped">

@@ -2,7 +2,11 @@
 
 {if $FORNECEDOR}
 
-		
+		  <section id="linkagem" class="col-xs-12 col-md-12" >
+                <a  href="{$BASE_URL}">HOME</a>
+                 > 
+                <a href="#">EDIT</a>
+            </section>
 		
 	<div id="edit_product_wrapper">
 		<form action="{$BASE_URL}pages/users/editProduct.php" method="post" >

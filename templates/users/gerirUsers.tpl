@@ -1,12 +1,11 @@
 {include file='common/header.tpl'}
 
-            <section id="linkagem" class="col-xs-12 col-md-12" >
-                <a  href="http://www.google.com">HOME</a>
+         <section id="linkagem" class="col-xs-12 col-md-12" >
+                <a  href="{$BASE_URL}">HOME</a>
                  > 
-                <a href="http://www.google.com">ACCOUNT</a>
+                <a href="#">MANAGE USERS</a>
             </section>
-            <section id="line"></section>
-        </div>
+<section id="">
 
 		<div id="utilizadores" class="table-responsive " >
             <table class="table table-striped">
