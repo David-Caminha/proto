@@ -45,7 +45,7 @@
 			<td><b>Valor Final:</b> {$valorfinal}</td>
 		</tr>
 	</table>
-	<a href="{$BASE_URL}pages/users/checkout.php"><button type="button" class="btn btn-default" >Finalizar Compra</button></a>
+	{if $valorfinal > 0}<a href="{$BASE_URL}pages/users/checkout.php"><button type="button" class="btn btn-default" >Finalizar Compra</button></a>{/if}
 
 </section>
 
