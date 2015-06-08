@@ -19,7 +19,7 @@
             
             <dt> 
                 <section id="Item" class=" col-xs-12  col-sm-4 col-md-3 " >         
-                    <a href="?idProd={$produto.id}"><img  src="{$BASE_URL}{$produto.photo}" alt="Imagem artigo" height="100" width="100"></a>
+                    <a href="?idProd={$produto.id}"><img  src="{$BASE_URL}{$produto.caminhoimagem}" alt="Imagem artigo" height="100" width="100"></a>
                     <a href="?idProd={$produto.id}"><img id="Imagem" src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-plus-outline.svg"  height="40" width="40"></a>
                     <p class=" col-xs-12 col-md-12 "> {$produto.nome}</p>
                     <p class=" col-xs-12 col-md-12 "> {$produto.preco}€</p>
