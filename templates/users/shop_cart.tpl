@@ -28,8 +28,8 @@
 			<td>
 				<form class="form-inline" action="{$BASE_URL}pages/users/shop_cart.php" method="get">
                       <div class="form-group">
-					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto}" />
-					<input value="{$itemEncomenda.quantidade}" type="number" name="qtd" />
+					<input type="hidden" name="idProduct" value="{$itemEncomenda.idproduto} class="form-control"" />
+					<input value="{$itemEncomenda.quantidade}" type="number" name="qtd class="form-control"" />
                                </div>
 					<button class="btn btn-default" >Alterar Quantidade</button>
 				</form>	
