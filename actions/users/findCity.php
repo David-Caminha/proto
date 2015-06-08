@@ -9,7 +9,7 @@
 
 <select name="city">
 <option>Select City</option>
-{foreach $cidades as $cidade}
-<option value="{$cidade.id}">{$cidade.nome}</option>
-{/foreach}
+<?php foreach($result as $row) { ?>
+<option value=<?php echo $row['id']?>><?php echo $row['nome']?></option>
+<?php } ?>
 </select>

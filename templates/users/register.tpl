@@ -103,7 +103,7 @@
                         <select name="pais" onChange="getCity(this.value)">
  <option value="">Select Country</option>
  {foreach $paises as $pais}
- <option value="{$pais.nome}">{$pais.nome}></option>
+ <option value="{$pais.nome}">{$pais.nome}</option>
  {/foreach}
      </select>
                         <br> 
