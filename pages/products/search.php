@@ -7,13 +7,13 @@
     foreach ($searchResult as $key => $product)
     {
         unset($photo);
-        if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png') && $product['caminhoimagem'] != ('images/produtos/'.$product['id'].'.png'))
+        if(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.png') && $product['caminhoimagem'] != 'images/produtos/'.$product['id'].'.png')
         {
             $photo = 'images/produtos/'.$product['id'].'.png';
             updatePath($product['id'], $photo);
             $searchResult = getSearchResult($_GET['pesquisa'], $_GET['method_receiver']);
         }
-        elseif(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg') && $product['caminhoimagem'] != ('images/produtos/'.$product['id'].'.jpg'))
+        elseif(file_exists($BASE_DIR.'images/produtos/'.$product['id'].'.jpg') && $product['caminhoimagem'] != 'images/produtos/'.$product['id'].'.jpg')
         {
             $photo = 'images/produtos/'.$product['id'].'.jpg';
             updatePath($product['id'], $photo);
