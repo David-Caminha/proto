@@ -103,21 +103,6 @@
                 {/foreach}
                 <input type="submit" value="Remover comentario" />
             </form>
-        <script> 
-            $(function () {
-                $('.myform').on('submit', function (e) {
-                    $.ajax({
-                        type: 'post',
-                        url: '{$BASE_URL}actions/products/removeComment.php',
-                        data: $(this).serialize(),
-                        success: function (data) {
-                            $('#comentarios').html(data);
-                        }
-                    });
-                    e.preventDefault();
-                });
-            }); 
-        </script>
         {/if}
 		{$number=$number+1}
 		{/foreach}
@@ -144,7 +129,21 @@
 	</div>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="{$BASE_URL}js/bootstrap.min.js"></script>
- 
+    <script> 
+        $(function () {
+            $('.myform').on('submit', function (e) {
+                $.ajax({
+                    type: 'post',
+                    url: '{$BASE_URL}actions/products/removeComment.php',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $('#comentarios').html(data);
+                    }
+                });
+                e.preventDefault();
+            });
+        }); 
+    </script>
     <script> 
         $(function () {
             $('.calssificacao').on('submit', function (e) {

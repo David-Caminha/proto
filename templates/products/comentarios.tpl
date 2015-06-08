@@ -2,7 +2,7 @@
 {foreach $Result as $comment}
 <h3 class="c_username">{$comment.username}</h3>
 <p class="c_text">{$comment.texto}</p>
-<form class="myform" onsubmit="myFunc();">
+<form class="myform">
     <input type="hidden" name="idComentario" value="{$comment.id}" />
     <input type="hidden" name="idProduto" value="{$idProd}" />
     <button type="submit" class="btn btn-default">Remove</button>
@@ -27,3 +27,19 @@
     </form>
 </div>
 {/if}
+
+<script> 
+        $(function () {
+            $('.myform').on('submit', function (e) {
+                $.ajax({
+                    type: 'post',
+                    url: '{$BASE_URL}actions/products/removeComment.php',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $('#comentarios').html(data);
+                    }
+                });
+                e.preventDefault();
+            });
+        }); 
+    </script>
