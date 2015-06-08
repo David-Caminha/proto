@@ -39,6 +39,7 @@
                 {else}
                 {include file='products/toVote.tpl'}
                 <input type="submit" value="Vote!"/>
+                {/if}
             </form>
             </div>
             {/if}
