@@ -18,10 +18,8 @@
                 <section class="row col-xs-6 col-md-4">
                     <a  class=" btn btn-default" href="{$BASE_URL}">Home</a>
                           {if $USERNAME}
-                        {include file='common/menu_logged_in.tpl'}
                     {else}
 						{if $FORNECEDOR}
-							{include file='common/menu_supplier.tpl'}
 						{else}
                       <a href="{$BASE_URL}pages/users/register.php" class=" btn btn-default" >Register</a>
                     	{/if}
