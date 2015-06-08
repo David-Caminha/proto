@@ -170,7 +170,7 @@
 	function populate_product_comment($p_id) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT produto.id as idProduto, produto.descricao, produto.preco, comentario.texto, utilizador.username, comentario.id
+			SELECT comentario.texto, utilizador.username, comentario.id
 			FROM comentario, utilizador, produto
 			WHERE comentario.idUser = utilizador.id AND
 			comentario.idProduto = ? AND
