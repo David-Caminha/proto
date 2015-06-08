@@ -43,7 +43,7 @@
             <section id="line"></section>
         </div>
         {foreach $ERROR_MESSAGES as $error}
-      <div class="error">{$error}  {$FORM_VALUES.dataNascimento}<a class="close" href="#">X</a></div>
+      <div class="error">{$error} <a class="close" href="#">X</a></div>
     {/foreach}
         <section id="forms">
             <div class="col-xs-12 col-sm-4 col-md-4 col-sm-offset-1 col-md-offset-1">
@@ -74,7 +74,7 @@
                          <div class=" col-xs-3  col-sm-2 col-md-3 ">
                         <input class=" form-control" type="text" name="cp1"  value="{$FORM_VALUES.cp1}"> 
                         </div>
-                        <h7 class=" col-xs-1  col-sm-1 col-md-1 "> - </h7>
+                        <p class=" col-xs-1  col-sm-1 col-md-1 "> - </p>
                          <div class="col-xs-3  col-sm-2 col-md-3">
                         <input class=" form-control" type="text" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
                         </div>
