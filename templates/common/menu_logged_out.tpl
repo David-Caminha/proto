@@ -1,6 +1,10 @@
 <a href="{$BASE_URL}pages/users/register.php">Register</a>
-<form action="{$BASE_URL}actions/users/login.php" method="post">
+<form class="form-inline" action="{$BASE_URL}actions/users/login.php" method="post">
+  <div class="form-group">
   <input type="text" class="form-control" placeholder="username" name="username">
+    </div>
+       <div class="form-group">
   <input type="password" class="form-control" placeholder="password" name="password">
-  <input type="submit" value=">">
+     </div>
+  <button type="submit" class="btn btn-default">Log in</button>
 </form>
