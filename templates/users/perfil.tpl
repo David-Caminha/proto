@@ -53,7 +53,7 @@ function getCps(city) {
 
 {foreach $info as $i}
     {if $i.tipo == 1}
-    <a href="{$BASE_URL}pages/users/gerirUsers.php">Gerir Users</a>
+    <a class="btn btn-default" href="{$BASE_URL}pages/users/gerirUsers.php">Gerir Users</a>
     {/if}
 <section class="col-sm-6 col-md-6" >
 	<form id="perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
@@ -81,13 +81,16 @@ function getCps(city) {
         </div>
         <br>
         
+        <form class="form-inline">
+            <div class="form-group">
         <h7 class=" col-xs-12  col-sm-2 col-md-3 ">Codigo Postal</h7>
         <div id="cpdiv" class=" col-xs-3  col-sm-2 col-md-3 ">
             <select id="cp" class="form-control" name="cp1">
                 <option>Codigo postal</option>
             </select>
         </div>
-        <input class="form-control ol-xs-12  col-sm-2 col-md-3 " type="text" value="{$i.cp2}" name="CP2" /><br />
+        <input  type="text" value="{$i.cp2}" name="CP2" /><br />
+            </div>
 		<button class="btn btn-default">Confirmar alterações</button>
 	</form>
 </section>
