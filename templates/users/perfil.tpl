@@ -4,7 +4,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script>
     $( document ).ready(function () {
-        $("#country").val({$i.pais});
+        $("#country").val({$i.nomepais});
         $("#cid").val({$i.nome_cidade});
         $("#cp").val({$i.cp1});
     });
@@ -71,12 +71,9 @@ function getCps(city) {
 		<select id="country" class="form-control" name="pais" onChange="getCity(this.value)">
  <option value="">Selecione o país</option>
  {foreach $paises as $pais}
- {if $pais.nome == $i.nomepais}
-  <option value="{$pais.nome}" selected>{$pais.nome}</option>
-
- {else}
+ 
  <option value="{$pais.nome}">{$pais.nome}</option>
- {/if}
+
  {/foreach}
      </select>
         <br>
