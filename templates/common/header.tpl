@@ -17,11 +17,7 @@
             <div id="ferramentas" class=" col-xs-12 col-md-12">
                 <section class="row col-xs-6 col-md-4">
                     <a  class=" btn btn-default" href="{$BASE_URL}">Home</a>
-                    <form action="{$BASE_URL}pages/products/search.php" method="get">
-                        <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
-						<input type="hidden" name="method_receiver" />
-					</form>
-                         {if $USERNAME}
+                          {if $USERNAME}
                         {include file='common/menu_logged_in.tpl'}
                     {else}
 						{if $FORNECEDOR}
@@ -30,6 +26,11 @@
                       <a href="{$BASE_URL}pages/users/register.php">Register</a>
                     	{/if}
                     {/if}
+                    <form action="{$BASE_URL}pages/products/search.php" method="get">
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="pesquisa" placeholder="Pesquisa">
+						<input type="hidden" name="method_receiver" />
+					</form>
+                   
                 </section>
           
                     {if $USERNAME}
