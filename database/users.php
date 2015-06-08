@@ -163,7 +163,8 @@
         global $conn;
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador
-                            WHERE tipo = 0");
+                            WHERE tipo = 0
+                            ORDER BY nome ASC");
         $stmt->execute();
         return $stmt->fetchALL();
     }
@@ -172,7 +173,8 @@
         global $conn;
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador
-                            WHERE tipo = 3");
+                            WHERE tipo = 3
+                            ORDER BY nome ASC");
         $stmt->execute();
         return $stmt->fetchALL();
     }
