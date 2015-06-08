@@ -7,6 +7,9 @@
 				<td>Produto</td>
 				<td>Vendas</td>
 				<td>Stock</td>
+                <td></td>
+                <td></td>
+                <td></td>
 			</tr>
 			{foreach $produto as $p}
 				<tr>
@@ -15,9 +18,9 @@
 					<td>{$p.stock}</td>
 					<td>
 						<form action="{$BASE_URL}pages/products/Homepage.php" method="get">
-							<input type="hidden" name="addStock" value="{$p.id}" />
-							<input type="text" name="qtd_stock" placeholder="0" value="0" />
-							<button>Adicionar Stock</button>
+							<input type="hidden" name="addStock" value="{$p.id}"  class="form-control"/>
+							<input type="text" name="qtd_stock" placeholder="0" value="0" class="form-control"/>
+							<button class=" btn btn-default" >Adicionar Stock</button>
 						</form>
 					</td>
                     <td><a  class=" btn btn-default" href="?editProd={$p.id}">Editar Produto</a></td>
