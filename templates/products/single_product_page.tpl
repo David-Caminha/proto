@@ -137,7 +137,7 @@
             });
         }
 
-        $('#my-form').submit( processForm );
+        $('#my-form').on('submit', processForm );
     })(jQuery);
 </script>
     </body>
