@@ -121,6 +121,7 @@
     <script>
     (function($){
         function processForm( e ){
+            e.preventDefault();
             $.ajax({
                 url: '{$BASE_URL}actions/products/removeComment.php',
                 dataType: 'text',
@@ -134,8 +135,6 @@
                     console.log( errorThrown );
                 }
             });
-
-            e.preventDefault();
         }
 
         $('#my-form').submit( processForm );
