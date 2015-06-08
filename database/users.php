@@ -166,6 +166,15 @@
         return $stmt->fetchALL();
     }
 	
+	function getUtilizadoresBanidos() {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                            FROM utilizador
+                            WHERE tipo = 3");
+        $stmt->execute();
+        return $stmt->fetchALL();
+    }
+	
 	function promoverUtilizador($u_id, $owner) {
 		global $conn;
 		if($owner) {
