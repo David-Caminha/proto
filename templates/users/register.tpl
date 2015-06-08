@@ -40,6 +40,26 @@
         }
     }
     </script>
+    <script>
+    function getCps(city) {
+        var strURL="{$BASE_URL}actions/users/findCity.php?city="+city;
+        var req = new XMLHttpRequest();
+        if (req) {
+            req.onreadystatechange = function() {
+                if (req.readyState == 4) {
+                    // only if "OK"
+                    if (req.status == 200) {
+                        document.getElementById('cpdiv').innerHTML=req.responseText;
+                    } else {
+                        alert("Problem while using XMLHTTP:\n" + req.statusText);
+                    }
+                }
+            }
+            req.open("GET", strURL, true);
+            req.send(null);
+        }
+    }
+    </script>
   
     <body id="pagina">
         <div class="container">
@@ -90,14 +110,6 @@
                         <input class="form-control" type="text" name="nome" placeholder="Nome completo" value="{$FORM_VALUES.nome}"> <br>
                         <input class="form-control" type="number" name="contacto" placeholder="Contacto" value="{$FORM_VALUES.contacto}"> <br>
                         <input class="form-control" type="text" name="morada" placeholder="Morada" value="{$FORM_VALUES.morada}"> <br>
-                        <h7 class=" col-xs-12  col-sm-2 col-md-3 ">Codigo Postal</h7>
-                        <div class=" col-xs-3  col-sm-2 col-md-3 ">
-                        <input class=" form-control" type="number" name="cp1"  value="{$FORM_VALUES.cp1}"> 
-                        </div>
-                        <p7 class=" col-xs-1  col-sm-1 col-md-1 "> - </p7>
-                        <div class="col-xs-3  col-sm-2 col-md-3">
-                        <input class=" form-control" type="number" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
-                        </div>
                         
                         <select class="form-control" name="pais" onChange="getCity(this.value)">
  <option value="">Selecione o país</option>
@@ -113,17 +125,26 @@
                             </select>
                         </div>
                         
-                        
-                        
-                        
                         <br>
+                        
+                        <h7 class=" col-xs-12  col-sm-2 col-md-3 ">Codigo Postal</h7>
+                        <div id="cpdiv" class=" col-xs-3  col-sm-2 col-md-3 ">
+                        <select class="form-control" name="cp1">
+                                <option>Selecione o codigo postal</option>
+                            </select> 
+                        </div>
+                        <p7 class=" col-xs-1  col-sm-1 col-md-1 "> - </p7>
+                        <div class="col-xs-3  col-sm-2 col-md-3">
+                        <input class=" form-control" type="number" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
+                        </div>
+                        
                     </div>
                     <div class="fornecedor box"> 
                         <input class="form-control" type="text" name="nomeResponsavel" placeholder="Nome responsável" value="{$FORM_VALUES.nomeResponsavel}"> <br>
                         <input class="form-control" type="text" name="contactoResponsavel" placeholder="Contacto" value="{$FORM_VALUES.contactoResponsavel}"> 
                     </div>
                     <br>          
-                    <input type="checkbox" name="termos"> <h7> Li e concordo com os</h7> <a href="http://www.google.com">Termos de utilização</a> <br><br>
+                    <input type="checkbox" name="termos"> <h7> Li e concordo com os</h7> <a href="">Termos de utilização</a> <br><br>
                     <input type="submit" class="btn btn-primary" value="Registar">
                     <br>
                 </form>
