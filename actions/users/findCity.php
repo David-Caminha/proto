@@ -1,5 +1,5 @@
 <?php 
-$country = $_GET['country'];
+$country = $_GET['cidade'];
 
 
 $result = cidadesPertencentes($country);
