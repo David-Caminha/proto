@@ -43,12 +43,11 @@
     function getRecentementeVendidos() {
         global $conn;
         $stmt = $conn->prepare("
-            SELECT Produto.nome, Produto.preco, Produto.caminhoImagem, Produto.id, carrinhoCompras.id
+            SELECT DISTINCT Produto.nome, Produto.preco, Produto.caminhoImagem, Produto.id
             FROM Produto, carrinhoCompras, itemEncomenda 
             WHERE carrinhoCompras.id = itemEncomenda.idCarrinho AND
             Produto.id = itemEncomenda.idProduto AND
 			carrinhoCompras.estado = TRUE
-			GROUP BY itemEncomenda.idProduto
             ORDER by carrinhoCompras.id DESC 
             LIMIT 4");
         $stmt->execute();
