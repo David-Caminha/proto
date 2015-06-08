@@ -1,4 +1,36 @@
 <?php
+    function banirUser($idUser, $admin) {
+        $tipo = getTipo($admin);
+        if($tipo == 1 || $tipo == 2)
+        {
+			$stmt = $conn->prepare("
+				UPDATE utilizador
+                SET tipo = 3
+                WHERE utilizador.id = ?
+			");
+			$stmt->execute(array($idUser));
+            return true;
+        }
+        else
+            return false;
+    }
+
+    function reporUser($idUser, $admin) {
+        $tipo = getTipo($admin);
+        if($tipo == 1 || $tipo == 2)
+        {
+			$stmt = $conn->prepare("
+				UPDATE utilizador
+                SET tipo = 0
+                WHERE utilizador.id = ?
+			");
+			$stmt->execute(array($idUser));
+            return true;
+        }
+        else
+            return false;
+    }
+
     function getPaises() {
         global $conn;
         $stmt = $conn->prepare("SELECT * 
@@ -186,7 +218,7 @@
 	function getUserInfo($u_name) {
 		global $conn;
 		$stmt = $conn->prepare("
-			SELECT utilizador.username, utilizador.nome, utilizador.email, utilizador.telemovel, utilizador.dataNascimento, morada.rua, morada.CP2, cidade.CP1, cidade.nome as nome_cidade, cidade.nomePais
+			SELECT utilizador.username, utilizador.nome, utilizador.email, utilizador.telemovel, utilizador.dataNascimento, utilizador.tipo, morada.rua, morada.CP2, cidade.CP1, cidade.nome as nome_cidade, cidade.nomePais
 			FROM utilizador, morada, cidade
 			WHERE utilizador.id = morada.idUser AND
 			morada.idCidade = cidade.id AND

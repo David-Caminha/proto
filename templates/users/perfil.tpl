@@ -4,6 +4,9 @@
 	<h3>Editar Perfil</h3>
 
 {foreach $info as $i}
+    {if $i.tipo == 1}
+    <a href="{$BASE_URL}pages/users/gerirUsers.php">Gerir Users</a>
+    {/if}
 	<form id="perfil_form" method="post" action="{$BASE_URL}pages/users/perfil.php">
 		Nome Completo: <input type="text" value="{$i.nome}" name="nome" /><br />
 		Data de Nascimento: <input type="date" value="{$i.datanascimento}" name="data_nascimento" /><br />
