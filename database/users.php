@@ -1,4 +1,21 @@
 <?php
+    function getPaises() {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                            FROM pais");
+        $stmt->execute();
+        return $stmt->fetchALL();
+    }
+
+    function cidadesPertencentes($country) {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                            FROM cidade 
+                            WHERE nomepais = ?");
+        $stmt->execute(array($country));
+        return $stmt->fetchALL();
+    }
+
     function usernameExists($username) {
         global $conn;
         $stmt = $conn->prepare("SELECT * 

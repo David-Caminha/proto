@@ -20,6 +20,29 @@
             });
         });
     </script>
+    <script>
+    function getCity(country) {   
+  var strURL="{$BASE_URL}actions/findCity.php?cidade="+country;
+  var req = getXMLHTTP();
+   
+  if (req) {
+   
+   req.onreadystatechange = function() {
+    if (req.readyState == 4) {
+     // only if "OK"
+     if (req.status == 200) {      
+      document.getElementById('citydiv').innerHTML=req.responseText;      
+     } else {
+      alert("Problem while using XMLHTTP:\n" + req.statusText);
+     }
+    }    
+   }   
+   req.open("GET", strURL, true);
+   req.send(null);
+  }
+    
+ }
+    </script>
   
     <body id="pagina">
         <div class="container">
@@ -78,8 +101,29 @@
                          <div class="col-xs-3  col-sm-2 col-md-3">
                         <input class=" form-control" type="text" name="cp2"  value="{$FORM_VALUES.cp2}"> <br>
                         </div>
-                        <input class="form-control" type="text" name="cidade" placeholder="Cidade" value="{$FORM_VALUES.nome}"> <br> 
-                        <input class="form-control" type="text" name="País" placeholder="País" value="{$FORM_VALUES.nomepais}"> <br>
+                        
+                        <input class="form-control" type="text" name="País" placeholder="País" value="{$FORM_VALUES.nomepais}">
+                        <select name="pais" onChange="getCity(this.value)">
+ <option value="">Select Country</option>
+ {foreach $paises as $pais}
+ <option value="{$pais.nome}">{$pais.nome}></option>
+ {/foreach}
+     </select>
+                        <br> 
+                        
+                        <input class="form-control" type="text" name="cidade" placeholder="Cidade" value="{$FORM_VALUES.nome}"> 
+                        <div id="citydiv">
+          <select name="cidade">
+          <option>Select City</option>
+
+           </select>
+
+         </div>
+                        
+                        
+                        
+                        
+                        <br>
                     </div>
                     <div class="fornecedor box"> 
                         <input class="form-control" type="text" name="nomeResponsavel" placeholder="Nome responsável" value="{$FORM_VALUES.nomeResponsavel}"> <br>
