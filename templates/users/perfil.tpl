@@ -80,13 +80,14 @@ function getCps(city) {
             </select>
         </div>
         <br>
+        
         <h7 class=" col-xs-12  col-sm-2 col-md-3 ">Codigo Postal</h7>
         <div id="cpdiv" class=" col-xs-3  col-sm-2 col-md-3 ">
             <select id="cp" class="form-control" name="cp1">
                 <option>Codigo postal</option>
             </select>
         </div>
-        <input class="form-control" type="text" value="{$i.cp2}" name="CP2" /><br />
+        <input class="form-control ol-xs-12  col-sm-2 col-md-3 " type="text" value="{$i.cp2}" name="CP2" /><br />
 		<button class="btn btn-default">Confirmar alterações</button>
 	</form>
 </section>
