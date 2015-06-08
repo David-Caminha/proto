@@ -164,7 +164,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador
                             WHERE tipo = 0
-                            ORDER BY nome ASC");
+                            ORDER BY username ASC");
         $stmt->execute();
         return $stmt->fetchALL();
     }
@@ -174,7 +174,7 @@
         $stmt = $conn->prepare("SELECT * 
                             FROM utilizador
                             WHERE tipo = 3
-                            ORDER BY nome ASC");
+                            ORDER BY username ASC");
         $stmt->execute();
         return $stmt->fetchALL();
     }
