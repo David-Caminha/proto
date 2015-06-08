@@ -53,7 +53,6 @@
         $address = strip_tags($_POST['morada']);
         $cp1 = strip_tags($_POST['cp1']);
         $cp2 = strip_tags($_POST['cp2']);
-        $idCidade = $_POST['cidade'];
     }
     else
     {
@@ -63,7 +62,7 @@
 
     try {
         if($_POST['choiceRadio'] == "user")
-            createUser($username, $password, $email, $birthDate, $realname, $phone, $address, $cp1, $cp2, $idCidade);
+            createUser($username, $password, $email, $birthDate, $realname, $phone, $address, $cp1, $cp2);
         else if($_POST['choiceRadio'] == "fornecedor")
             createSupplier($username, $password, $email, $contactName, $contactPhone);
         else

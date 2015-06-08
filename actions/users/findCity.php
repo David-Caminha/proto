@@ -1,9 +1,9 @@
 <?php 
     include_once('../../config/init.php');
     include_once($BASE_DIR .'database/users.php');  
-    $country = $_GET['cidade'];
+    $city = $_GET['cidade'];
 
-    $cidades = cidadesPertencentes($country);
+    $cidades = cidadesPertencentes($city);
     $smarty->assign('cidades', $cidades);
     $output = $smarty->fetch('users/cities.tpl');
     echo $output;

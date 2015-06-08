@@ -68,7 +68,7 @@
         return $stmt->fetch() == true;
     }
 
-    function createUser($username, $password, $email, $birthDate, $realname, $phone, $address, $cp1, $cp2, $idCidade) {
+    function createUser($username, $password, $email, $birthDate, $realname, $phone, $address, $cp1, $cp2) {
         global $conn;
 		
 		$stmtVerify = $conn->prepare("
@@ -89,7 +89,7 @@
 			$stmtAddr = $conn->prepare("
 				INSERT INTO morada (rua, cp2, idUser, idCidade)
 				VALUES (?, ?, ?, ?)");
-			$stmtAddr->execute(array($address, $cp2, $result['id'], $idCidade));
+			$stmtAddr->execute(array($address, $cp2, $result['id'], $cp1));
 			return true;
 		}
 		return false;
