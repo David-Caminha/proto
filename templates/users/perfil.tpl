@@ -1,14 +1,10 @@
 {include file='common/header.tpl'}
 <script>
-    $( document ).ready(function ()
-{    
-    var country = document.getElementById('country');
-    country.value = {$i.pais};
-    var city = document.getElementById('cid');
-    city.value = {$i.cidade};
-    var cp1 = document.getElementById('cp');
-    cp1.value = {$i.cp1};
-});
+    $( document ).ready(function () {
+        $("#country").val({$i.pais});
+        $("#cid").val({$i.nome_cidade});
+        $("#cp").val({$i.cp1});
+    });
 </script>
 <script>
 function getCity(country) {
