@@ -1,5 +1,5 @@
 {include file='common/header.tpl'}
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script>
     $( document ).ready(function () {
         $("#country").val({$i.pais});
@@ -93,5 +93,5 @@ function getCps(city) {
 {else}
 	{include file='common/no_permission.tpl'}
 {/if}
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 {include file='common/footer.tpl'}
