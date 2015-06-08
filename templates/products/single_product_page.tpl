@@ -34,11 +34,11 @@
             <form class="classificacao" action="">
                 {foreach $p as $pp}
                 <input type="hidden" name="idProduct" value="{$pp.id}" />{/foreach}
-                {if $hasVoted}
-                {include file='products/voted.tpl'}
-                {else}
+                {if !$hasVoted}
                 {include file='products/toVote.tpl'}
                 <input type="submit" value="Vote!"/>
+                {else}
+                {include file='products/voted.tpl'}
                 {/if}
             </form>
             </div>
