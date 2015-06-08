@@ -3,10 +3,10 @@
 <h3 class="c_username">{$comment.username}</h3>
 <p class="c_text">{$comment.texto}</p>
 {if $tipo == 1}
-<form>
+<form id="my-form">
     <input type="hidden" name="idComentario" value="{$comment.id}" />
     <input type="hidden" name="idProduto" value="{$comment.idProduto}" />
-    <button value="{$comment.id}" onclick="remove(this.form)">Remover comentario</button>
+    <button type="submit">Remover comentario</button>
 </form>
 {/if}
 {$number=$number+1}
